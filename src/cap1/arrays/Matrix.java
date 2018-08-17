@@ -45,7 +45,7 @@ public class Matrix {
 	}
 	
 	public int[][] updateElement(int row, int column, int element) {
-		this.elements[row][column] = element;	
+		this.elements[row][column] = element;
 		return this.elements;
 	}
 	
