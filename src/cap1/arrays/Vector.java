@@ -40,7 +40,7 @@ public class Vector {
 		return this.elements[position];
 	}
 	
-	public boolean searchElementByElement(int element) {
+	public boolean searchElementByValue(int element) {
 		boolean result = false;
 		// Recorrer el vector buscando el elemento a eliminar
 		for (int i = 0; i < elements.length; i++) {
