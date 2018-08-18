@@ -30,7 +30,7 @@ class VectorTest {
 		int expectedValue = 999;
 		testedVector.insertElement(expectedValue, 9);
 		// Step 3. Obtain the actual value
-		int actualValue = testedVector.searchElement(9);
+		int actualValue = testedVector.searchElementByPosition(9);
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);		
 	}
