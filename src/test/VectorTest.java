@@ -2,7 +2,6 @@ package test;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,13 +15,13 @@ class VectorTest {
 		Vector testedVector = new Vector(10);
 		// Step 2. Create the expected value variable
 		int[] expectedValue = new int[10];
-		expectedValue[0]=999;
+		expectedValue[0] = 999;
 		// Step 3. Obtain the actual value
 		int[] actualValue = testedVector.insertElement(999, 0);
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
 	}
-	
+
 	@Test
 	void testSearchElement() {
 		// Step 1. instantiate the tested class using the constructor method
@@ -33,22 +32,22 @@ class VectorTest {
 		// Step 3. Obtain the actual value
 		int actualValue = testedVector.searchElementByPosition(9);
 		// Step 4. Compare the expected versus actual values
-		assertEquals(expectedValue, actualValue);		
+		assertEquals(expectedValue, actualValue);
 	}
-	
+
 	@Test
 	void testUpdateElement() {
 		// Step 1. instantiate the tested class using the constructor method
 		Vector testedVector = new Vector(10);
 		// Step 2. Create the expected value variable
 		int[] expectedValue = new int[10];
-		expectedValue[0]=888;
+		expectedValue[0] = 888;
 		// Step 3. Obtain the actual value
 		int[] actualValue = testedVector.updateElement(888, 0);
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
 	}
-	
+
 	@Test
 	void testDeleteElement() {
 		// Step 1. instantiate the tested class using the constructor method
@@ -59,8 +58,8 @@ class VectorTest {
 		// Step 3. Obtain the actual value
 		int[] actualValue = testedVector.deleteElement(expectedValue);
 		// Step 4. Compare the expected versus actual values
-		boolean pos = testedVector.searchElementByValue(expectedValue);
-		
-		assertFalse(pos);		
+		int pos = testedVector.searchElementByValue(expectedValue);
+
+		assertEquals(-1, pos);
 	}
 }

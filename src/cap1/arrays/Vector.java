@@ -40,13 +40,13 @@ public class Vector {
 		return this.elements[position];
 	}
 	
-	public boolean searchElementByValue(int element) {
-		boolean result = false;
+	public int searchElementByValue(int element) {
+		int result = -1;
 		// Recorrer el vector buscando el elemento a eliminar
 		for (int i = 0; i < elements.length; i++) {
 			// Si el elemento es encontrado reemplazarlo por 0
 			if (elements[i] == element) {
-				result = true;
+				result = i;
 			}
 		}
 		return result;
