@@ -5,6 +5,7 @@ public class Vector {
 	private int size;
 	private int[] elements;
 	
+	// Step 1.1. Create Constructor
 	public Vector(int newSize) {
 		System.out.println("Creating vector with size="+newSize);
 		this.size = newSize;
