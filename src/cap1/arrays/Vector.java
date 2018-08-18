@@ -36,11 +36,11 @@ public class Vector {
 		return this.elements;
 	}
 
-	public int searchElement(int position) {
+	public int searchElementByPosition(int position) {
 		return this.elements[position];
 	}
 	
-	public boolean searchElementIfExist(int element) {
+	public boolean searchElementByElement(int element) {
 		boolean result = false;
 		// Recorrer el vector buscando el elemento a eliminar
 		for (int i = 0; i < elements.length; i++) {
