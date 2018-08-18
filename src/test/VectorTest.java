@@ -59,7 +59,7 @@ class VectorTest {
 		// Step 3. Obtain the actual value
 		int[] actualValue = testedVector.deleteElement(expectedValue);
 		// Step 4. Compare the expected versus actual values
-		boolean pos = testedVector.searchElementByElement(expectedValue);
+		boolean pos = testedVector.searchElementByValue(expectedValue);
 		
 		assertFalse(pos);		
 	}
