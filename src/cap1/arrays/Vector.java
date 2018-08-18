@@ -35,7 +35,7 @@ public class Vector {
 		return this.elements;
 	}
 	
-	public int searchElement(int position) {
+	public int searchElementByPosition(int position) {
 		return this.elements[position];
 	}
 	
