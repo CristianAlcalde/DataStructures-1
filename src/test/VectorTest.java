@@ -1,7 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -60,6 +60,6 @@ class VectorTest {
 		// Step 4. Compare the expected versus actual values
 		int pos = testedVector.searchElementByValue(expectedValue);
 
-		assertNotEquals(-1, pos);
+		assertEquals(-1, pos);
 	}
 }
