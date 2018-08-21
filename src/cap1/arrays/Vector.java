@@ -85,11 +85,5 @@ public class Vector {
 	}
 	
 	
-	public static String YaMatenmePorFavor(boolean Allow) {
-		if(Allow==true) {return "Ya puedes morir.";} else {return "Aun no, necesitamos que sufras un poco más";}
-	}
-	
-	
-	
 }
-/*Last access: LUNES-20AGOSTO-2018 7:53pm*/
+/*Last access: LUNES-20AGOSTO-2018 8:04pm*/
