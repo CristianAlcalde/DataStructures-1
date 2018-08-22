@@ -4,53 +4,61 @@ public class Matrix {
 	private int rows;
 	private int columns;
 	private int[][] elements;
-	
+
 	public Matrix(int newRows, int newColumns) {
 		this.rows = newRows;
 		this.columns = newColumns;
 		this.elements = new int[newRows][newColumns];
 	}
-	
+
 	public int getRows() {
 		return rows;
 	}
-	
+
 	public void setRows(int rows) {
 		this.rows = rows;
 	}
-	
+
 	public int getColumns() {
 		return columns;
 	}
-	
+
 	public void setColumns(int columns) {
 		this.columns = columns;
 	}
-	
+
 	public int[][] getElements() {
 		return elements;
 	}
-	
+
 	public void setElements(int[][] elements) {
 		this.elements = elements;
-	} 
-	
+	}
+
 	public int[][] insertElement(int row, int column, int element) {
-		this.elements[row][column] = element;	
+		this.elements[row][column] = element;
 		return this.elements;
 	}
-	
-	public int searchElement(int row, int column) {
-		return this.elements[row][column];
+
+	public int searchElement(int element) {
+		for (int i= 0; i <= this.rows; i ++) {
+			for(int j = 0; j <= this.columns; j ++) {
+				int serchElement = this.elements[i][j];
+				if (serchElement == element) {
+					return i + j;
+				}
+			}
 	}
-	
+		return this.elements[0][0];
+	}
+
 	public int[][] updateElement(int row, int column, int element) {
 		this.elements[row][column] = element;
 		return this.elements;
 	}
-	
+
 	public int[][] deleteElement(int row, int column) {
-		this.elements[row][column] = 0;	
+		this.elements[row][column] = 0;
 		return this.elements;
 	}
 
