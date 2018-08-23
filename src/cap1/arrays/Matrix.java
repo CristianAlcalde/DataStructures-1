@@ -40,16 +40,23 @@ public class Matrix {
 		return this.elements;
 	}
 
-	public int searchElement(int element) {
-		for (int i= 0; i <= this.rows; i ++) {
-			for(int j = 0; j <= this.columns; j ++) {
-				int serchElement = this.elements[i][j];
+	public String searchElement(int element) {
+		int i = 0;
+		int j = 0;
+		int yes = 0;
+		for (i = 0; i < this.rows; i++) {
+			for (j = 0; j < this.columns; j++) {
+				int serchElement = elements[i][j];
 				if (serchElement == element) {
-					return i + j;
+					yes = 1;
+					break;
 				}
 			}
-	}
-		return this.elements[0][0];
+			if (yes == 1) {
+				break;
+			}
+		}
+		return i + ", "+ j;
 	}
 
 	public int[][] updateElement(int row, int column, int element) {

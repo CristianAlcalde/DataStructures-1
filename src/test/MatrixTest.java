@@ -27,10 +27,10 @@ class MatrixTest {
 		// Step 1. instantiate the tested class using the constructor method
 		Matrix testedMatrix = new Matrix(3, 4);
 		// Step 2. Create the expected value variable
-		int expectedValue = 999;
-		testedMatrix.insertElement(0, 0, expectedValue);
+		String expectedValue = "1, 3";
+		testedMatrix.insertElement(1, 3, 999);
 		// Step 3. Obtain the actual value
-		int actualValue = testedMatrix.searchElement(0, 0);
+		String actualValue = testedMatrix.searchElement(999);
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
 	}
