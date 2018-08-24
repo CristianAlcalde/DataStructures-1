@@ -27,11 +27,11 @@ class MatrixTest {
 		Matrix testedMatrix = new Matrix(10, 10);
 		// Step 2. Create the expected value variable
 		int expectedValue = 56;
-		//System.out.println("Valor Esperado: " + expectedValue);
+		//System.out.println("Expected Value: " + expectedValue);
 		testedMatrix.insertElement(expectedValue, 5, 5);
 		// Step 3. Obtain the actual value
 		int actualValue = testedMatrix.searchElementByPosition(5, 5);
-		//System.out.println("Valor Actual: " + actualValue);
+		//System.out.println("Actual Value: " + actualValue);
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
 

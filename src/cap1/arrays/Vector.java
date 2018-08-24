@@ -39,20 +39,18 @@ public class Vector {
 	public int searchElementByPosition(int position) {
 		return this.elements[position];
 	}
-	
+
 	public int searchElementByValue(int element) {
 		int result = -1;
-		System.out.println(result);
 		// Recorrer el vector buscando el elemento a eliminar
 		for (int i = 0; i < elements.length; i++) {
 			// Si el elemento es encontrado reemplazarlo por 0
 			if (elements[i] == element) {
 				result = i;
-				System.out.println(result);
 			}
 		}
 		return result;
-		//System.out.println(result);
+		
 	}
 
 	public int[] updateElement(int newElement, int position) {

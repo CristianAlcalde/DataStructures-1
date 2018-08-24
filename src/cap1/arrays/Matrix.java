@@ -55,11 +55,12 @@ public class Matrix {
 
 	public int searchElementByValue(int element) {
 		int result = -3;
-		// Recorrer la matirz buscando el elemento dado.
+		// Recorrer la matriz buscando el elemento dado.
 		for (int i = 0; i < elements.length; i++) {
 			for (int j = 0; j < elements.length; i++) {
 				if (elements[i][j] == element) {
 					result = i * j;
+					// System.out.println(result);
 				}
 			}
 		}
