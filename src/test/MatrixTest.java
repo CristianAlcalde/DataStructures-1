@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 class MatrixTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
+	fail
 
 }
