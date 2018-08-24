@@ -49,4 +49,22 @@ public class Matrix {
 		return this.elements;
 	}
 
+	public int searchElementByPosition(int filePosition, int columnPosition) {
+		return this.elements[filePosition][columnPosition];
+	}
+
+	public int searchElementByValue(int element) {
+		int result = -3;
+		// Recorrer la matirz buscando el elemento dado.
+		for (int i = 0; i < elements.length; i++) {
+			for (int j = 0; j < elements.length; i++) {
+				if (elements[i][j] == element) {
+					result = i * j;
+				}
+			}
+		}
+		return result;
+
+	}
+
 }

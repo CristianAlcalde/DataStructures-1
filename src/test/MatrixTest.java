@@ -20,6 +20,21 @@ class MatrixTest {
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
 	}
-	
+
+	@Test
+	void testSearchElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(10, 10);
+		// Step 2. Create the expected value variable
+		int expectedValue = 56;
+		//System.out.println("Valor Esperado: " + expectedValue);
+		testedMatrix.insertElement(expectedValue, 5, 5);
+		// Step 3. Obtain the actual value
+		int actualValue = testedMatrix.searchElementByPosition(5, 5);
+		//System.out.println("Valor Actual: " + actualValue);
+		// Step 4. Compare the expected versus actual values
+		assertEquals(expectedValue, actualValue);
+
+	}
 
 }
