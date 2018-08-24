@@ -38,5 +38,8 @@ public class Matrix {
 		
 	// Step 2.2. Create CRUD methods
 			//INSERTAR ELEMENTO
-	
+	public int [][] insertElement(int element, int x, int y){
+		this.elements[x][y] = element;
+		return this.elements;
+	}
 }
