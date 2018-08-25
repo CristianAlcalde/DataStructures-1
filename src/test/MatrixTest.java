@@ -48,7 +48,18 @@ class MatrixTest {
 		testedMatrix.insertElement(4, 1, 1);
 		int[][] actualValue = testedMatrix.listElement();
 		assert Arrays.deepEquals(expectedValue, actualValue);
-		System.out.println("El valor esperado es: " + expectedValue);
-		System.out.println("El valor actual es: " + actualValue);
+		// System.out.println("El valor esperado es: " + expectedValue);
+		// System.out.println("El valor actual es: " + actualValue);
+	}
+
+	@Test // ELIMINAR
+	void testDeleteElement() {
+		Matrix testedMatrix = new Matrix(8, 8);
+		int expectedValue = 1000;
+		testedMatrix.insertElement(expectedValue, 3, 3);
+		int[][] actualValue = testedMatrix.deleteElement(expectedValue);
+		int ubication = testedMatrix.searchElementoByValue(expectedValue);
+		assertEquals(6, ubication);
+
 	}
 }

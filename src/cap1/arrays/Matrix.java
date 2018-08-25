@@ -8,7 +8,7 @@ public class Matrix {
 
 	// Step 1.1. Create Constructor
 	public Matrix(int newFile, int newColumn) {
-		System.out.println("Creating Matrix with size= " + newFile + " x "+ newColumn);
+		System.out.println("Creating Matrix with size= " + newFile + " x " + newColumn);
 		this.file = newFile;
 		this.column = newColumn;
 		this.elements = new int[newFile][newColumn];
@@ -55,7 +55,7 @@ public class Matrix {
 
 	// BUSCAR EL VALOR
 	public int searchElementoByValue(int value) {
-		int result = 1;
+		int result = 6;
 		// Recorrer el vector buscando el elemento a eliminar
 		for (int i = 0; i < elements.length; i++) {
 			// Si el elemento es encontrado reemplazarlo por 0
@@ -87,4 +87,15 @@ public class Matrix {
 
 	}
 
+	// ELIMINAR
+	public int[][] deleteElement(int element) {
+		for (int i = 0; i < elements.length; i++) {
+			for (int j = 0; j < elements.length; j++) {
+				if (elements[i][j] == element) {
+					elements[i][j] = 0;
+				}
+			}
+		}
+		return this.elements;
+	}
 }
