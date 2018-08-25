@@ -8,7 +8,7 @@ public class Matrix {
 
 	// Step 1.1. Create Constructor
 	public Matrix(int newFile, int newColumn) {
-		System.out.println("Creating Matrix with size= " + newFile + newColumn);
+		System.out.println("Creating Matrix with size= " + newFile + " x "+ newColumn);
 		this.file = newFile;
 		this.column = newColumn;
 		this.elements = new int[newFile][newColumn];
@@ -68,4 +68,23 @@ public class Matrix {
 		return result;
 
 	}
+
+	// ACTUALIZAR
+	public int[][] updateElement(int newElement, int x, int y) {
+		this.elements[x][y] = newElement;
+		return this.elements;
+	}
+
+	// LISTAR
+	public int[][] listElement() {
+		for (int i = 0; i < elements.length; i++) {
+			for (int j = 0; j < elements.length; j++) {
+				System.out.print(elements[i][j] + " ");
+			}
+			System.out.println(" ");
+		}
+		return elements;
+
+	}
+
 }
