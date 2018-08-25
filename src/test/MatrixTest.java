@@ -11,30 +11,48 @@ class MatrixTest {
 	@Test
 	void testinsertElement() {
 		// Step 1. instantiate the tested class using the constructor method
-		Matrix testedMatrix = new Matrix(3, 2);
+		Matrix testedMatrix = new Matrix(6, 3);
 		// Step 2. Create the expected value variable
-		int[][] expectedValue = new int[3][2];
+		int[][] expectedValue = new int[6][3];
 		expectedValue[1][1] = 60;
 		// Step 3. Obtain the actual value
 		int[][] actualValue = testedMatrix.insertElement(60, 1, 1);
 		// Step 4. Compare the expected versus actual values
+		//System.out.println("Esta es la dirección de memoria del valor esperado: " + expectedValue);
+		//System.out.println("Esta es la direccion de memoria del valor actual: " + actualValue);
 		assertArrayEquals(expectedValue, actualValue);
 	}
 
 	@Test
 	void testSearchElement() {
 		// Step 1. instantiate the tested class using the constructor method
-		Matrix testedMatrix = new Matrix(10, 10);
+		Matrix testedMatrix = new Matrix(5, 5);
 		// Step 2. Create the expected value variable
 		int expectedValue = 56;
-		//System.out.println("Expected Value: " + expectedValue);
-		testedMatrix.insertElement(expectedValue, 5, 5);
+		testedMatrix.insertElement(expectedValue, 0, 0);
 		// Step 3. Obtain the actual value
-		int actualValue = testedMatrix.searchElementByPosition(5, 5);
-		//System.out.println("Actual Value: " + actualValue);
+		int actualValue = testedMatrix.searchElementByPosition(0, 0);
 		// Step 4. Compare the expected versus actual values
+		 System.out.println("Expected Value: " + expectedValue);
+		 System.out.println("Actual Value: " + actualValue);
 		assertEquals(expectedValue, actualValue);
-
 	}
 
+	@Test
+	void testUpdateElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(15, 15);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = new int[15][15];
+		expectedValue[0][0] = 100;
+		// Step 3. Obtain the actual value
+		int[][] actualValue = testedMatrix.updateElement(100, 0, 0);
+		// Step 4. Compare the expected versus actual values
+		//System.out.println("Esta es la dirección de memoria del valor esperado: " + expectedValue);
+		//System.out.println("Esta es la direccion de memoria del valor actual: " + actualValue);
+		assertArrayEquals(expectedValue, actualValue);
+		
+	} 
+	
+	
 }

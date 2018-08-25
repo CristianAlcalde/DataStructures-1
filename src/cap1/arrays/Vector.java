@@ -50,13 +50,14 @@ public class Vector {
 			}
 		}
 		return result;
-		
+
 	}
 
 	public int[] updateElement(int newElement, int position) {
 		this.elements[position] = newElement;
 		return this.elements;
 	}
+	
 
 	public int[] deleteElement(int element) {
 

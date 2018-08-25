@@ -33,7 +33,7 @@ class VectorTest {
 		int actualValue = testedVector.searchElementByPosition(9);
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
-	}
+	} 
 
 	@Test
 	void testUpdateElement() {

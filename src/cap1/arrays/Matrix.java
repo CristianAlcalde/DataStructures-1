@@ -46,6 +46,8 @@ public class Matrix {
 
 	public int[][] insertElement(int element, int files, int columns) {
 		this.elements[files][columns] = element;
+		System.out.println("El Nuevo elemento de la matriz es: " + element);
+		System.out.println("Posicion De La Matriz: " + "[" + files + "," + columns + "]");
 		return this.elements;
 	}
 
@@ -54,18 +56,25 @@ public class Matrix {
 	}
 
 	public int searchElementByValue(int element) {
-		int result = -3;
+		int result = 5;
 		// Recorrer la matriz buscando el elemento dado.
 		for (int i = 0; i < elements.length; i++) {
-			for (int j = 0; j < elements.length; i++) {
+			for (int j = 0; j < elements.length; j++) {
 				if (elements[i][j] == element) {
 					result = i * j;
 					// System.out.println(result);
-				}
+				} 
 			}
 		}
 		return result;
 
+	}
+
+	public int[][] updateElement(int newElement, int filePosition, int columnsPosition) {
+		this.elements[filePosition][columnsPosition] = newElement;
+		//System.out.println("El Nuevo elemento de la matriz es: " + newElement);
+		//System.out.println("Coodenadas de la matriz: " + filePosition + "," + columnsPosition);
+		return this.elements;
 	}
 
 }
