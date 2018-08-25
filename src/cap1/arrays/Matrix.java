@@ -9,7 +9,7 @@ public class Matrix {
 
 	// Step 1.1. Create Constructor
 	public Matrix(int newFiles, int newColumns) {
-		System.out.println("Creating matrix with size = " + newFiles + "*" + newColumns);
+		System.out.println("Creating matrix with size = " + "[" + newFiles + "," + newColumns + "]");
 		this.files = newFiles;
 		this.columns = newColumns;
 		this.elements = new int[newFiles][newColumns];
@@ -46,8 +46,8 @@ public class Matrix {
 
 	public int[][] insertElement(int element, int files, int columns) {
 		this.elements[files][columns] = element;
-		System.out.println("El Nuevo elemento de la matriz es: " + element);
-		System.out.println("Posicion De La Matriz: " + "[" + files + "," + columns + "]");
+		System.out.println("El nuevo elemento en la matriz es: " + element);
+		System.out.println("La posición del elemento en la matriz es: " + "(" + files + "," + columns + ")");
 		return this.elements;
 	}
 
@@ -63,7 +63,7 @@ public class Matrix {
 				if (elements[i][j] == element) {
 					result = i * j;
 					// System.out.println(result);
-				} 
+				}
 			}
 		}
 		return result;
@@ -72,8 +72,22 @@ public class Matrix {
 
 	public int[][] updateElement(int newElement, int filePosition, int columnsPosition) {
 		this.elements[filePosition][columnsPosition] = newElement;
-		//System.out.println("El Nuevo elemento de la matriz es: " + newElement);
-		//System.out.println("Coodenadas de la matriz: " + filePosition + "," + columnsPosition);
+		// System.out.println("El Nuevo elemento de la matriz es: " + newElement);
+		// System.out.println("Coodenadas de la matriz: " + filePosition + "," +
+		// columnsPosition);
+		return this.elements;
+	}
+
+	public int[][] deleteElement(int element) {
+		// Recorrer la matriz buscando el elemento a eliminar.
+		for (int i = 0; i < elements.length; i++) {
+			for (int j = 0; j < elements.length; j++) {
+			//Si el elemento de la matriz es encontrado, reeemplazarlo por cero.
+				if (elements[i][j] == element) {
+					elements[i][j] = 0;
+				}
+			}
+		}
 		return this.elements;
 	}
 

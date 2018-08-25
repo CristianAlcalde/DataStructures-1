@@ -18,8 +18,10 @@ class MatrixTest {
 		// Step 3. Obtain the actual value
 		int[][] actualValue = testedMatrix.insertElement(60, 1, 1);
 		// Step 4. Compare the expected versus actual values
-		//System.out.println("Esta es la dirección de memoria del valor esperado: " + expectedValue);
-		//System.out.println("Esta es la direccion de memoria del valor actual: " + actualValue);
+		// System.out.println("Esta es la dirección de memoria del valor esperado: " +
+		// expectedValue);
+		// System.out.println("Esta es la direccion de memoria del valor actual: " +
+		// actualValue);
 		assertArrayEquals(expectedValue, actualValue);
 	}
 
@@ -33,8 +35,8 @@ class MatrixTest {
 		// Step 3. Obtain the actual value
 		int actualValue = testedMatrix.searchElementByPosition(0, 0);
 		// Step 4. Compare the expected versus actual values
-		 System.out.println("Expected Value: " + expectedValue);
-		 System.out.println("Actual Value: " + actualValue);
+		System.out.println("Expected Value: " + expectedValue);
+		System.out.println("Actual Value: " + actualValue);
 		assertEquals(expectedValue, actualValue);
 	}
 
@@ -48,11 +50,29 @@ class MatrixTest {
 		// Step 3. Obtain the actual value
 		int[][] actualValue = testedMatrix.updateElement(100, 0, 0);
 		// Step 4. Compare the expected versus actual values
-		//System.out.println("Esta es la dirección de memoria del valor esperado: " + expectedValue);
-		//System.out.println("Esta es la direccion de memoria del valor actual: " + actualValue);
+		// System.out.println("Esta es la dirección de memoria del valor esperado: " +
+		// expectedValue);
+		// System.out.println("Esta es la direccion de memoria del valor actual: " +
+		// actualValue);
 		assertArrayEquals(expectedValue, actualValue);
+
+	}
+
+	@Test
+	void testDeleteElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(8, 8);
+		// Step 2. Create the expected value variable
+		int expectedValue = 77;
+		testedMatrix.insertElement(expectedValue, 3, 3);
+		// Step 3. Obtain the actual value
+		int[][] actualValue = testedMatrix.deleteElement(expectedValue);
+		//System.out.println("Esta es la dirreción de memoria del valor actual: " + actualValue);
+		// Step 4. Compare the expected versus actual values
+		int pos = testedMatrix.searchElementByValue(expectedValue);
+		//System.out.println("Esta es la direccion de memoria donde será reemplazado el elemento por 0: " + actualValue);
 		
-	} 
-	
-	
+		assertEquals(5,pos);
+
+	}
 }
