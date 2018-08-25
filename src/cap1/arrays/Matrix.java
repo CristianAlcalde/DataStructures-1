@@ -89,7 +89,7 @@ public class Matrix {
 
 	// ELIMINAR
 	public int[][] deleteElement(int element) {
-		for (int i = 0; i < elements.length; i++) {
+		for (int i=0; i < elements.length; i++) {
 			for (int j = 0; j < elements.length; j++) {
 				if (elements[i][j] == element) {
 					elements[i][j] = 0;
