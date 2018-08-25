@@ -9,14 +9,21 @@ import cap1.arrays.Matrix;
 
 class MatrixTest {
 
-	@Test
+	@Test 	//INSERTAR
 	void testInsertElement() {
 		Matrix testedMatrix = new Matrix (5,5);
 		int [][] expectedValue =new int [5][5];
 		expectedValue[0][0]=99;
 		int[][] actualValue = testedMatrix.insertElement(99, 0, 0);
 		assertArrayEquals(expectedValue, actualValue);
-		
+	}
+	@Test	//BUSCAR
+	void testSearchElement() {
+		Matrix testedMatrix = new Matrix (5,5);
+		int expectedValue = 99;
+		testedMatrix.insertElement(expectedValue, 4, 3);
+		int actualValue = testedMatrix.searchElementByxyPosition(4, 3);
+		assertEquals(expectedValue, actualValue);
 	}
 
 }

@@ -11,6 +11,7 @@ public class Vector {
 		this.size = newSize;
 		this.elements = new int[newSize];
 	}
+	
 
 	// Step 2. Create methods
 	// Step 2.1. Generate encapsulation methods
