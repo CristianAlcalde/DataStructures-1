@@ -2,6 +2,8 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
 
 import cap1.arrays.Matrix;
@@ -35,8 +37,8 @@ class MatrixTest {
 		// Step 3. Obtain the actual value
 		int actualValue = testedMatrix.searchElementByPosition(0, 0);
 		// Step 4. Compare the expected versus actual values
-		System.out.println("Expected Value: " + expectedValue);
-		System.out.println("Actual Value: " + actualValue);
+		//System.out.println("Expected Value: " + expectedValue);
+		//System.out.println("Actual Value: " + actualValue);
 		assertEquals(expectedValue, actualValue);
 	}
 
@@ -67,12 +69,35 @@ class MatrixTest {
 		testedMatrix.insertElement(expectedValue, 3, 3);
 		// Step 3. Obtain the actual value
 		int[][] actualValue = testedMatrix.deleteElement(expectedValue);
-		//System.out.println("Esta es la dirreción de memoria del valor actual: " + actualValue);
+		// System.out.println("Esta es la dirreción de memoria del valor actual: " +
+		// actualValue);
 		// Step 4. Compare the expected versus actual values
-		int pos = testedMatrix.searchElementByValue(expectedValue);
-		//System.out.println("Esta es la direccion de memoria donde será reemplazado el elemento por 0: " + actualValue);
-		
-		assertEquals(5,pos);
+		int ubication = testedMatrix.searchElementByValue(expectedValue);
+		// System.out.println("Esta es la direccion de memoria donde será reemplazado el
+		// elemento por 0: " + actualValue);
 
+		assertEquals(5, ubication); 
+	}
+
+	@Test
+	void testListElements() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(3, 3);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		testedMatrix.insertElement(1, 0, 0);
+		testedMatrix.insertElement(2, 0, 1);
+		testedMatrix.insertElement(3, 0, 2);
+		testedMatrix.insertElement(4, 1, 0);
+		testedMatrix.insertElement(5, 1, 1);
+		testedMatrix.insertElement(6, 1, 2);
+		testedMatrix.insertElement(7, 2, 0);
+		testedMatrix.insertElement(8, 2, 1);
+		testedMatrix.insertElement(9, 2, 2);
+		// Step 3. Obtain the actual value
+		int [][] actualValue = testedMatrix.listElements();
+		// Step 4. Compare the expected versus actual values
+		assert Arrays.deepEquals(expectedValue, actualValue);
+		
 	}
 }

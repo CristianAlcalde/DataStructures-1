@@ -61,8 +61,8 @@ public class Matrix {
 		for (int i = 0; i < elements.length; i++) {
 			for (int j = 0; j < elements.length; j++) {
 				if (elements[i][j] == element) {
-					result = i * j;
-					// System.out.println(result);
+					result = element;
+					
 				}
 			}
 		}
@@ -80,15 +80,25 @@ public class Matrix {
 
 	public int[][] deleteElement(int element) {
 		// Recorrer la matriz buscando el elemento a eliminar.
-		for (int i = 0; i < elements.length; i++) {
+		for(int i=0; i<elements.length; i++) {
 			for (int j = 0; j < elements.length; j++) {
-			//Si el elemento de la matriz es encontrado, reeemplazarlo por cero.
+				// Si el elemento de la matriz es encontrado, reeemplazarlo por cero.
 				if (elements[i][j] == element) {
 					elements[i][j] = 0;
 				}
 			}
 		}
 		return this.elements;
+	}
+
+	public int[][] listElements() {
+		for (int i = 0; i < elements.length; i++) {
+			for (int j = 0; j < elements.length; j++) {
+				System.out.print(elements[i][j] + " ");
+			}
+			System.out.println(" ");
+		}
+		return elements;
 	}
 
 }
