@@ -5,6 +5,7 @@ public class Matrix {
 	private int size;
 	private int[][] elements;
 	int [][] matriz={{7,14,8,3},{6,19,7,2},{3,13,4,1}};
+	private int[][] expectedValue;
 	
 	public Matrix(int newsize,int newsize1) {
 	// Step 1.1. Create Constructor
@@ -32,8 +33,11 @@ public class Matrix {
 		
 		return this.elements;
 	}
-	public int searchElements(int element) {
-		int result=0;
+	public int[] searchElementByPosition(int position) {
+		return this.elements[position];
+	}
+	public int searchElementsbyValue(int element) {
+		int result=-1;
 		for (int x =0; x <elements.length;x++) {
 			for(int y=0; y <elements.length; y++) {
 				if(elements[x][y]==element);
@@ -42,8 +46,17 @@ public class Matrix {
 		}
 		return result;
 	}
-	public int[][] updateElements( int[] newElement,int position) {
-		this.elements[position]= newElement;
+	public int[][] updateElements( int[] i,int position) {
+		this.elements[position]= i;
+		return this.elements;
+	}
+	public int [][] DeleteElements(int element){
+		for(int x=0; x < elements.length; x ++) {
+			for(int y=0; y < elements.length; y++) {
+				elements[x][y]=element;
+				element=0;
+			}
+		}
 		return this.elements;
 	}
 	

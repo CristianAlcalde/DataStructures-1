@@ -30,7 +30,7 @@ class MatrixTest {
 		int[][] expectedValue = new int[4] [4];
 		expectedValue[2][3] =5;
 		// Step 3. Obtain the actual value
-		int actualValue = testedMatrix.searchElements(5);
+		int[] actualValue = testedMatrix.searchElementByPosition(5);
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
 		
@@ -46,5 +46,18 @@ class MatrixTest {
 		int[][] actualValue = testedMatrix.updateElements(null,300);
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
+	}
+	void testDeleteElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(4 , 4);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = new int[4] [4];
+		expectedValue[2][3] =300;
+		// Step 3. Obtain the actual value
+		//int [][] actualValue = testedMatrix.DeleteElements(300);
+		// Step 4. Compare the expected versus actual values
+		int[][] pos = testedMatrix.DeleteElements(300);
+
+		assertEquals(-1, pos);
 	}
 }
