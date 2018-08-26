@@ -10,7 +10,7 @@ public class Matrix {
 	// Step 1.1. Create Constructor
 		System.out.println("Creating Matrix with size=" + newsize + newsize1);
 		this.size = newsize;
-		this.elements = new int[newsize][newsize1];
+		this.elements = new int[newsize] [newsize1];
 	}
 	// Step 2. Create methods
 	// Step 2.1. Generate encapsulation methods
@@ -42,4 +42,9 @@ public class Matrix {
 		}
 		return result;
 	}
+	public int[][] updateElements( int[] newElement,int position) {
+		this.elements[position]= newElement;
+		return this.elements;
+	}
+	
 }
