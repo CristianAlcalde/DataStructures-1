@@ -3,14 +3,14 @@ package cap1.arrays;
 public class Matrix {
 	// Step 1. Create attributes
 	private int sizerow;
-	private int sizerowcolumn;
+	private int sizecolumn;
 	private int[][] elements;
 
 	// Step 1.1. Create Constructor
 
 	public Matrix(int newsizerow, int newsizerowcolumn) {
 		this.sizerow = newsizerow;
-		this.sizerowcolumn = newsizerowcolumn;
+		this.sizecolumn = newsizerowcolumn;
 		this.elements = new int[newsizerow][newsizerowcolumn];
 	}
 
@@ -26,11 +26,11 @@ public class Matrix {
 	}
 
 	public int getSizerowcolumn() {
-		return sizerowcolumn;
+		return sizecolumn;
 	}
 
 	public void setSizerowcolumn(int sizerowcolumn) {
-		this.sizerowcolumn = sizerowcolumn;
+		this.sizecolumn = sizerowcolumn;
 	}
 
 	public int[][] getElements() {
