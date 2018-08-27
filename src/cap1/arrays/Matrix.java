@@ -72,17 +72,19 @@ public class Matrix {
 		return this.elements;
 	}
 
-	public int[][] SearchElement(int element) {
+	public int SearchElement(int element) {
+		int intbuscado = 0;
 		for (int i = 0; i < elements.length; i++) {
 			for (int k = 0; k < elements[i].length; k++) {
 				if (this.elements[i][k] == element) {
-					System.out.println("--- SearchElement()---- Elemento encontrado: " + this.elements[i][k] + " --- Posición: " + i + "," + k);
-					break;
+					System.out.println("--- SearchElement()---- Elemento encontrado: " + this.elements[i][k]
+							+ " --- Posición: " + i + "," + k);
+					intbuscado = this.elements[i][k];
 				}
 
 			}
 
 		}
-		return this.elements;
+		return intbuscado;
 	}
 }

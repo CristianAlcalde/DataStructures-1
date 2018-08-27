@@ -56,13 +56,12 @@ class MatrixTest {
 		// Step 1. instantiate the tested class using the constructor method
 		Matrix testedMatrix = new Matrix(5, 5);
 		// Step 2. Create the expected value variable
-		int[][] expectedValue = new int[5][5];
-		expectedValue[3][3] = 805;
+		int expectedValue = 805;
 		// Step 3. Obtain the actual value
 		testedMatrix.InsertElement(805, 3, 3);
-		int[][] actualValue = testedMatrix.SearchElement(805);
+		int actualValue = testedMatrix.SearchElement(805);
 		// Step 4. Compare the expected versus actual values
-		assertArrayEquals(expectedValue, actualValue);
+		assertEquals(expectedValue, actualValue);
 	}
 
 }
