@@ -5,9 +5,46 @@ public class Matrix {
 	private int sizerow;
 	private int sizerowcolumn;
 	private int[][] elements;
-	
+
 	// Step 1.1. Create Constructor
+
+	public Matrix(int newsizerow, int newsizerowcolumn) {
+		this.sizerow = newsizerow;
+		this.sizerowcolumn = newsizerowcolumn;
+		this.elements = new int[newsizerow][newsizerowcolumn];
+	}
+
 	// Step 2. Create methods
 	// Step 2.1. Generate encapsulation methods
+
+	public int getSizerow() {
+		return sizerow;
+	}
+
+	public void setSizerow(int sizerow) {
+		this.sizerow = sizerow;
+	}
+
+	public int getSizerowcolumn() {
+		return sizerowcolumn;
+	}
+
+	public void setSizerowcolumn(int sizerowcolumn) {
+		this.sizerowcolumn = sizerowcolumn;
+	}
+
+	public int[][] getElements() {
+		return elements;
+	}
+
+	public void setElements(int[][] elements) {
+		this.elements = elements;
+	}
+	
 	// Step 2.2. Create CRUD methods
+	
+	public int[][] InsertElements(int element,int row,int column) {
+		this.elements[row][column]= element;
+		return this.elements;
+	}
 }
