@@ -8,10 +8,10 @@ public class Matrix {
 
 	// Step 1.1. Create Constructor
 
-	public Matrix(int newsizerow, int newsizerowcolumn) {
+	public Matrix(int newsizerow, int newsizecolumn) {
 		this.sizerow = newsizerow;
-		this.sizecolumn = newsizerowcolumn;
-		this.elements = new int[newsizerow][newsizerowcolumn];
+		this.sizecolumn = newsizecolumn;
+		this.elements = new int[newsizerow][newsizecolumn];
 	}
 
 	// Step 2. Create methods
@@ -40,11 +40,49 @@ public class Matrix {
 	public void setElements(int[][] elements) {
 		this.elements = elements;
 	}
-	
+
 	// Step 2.2. Create CRUD methods
-	
-	public int[][] InsertElements(int element,int row,int column) {
-		this.elements[row][column]= element;
+
+	public int[][] InsertElement(int element, int row, int column) {
+		this.elements[row][column] = element;
+		return this.elements;
+	}
+
+	public int[][] UpdateElement(int element, int newelement) {
+		for (int i = 0; i < elements.length; i++) {
+			for (int k = 0; k < elements[i].length; k++) {
+				if (this.elements[i][k] == element)
+					this.elements[i][k] = newelement;
+				;
+			}
+
+		}
+		return this.elements;
+	}
+
+	public int[][] DeleteElement(int element) {
+		for (int i = 0; i < elements.length; i++) {
+			for (int k = 0; k < elements[i].length; k++) {
+				if (this.elements[i][k] == element)
+					this.elements[i][k] = 0;
+				;
+			}
+
+		}
+		return this.elements;
+	}
+
+	public int[][] SearchElement(int element) {
+		for (int i = 0; i < elements.length; i++) {
+			for (int k = 0; k < elements[i].length; k++) {
+				if (this.elements[i][k] == element) {
+					System.out.println("--- SearchElement()---- Elemento encontrado: " + this.elements[i][k] + " --- Posición: " + i + "," + k);
+					break;
+				}
+
+			}
+
+		}
 		return this.elements;
 	}
 }
