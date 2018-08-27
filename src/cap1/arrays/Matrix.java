@@ -7,6 +7,9 @@ public class Matrix {
 	private int[][] element;
 	
 	
+	public Matrix(int newsizex, int newsizey) {
+		this.element = new int[newsizex][newsizey];
+	}
 	// Step 2. Create methods
 		// Step 2.1. Generate encapsulation methods
 	public int getSize() {
@@ -28,6 +31,20 @@ public class Matrix {
 		this.element[positionx][positiony] = element1;
 		return this.element;
 	}
+	
+	public int [][] SearchElement(int elementxy ,int positionx,int positiony) {
+		public int matriz [][]; 
+		for(int i=0;i<positionx;i++){
+			for(int j=0;j<positiony;j++){
+				if matriz[i][j]=elementxy;
+		 }
+		}
+
+
+			return 0;
+		}
+	}
+	
 	
 	
 	
