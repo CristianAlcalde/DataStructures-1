@@ -9,7 +9,7 @@ public class Matrix {
 
 	// Step 1.1. Create Constructor
 	public Matrix(int newFiles, int newColumns) {
-		System.out.println("Creating matrix with size = " + "[" + newFiles + "," + newColumns + "]");
+		System.out.println("Creating matrix with size = " + "[" + newFiles + "*" + newColumns + "]");
 		this.files = newFiles;
 		this.columns = newColumns;
 		this.elements = new int[newFiles][newColumns];
@@ -46,8 +46,8 @@ public class Matrix {
 
 	public int[][] insertElement(int element, int files, int columns) {
 		this.elements[files][columns] = element;
-		System.out.println("El nuevo elemento en la matriz es: " + element);
-		System.out.println("La posición del elemento en la matriz es: " + "(" + files + "," + columns + ")");
+		//System.out.println("El nuevo elemento en la matriz es: " + element);
+		//System.out.println("La posición del elemento en la matriz es: " + "(" + files + "," + columns + ")");
 		return this.elements;
 	}
 

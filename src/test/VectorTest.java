@@ -3,6 +3,8 @@ package test;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
 
 import cap1.arrays.Vector;
@@ -33,7 +35,7 @@ class VectorTest {
 		int actualValue = testedVector.searchElementByPosition(9);
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
-	} 
+	}
 
 	@Test
 	void testUpdateElement() {
@@ -61,5 +63,25 @@ class VectorTest {
 		int pos = testedVector.searchElementByValue(expectedValue);
 
 		assertEquals(-1, pos);
+	}
+
+	@Test
+	void testListElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Vector testedVector = new Vector(8);
+		// Step 2. Create the expected value variable
+		int[] expectedValue = { 8, 7, 6, 5, 4, 3, 2, 1 };
+		testedVector.insertElement(8, 0);
+		testedVector.insertElement(7, 1);
+		testedVector.insertElement(6, 2);
+		testedVector.insertElement(5, 3);
+		testedVector.insertElement(4, 4);
+		testedVector.insertElement(3, 5);
+		testedVector.insertElement(2, 6);
+		testedVector.insertElement(1, 7);
+		// Step 3. Obtain the actual value
+		int[] actualValue = testedVector.listElement();
+		// Step 4. Compare the expected versus actual values
+		assertArrayEquals(expectedValue, actualValue);
 	}
 }

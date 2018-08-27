@@ -57,7 +57,6 @@ public class Vector {
 		this.elements[position] = newElement;
 		return this.elements;
 	}
-	
 
 	public int[] deleteElement(int element) {
 
@@ -68,6 +67,14 @@ public class Vector {
 				elements[i] = 0;
 			}
 		}
+		return this.elements;
+	}
+
+	public int[] listElement() {
+		for (int i = 0; i < elements.length; i++) {
+			System.out.print(elements[i] + " ");
+		}
+		System.out.println();
 		return this.elements;
 	}
 }
