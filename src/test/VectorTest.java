@@ -20,8 +20,8 @@ class VectorTest {
 		int[] actualValue = testedVector.insertElement(999, 0);
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
+	
 	}
-
 	@Test
 	void testSearchElement() {
 		// Step 1. instantiate the tested class using the constructor method

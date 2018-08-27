@@ -4,11 +4,12 @@ public class Matrix {
 	// Step 1. Create attributes
 
 	private int size;
-	private int[][] element;
+	private int[][] elements;
+	//public Object searchElement;
 	
 	
 	public Matrix(int newsizex, int newsizey) {
-		this.element = new int[newsizex][newsizey];
+		this.elements = new int[newsizex][newsizey];
 	}
 	// Step 2. Create methods
 		// Step 2.1. Generate encapsulation methods
@@ -19,38 +20,39 @@ public class Matrix {
 		this.size = size;
 	}
 	public int[][] getElement() {
-		return element;
+		return elements;
 	}
 	public void setElement(int[][] element) {
-		this.element = element;
+		this.elements = element;
 	}
 	
 	// Step 2.2. Create CRUD methods
 	
 	public int [][] insertElement(int element1 ,int positionx,int positiony) {
-		this.element[positionx][positiony] = element1;
-		return this.element;
+		this.elements[positionx][positiony] = element1;
+		return this.elements;
 	}
 	
-	public int [][] SearchElement(int elementxy ,int positionx,int positiony) {
-		public int matriz [][]; 
-		for(int i=0;i<positionx;i++){
-			for(int j=0;j<positiony;j++){
-				if matriz[i][j]=elementxy;
-		 }
-		}
-
-
-			return 0;
-		}
+	public int searchElementByPosition(int positionx, int positiony) {
+		return this.elements[positionx][positiony];
 	}
-	
-	
-	
-	
-	
-	
-	
+	public int searchElementByValue(int element) {
+		int result = -1;
+		// Recorrer el vector buscando el elemento a eliminar
+		for (int i = 0; i < 3 ; i++) {
+			for (int j = 0; i < 3; j++) {
+			// Si el elemento es encontrado reemplazarlo por 0
+			if (elements[i][j] == element) {
+				result = elements [i][j];
+			}
+			}
+		}
+		return result;
+	}
+	public int[][] updateElement(int newElement, int positionx, int positiony) {
+		this.elements[positionx][positiony] = newElement;
+		return this.elements;
+	}
 	
 	
 }
