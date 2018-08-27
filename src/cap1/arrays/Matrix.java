@@ -3,66 +3,34 @@ package cap1.arrays;
 public class Matrix {
 	// Step 1. Create attributes
 	
-	private int[] sizex;
-	private int[] sizey;
-	private int[][] elementox,elementoy;
-	public int[] getSizex() {
-		return sizex;
-	}
-	public void setSizex(int[] sizex) {
-		this.sizex = sizex;
-	}
-	public int[] getSizey() {
-		return sizey;
-	}
-	public void setSizey(int[] sizey) {
-		this.sizey = sizey;
-	}
-	public int[][] getElementox() {
-		return elementox;
-	}
-	public void setElementox(int[][] elementox) {
-		this.elementox = elementox;
-	}
-	public int[][] getElementoy() {
-		return elementoy;
-	}
-	public void setElementoy(int[][] elementoy) {
-		this.elementoy = elementoy;
-	}
+	private int size;
+	private int[][] element;
 	
-	// Step 2. Create methods
-		// Step 2.1. Generate encapsulation methods
-	
-	
-	/*	
-	
-	// Step 1.1. Create Constructor
-	public Matrix(int newSizex, int newSizey) {
-		System.out.println("Creating matrix with size=" + newSizex + newSizey);		
-		this.sizex = new int[newSizex];
-		this.sizey = new int[newSizey];
-		
-		
-		
 	// Step 2. Create methods
 	// Step 2.1. Generate encapsulation methods
-		public int getSize(){
-			return size;
-			
-		}
+	
+	public int getSize() {
+		return size;
+	}
 
-		public void setSize(int size) {
-			this.size = size;
-		}
+	public void setSize(int size) {
+		this.size = size;
+	}
 
-		public int[] getElements() {
-			return elements;
-		}
+	public int[][] getElement() {
+		return element;
+	}
 
-		public void setElements(int[] elements) {
-			this.elements = elements;
-		}
+	public void setElement(int[][] element) {
+		this.element = element;
+	}
+	
+	// Step 2.2. Create CRUD methods	
+	
+	public int[][] insertElement(int[] position, intelementB)
+	
+	
+	/*				
 
 		// Step 2.2. Create CRUD methods
 		public int[] insertElement(int element, int position) {
@@ -109,3 +77,8 @@ public class Matrix {
 */
 
 }
+
+
+
+	
+
