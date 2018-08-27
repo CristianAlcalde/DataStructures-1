@@ -5,6 +5,11 @@ public class Matrix {
 	private int tamFila;
 	private int tamColumna;
 	
+	// Step 1.1. Create Constructor
+	public int matrix[][];
+		
+	
+	// Step 2. Create methods
 	public void setTamFila(int tamFila) {
 		this.tamFila = tamFila;
 	}
@@ -21,10 +26,6 @@ public class Matrix {
 		return tamColumna;
 	}
 	
-	
-	
-	// Step 1.1. Create Constructor
-	// Step 2. Create methods
 	// Step 2.1. Generate encapsulation methods
 	// Step 2.2. Create CRUD methods
 	
