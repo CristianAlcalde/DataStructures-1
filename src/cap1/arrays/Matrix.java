@@ -22,9 +22,12 @@ public class Matrix {
 		this.element = element;
 	}
 	
-
+	// Step 2.2. Create CRUD methods
 	
-	
+	public int [][] insertElement(int element1 ,int positionx,int positiony) {
+		this.element[positionx][positiony] = element1;
+		return this.element;
+	}
 	
 	
 	
