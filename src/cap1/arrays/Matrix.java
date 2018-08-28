@@ -5,7 +5,6 @@ public class Matrix {
 
 	private int size;
 	private int[][] elements;
-	//public Object searchElement;
 	
 	
 	public Matrix(int newsizex, int newsizey) {
