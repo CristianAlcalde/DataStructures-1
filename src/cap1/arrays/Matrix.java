@@ -87,4 +87,15 @@ public class Matrix {
 		}
 		return intbuscado;
 	}
+
+	public void ListElements() {
+		System.out.println("-----List Array-------");
+		for (int i = 0; i < elements.length; i++) {
+			for (int j = 0; j < elements[i].length; j++) {
+				System.out.print(this.elements[i][j] + ",");
+			}
+			System.out.println("");
+		}
+		System.out.println("");
+	}
 }

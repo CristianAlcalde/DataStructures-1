@@ -52,6 +52,20 @@ class MatrixTest {
 	}
 
 	@Test
+	void testListElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(5, 5);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = new int[5][5];
+		expectedValue[2][3] = 801;
+		// Step 3. Obtain the actual value
+		int[][] actualValue = testedMatrix.InsertElement(801, 2, 3);
+		testedMatrix.ListElements();
+		// Step 4. Compare the expected versus actual values
+		assertArrayEquals(expectedValue, actualValue);
+	}
+
+	@Test
 	void testSearhElement() {
 		// Step 1. instantiate the tested class using the constructor method
 		Matrix testedMatrix = new Matrix(5, 5);
