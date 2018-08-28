@@ -50,4 +50,14 @@ public class Matrix {
 		this.elements[row][column] = element;
 		return this.elements;
 	}
+	
+	public int searchElementByPosition(int row, int column) {
+		return this.elements[row][column];
+	}
+	
+	public int[][] updateElement(int newElement, int row, int column) {
+		this.elements[row][column] = newElement;
+		return this.elements;
+	}
+
 }
