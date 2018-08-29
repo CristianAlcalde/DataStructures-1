@@ -45,15 +45,31 @@ public class Matrix {
 	// If the item is found replace it with 0
 	if (elements[i][j] == element) {
 	result = i;	
-	}
+	result = j;
+	     }
 	}
 }
 	return result;
-	}
 
+	}
+	
 	public int[][] updateElement(int newElement, int positionA, int positionB) {
 		this.elements[positionA][positionB] = newElement;
 	return this.elements;
 	}
 	
+	public int[][] deleteElement(int element) {
+
+		// Scroll through the vector looking for the element to be deleted.
+		for (int i = 0; i < elements.length; i++) {
+		for (int j = 0; j < elements.length; j++) {	
+		// If the item is found replace it with 0
+			if (elements[i][j] == element) {
+				elements[i][j] = 0;
+			}
+		}
+		return this.elements;
+	}
+		return elements;
+ }
 }
