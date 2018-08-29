@@ -11,8 +11,26 @@ public class Matrix {
 		this.tamano = nuevoTamano;
 		this.elementos = new int[nuevoTamano][nuevoTamano];
 	}	
-		
-		
+	
+	// Step 2. Create methods
+		// Step 2.1. Generate encapsulation methods
+		public int getTamano() {
+			return tamano;
+		}
+
+		public void seTtamano(int size) {
+			this.tamano = size;
+		}
+
+		public int[][] getElementos() {
+			return elementos;
+		}
+
+		public void setElementos(int[][] elementos) {
+			this.elementos = elementos;
+		}
+
+	
 	// Step 2. Create methods
 	// Step 2.1. Generate encapsulation methods
 	// Step 2.2. Create CRUD methods
