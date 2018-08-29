@@ -59,5 +59,48 @@ public class Matrix {
 		this.elements[row][column] = newElement;
 		return this.elements;
 	}
+	
+	public int[][] deleteElement(int element) {
 
-}
+		// Recorrer el vector buscando el elemento a eliminar
+		for (int i = 0; i < this.size1; i++) {
+			for(int j = 0; j < this.size2; j++) {
+			// Si el elemento es encontrado reemplazarlo por 0
+				if (elements[i][j] == element) {
+					elements[i][j] = 0;
+			}
+		}
+		}
+		return this.elements;
+	}
+	
+	public int searchElementByValue(int element) {
+		int result = -1;
+		// Recorrer el vector buscando el elemento a eliminar
+		for (int i = 0; i < this.size1; i++) {
+			for(int j = 0; j < this.size2; j++) {
+			// Si el elemento es encontrado reemplazarlo por 0
+			if (elements[i][j] == element) {
+				result = i;
+			}
+		}
+		}
+		return result;
+	}
+	
+	public int[][] ListElement(int element, int row, int column) {
+		// Recorrer el vector buscando el elemento a eliminar
+		for (int i = 0; i < this.size1; i++) {
+			for(int j = 0; j < this.size2; j++) {
+			// Remplaza en la respectiva posicion el numero asignado
+			System.out.println(this.elements[i][j]);
+			this.elements[row][column] = element;
+				}									
+			}
+		return this.elements;
+		}
+	}
+
+
+
+
