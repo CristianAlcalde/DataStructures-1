@@ -32,5 +32,8 @@ public class Matrix {
 		this.elements[positionA][positionB] = element1;
 		return this.elements;
 	}
-				
+	
+	public int searchElementByPosition(int positionA,int positionB) {
+	return this.elements[positionA][positionB];
+	}
 }

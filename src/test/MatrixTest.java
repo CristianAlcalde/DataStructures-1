@@ -1,6 +1,8 @@
 package test;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import cap1.arrays.Matrix;
 
@@ -19,15 +21,15 @@ class MatrixTest {
 		assertArrayEquals(expectedValue, actualValue);
 	}
 
-	/*	@Test
+		@Test
 	void testSearchElement() {
 		// Step 1. instantiate the tested class using the constructor method
-		Matrix testMatrix = new Matrix(3,3);
+		Matrix testMatrix = new Matrix(4,4);
 		// Step 2. Create the expected value variable
-		int expectedValue = 11;
+		int expectedValue = 345;
 		testMatrix.insertElement(expectedValue, 2, 2);		
 		// Step 3. Obtain the actual value
-		int actualValue = testMatrix.	
+		int actualValue = testMatrix.searchElementByPosition(2,2);	
 		// Step 4. Compare the expected versus actual values		
 		assertEquals(expectedValue, actualValue);
 	}
