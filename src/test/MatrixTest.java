@@ -34,19 +34,19 @@ class MatrixTest {
 		assertEquals(expectedValue, actualValue);
 	}
 
-	/*	
+		
 	@Test
 	void testUpdateElement() {
 		// Step 1. instantiate the tested class using the constructor method
-		Matrix testMartix = new Matrix (3,3);
+		Matrix testMartix = new Matrix (4,4);
 		// Step 2. Create the expected value variable
-		int[][] expectedValue = new int[3][3];
-		expectedValue[0][0] = 11;
+		int[][] expectedValue = new int[4][4];
+		expectedValue[0][0] = 345;
 		// Step 3. Obtain the actual value
-		int[][] actualValue = testMartix.updateElement(11, 0, 0);
+		int[][] actualValue = testMartix.updateElement(345, 0, 0);
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
 	}
-*/
+
 }
 	
