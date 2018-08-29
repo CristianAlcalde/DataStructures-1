@@ -15,6 +15,7 @@ public class Matrix {
 		this.elementos = new int[newFilas][newColumnas];
 	
 	// Step 2. Create methods
+	// Step 2.1. Generate encapsulation methods	
 		
 		 public int getColumnas() { 
              return columnas; 
@@ -42,6 +43,6 @@ public class Matrix {
 		
 		
 		
-	// Step 2.1. Generate encapsulation methods
+	
 	// Step 2.2. Create CRUD methods
 }
