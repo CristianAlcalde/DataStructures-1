@@ -56,11 +56,30 @@ public class Matrix {
 		}
 		return this.elements[row][column];
 	}
-
+	 
+	public int[][] listElement() {
+		for (int i = 0; i < elements.length; i++) {
+			for (int j = 0; j < elements [i].length; j++) {
+				if ((j + 1) == elements[i].length)
+					System.out.println("");
+			}
+		}
+		
+		return elements;
+	}
+	
+			
+		
 	public int[][] updateElement(int newElement, int row, int column) {
 		this.elements[column][row] = newElement;
 		return this.elements;
 
+	}
+	
+	public int [][] deleteElement(int row, int column) {
+		// Algoritmo para eliminar
+		elements[row - 1][column - 1] = 0;
+		return elements;
 	}
 
 }
