@@ -70,10 +70,9 @@ class MatrixTest {
 		Matrix PruebaTamaño =new Matrix  (3,3);
 		// Step 2. Create the expected value variable
 		int [][] EsperaTamaño =new int[3][3];
-		EsperaTamaño[0][0]=90;
+		EsperaTamaño[0][0]=9;
 		// Step 3. Obtain the actual value
-		int[][] ObtenerDato=PruebaTamaño.insertarMatriz(90, 0, 0);
-		PruebaTamaño.imprimirMatriz();
+		int[][] ObtenerDato=PruebaTamaño.insertarMatriz(9, 0, 0);
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(EsperaTamaño, ObtenerDato);
 		PruebaTamaño.imprimirMatriz();

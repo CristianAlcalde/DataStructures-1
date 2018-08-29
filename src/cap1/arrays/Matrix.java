@@ -6,7 +6,7 @@ public class Matrix {
 	int [][]elemnts;
 	
 	public Matrix(int filas, int columnas) {
-		System.out.print("Tamaño Matriz "+ filas+ " * " + columnas);
+		System.out.print("Tamaño Matriz "+ filas+ " * " + columnas+" ");
 		this.filas=filas;
 		this.columnas=columnas;
 		this.elemnts= new int[filas][columnas];
@@ -84,11 +84,13 @@ public class Matrix {
 	public void imprimirMatriz() {
 
 	    for (int i = 0; i < filas; i++) {
+	    	System.out.println(" ");
 			for (int j = 0; j < columnas; j++) {
-	           System.out.println(elemnts[i][j]+" ") ;
+				System.out.print(elemnts[i][j]) ;
+
 
 	        }
-
+			
 	    }
 	}
 }
