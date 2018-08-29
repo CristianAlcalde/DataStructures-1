@@ -22,6 +22,17 @@ class MatrixTest {
 		assertArrayEquals(expectedValue, actualValue);
 	}
 	
-	
+	@Test
+	void testSearchtElementbyPosition() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(5, 5);
+		// Step 2. Create the expected value variable
+		int expectedValue = 600;
+		testedMatrix.insertElement(expectedValue, 0, 0);
+		// Step 3. Obtain the actual value
+		int actualValue = testedMatrix.searchElementbyPosition( 0, 0);
+		// Step 4. Compare the expected versus actual values
+		assertEquals(expectedValue, actualValue);
+	}
 
 }
