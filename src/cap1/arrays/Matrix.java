@@ -39,10 +39,10 @@ public class Matrix {
 	
 	public int searchElementByValue(int element) {
 	int result = -1;
-	// Recorrer la matriz buscando el elemento a eliminar
+	// Scroll through the matrix looking for the element to be deleted
 	for (int i = 0; i < elements.length; i++){
 	for (int j = 0; j < elements.length; j++) {	
-	// Si el elemento es encontrado reemplazarlo por 0
+	// If the item is found replace it with 0
 	if (elements[i][j] == element) {
 	result = i;	
 	}
