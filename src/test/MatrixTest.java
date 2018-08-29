@@ -72,7 +72,8 @@ class MatrixTest {
 		int expectedValue = 999;
 		testedMatrix.insertElement(expectedValue, 0, 0);
 		// Step 3. Obtain the actual value
-		int[][] actualValue = testedMatrix.ListElement(999, 0, 0);
+		int actualValue = testedMatrix.searchElementByPosition(0, 0);
+		//int[][] actualValue = testedMatrix.ListElement(999, 0, 0);
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
 	}
