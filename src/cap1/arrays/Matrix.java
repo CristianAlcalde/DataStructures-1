@@ -15,6 +15,33 @@ public class Matrix {
 		this.elementos = new int[newFilas][newColumnas];
 	
 	// Step 2. Create methods
+		
+		 public int getColumnas() { 
+             return columnas; 
+     } 
+
+     public void setColumnas(int columnas) { 
+             this.columnas = columnas; 
+     } 
+
+     public int[][] getElementos() { 
+             return elementos; 
+     } 
+
+     public void setElementos(int[][] elementos) { 
+             this.elementos = elementos; 
+     } 
+
+     public int getFilas() { 
+             return filas; 
+     } 
+
+     public void setFilas(int filas) { 
+             this.filas = filas; 
+     }
+		
+		
+		
 	// Step 2.1. Generate encapsulation methods
 	// Step 2.2. Create CRUD methods
 }
