@@ -36,7 +36,7 @@ public class Vector {
 		return this.elements;
 	}
 
-	public int searchElementByPosition(int position) {
+	public int searchElementByPosition(int position) { // Se inserta un elemento para despues buscarlo
 		return this.elements[position];
 	}
 	
@@ -68,4 +68,15 @@ public class Vector {
 		}
 		return this.elements;
 	}
+	
+	// Metodo Listar
+		public void listarElementos(){
+			for(int i=0; i<elements.length; i++) {
+				System.out.print(elements[i] + " ");
+				}
+		}
+	
+	
+	
+	
 }

@@ -63,4 +63,6 @@ class VectorTest {
 		
 		assertFalse(pos);		
 	}
+	
+	
 }
