@@ -56,8 +56,8 @@ public class Matrix {
 	public int[][] deleteElement(int element) {
 		
 		// Recorrer el vector buscando el elemento a eliminar
-		for (int i = 0; i < 3 ; i++) {
-			for (int j = 0; i < 3; j++) {
+		for (int i = 0; i < elements.length ; i++) {
+			for (int j = 0; i < elements.length; j++) {
 			// Si el elemento es encontrado reemplazarlo por 0
 			if (elements[i][j] == element) {
 				elements[i][j] = 0;
