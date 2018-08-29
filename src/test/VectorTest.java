@@ -55,11 +55,8 @@ class VectorTest {
 		// Step 2. Create the expected value variable
 		int expectedValue = 999;
 		testedVector.insertElement(expectedValue, 9);
-		// Step 3. Obtain the actual value
-		int[] actualValue = testedVector.deleteElement(expectedValue);
 		// Step 4. Compare the expected versus actual values
 		int pos = testedVector.searchElementByValue(expectedValue);
-
 		assertEquals(-1, pos);
 	}
 }
