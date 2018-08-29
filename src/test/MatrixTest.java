@@ -48,17 +48,17 @@ class MatrixTest {
 		assertArrayEquals(expectedValue, actualValue);
 	}	
 	
-	//@Test
-	/*void testListElement() {
+	@Test
+	void testListElement() {
 		// Step 1. instantiate the tested class using the constructor method
 		Matrix testedMatrix = new Matrix(5, 5);
 		// Step 2. Create the expected value variable
-		String expectedValue = " 0 0 0\n" + " 0 0 0\n" + " 0 0 900\n";
+		String expectedValue = "0 0 0 0 0\n" + "0 0 0 0 0\n" + "0 0 900 0 0\n" + "0 0 0 0 0\n" + "0 0 0 0 0\n";
 		// Step 3. Obtain the actual value
 		int[][] oldValue = testedMatrix.insertElement(900, 2, 2);
 		String actualValue = testedMatrix.listElement(oldValue);
 		// Step 4. Compare the expected versus actual values
-		assertEquals(expectedValue, actualValue);*/
-	//}
+		assertEquals(expectedValue, actualValue);
+	}
 	
 }
