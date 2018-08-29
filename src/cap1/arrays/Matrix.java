@@ -9,7 +9,6 @@ public class Matrix {
 	// Step 1.1. Create Constructor
 	
 	public Matrix(int newFilas, int NewColumnas) {
-		System.out.println("Creating matrix with filas and columnas=" + newFilas, newColumnas);
 		this.filas = newFilas;
 		this.columnas = newColumnas
 		this.elementos = new int[newFilas][newColumnas];
@@ -39,10 +38,11 @@ public class Matrix {
 
      public void setFilas(int filas) { 
              this.filas = filas; 
-     }
-		
-		
-		
+     }	
 	
-	// Step 2.2. Create CRUD methods
-}
+    // Step 2.2. Create CRUD methods
+
+     public int[][] insertarElementos(int[][] elementos, int fila, int columna ) {
+ 		this.elementos[fila][columna] = elementos[][];
+ 		return this.elementos[][] ;
+ 	}
