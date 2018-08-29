@@ -4,7 +4,6 @@ public class Matrix {
 	// Step 1. Create attributes
 	private int size;
 	private int[][] elements;
-	int [][] matriz={{7,14,8,3},{6,19,7,2},{3,13,4,1}};
 	private int[][] expectedValue;
 	
 	public Matrix(int newsize,int newsize1) {
@@ -60,4 +59,12 @@ public class Matrix {
 		return this.elements;
 	}
 	
+	public static void listarMatriz(int rows,int columns) {
+		int [][] matriz={{7,14,8,3},{6,19,7,2},{3,13,4,1}};
+		for(int x = 0; x <= matriz.length;x++) {
+			for(int y = 0; y <= matriz.length;y++) {
+				System.out.println(matriz[x][y]);
+			}
+		}
+	}
 }
