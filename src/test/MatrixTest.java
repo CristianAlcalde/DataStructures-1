@@ -9,16 +9,17 @@ class MatrixTest {
 	@Test
 	void testInsertElement() {
 		// Step 1. instantiate the tested class using the constructor method
-		Matrix testMatrix = new Matrix(3,3);
+		Matrix testMatrix = new Matrix(4,4);
 		// Step 2. Create the expected value variable
-		int[][] expectedValue = new int[3][3];
-		expectedValue[2][1] = 11;
+		int[][] expectedValue = new int[4][4];
+		expectedValue[3][3] = 345;
 		// Step 3. Obtain the actual value
-		int[][] actualValue = testMatrix.insertElement(11, 2, 1);	
+		int[][] actualValue = testMatrix.insertElement(345, 3, 3);	
 		// Step 4. Compare the expected versus actual values		
 		assertArrayEquals(expectedValue, actualValue);
 	}
-/*	@Test
+
+	/*	@Test
 	void testSearchElement() {
 		// Step 1. instantiate the tested class using the constructor method
 		Matrix testMatrix = new Matrix(3,3);
@@ -26,10 +27,12 @@ class MatrixTest {
 		int expectedValue = 11;
 		testMatrix.insertElement(expectedValue, 2, 2);		
 		// Step 3. Obtain the actual value
-		int actualValue = testMatrix.searchElementByPosition(2, 2);	
+		int actualValue = testMatrix.	
 		// Step 4. Compare the expected versus actual values		
 		assertEquals(expectedValue, actualValue);
 	}
+
+	/*	
 	@Test
 	void testUpdateElement() {
 		// Step 1. instantiate the tested class using the constructor method
