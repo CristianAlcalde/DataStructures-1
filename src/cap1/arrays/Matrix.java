@@ -7,7 +7,7 @@ public class Matrix {
 	
 	// Step 1.1. Create Constructor
 	public Matrix(int newTamx, int newTamy) {
-		System.out.println("Se creo una matrix de tamaño=" + newTamx + "," + newTamy );
+		System.out.println("Se creo una matriz de tamaño=" + newTamx + "," + newTamy );
 		this.tamx = newTamx;
 		this.tamy = newTamy;
 		this.matriz = new int[newTamx][newTamy];
@@ -50,6 +50,21 @@ public class Matrix {
 		return this.matriz[posX][posY];
 	}
 	
+	public String buscaPosicionPorValor(int valor) {
+		String result = "-1,-1";
+		
+		// Recorrer el vector buscando el elemento a eliminar
+		for (int i = 0; i < tamy; i++) {
+			for (int j = 0; j < this.tamx; j++) {
+			// Si el elemento es encontrado reemplazarlo por 0
+				if (matriz[i][j] == valor) {
+					result = i+","+j;
+				}
+			}
+		}
+		return result;
+	}
+	
 	
 	public int[][] actualizaValor(int nuevoValor, int posX, int posY ) {
 		this.matriz[posX][posY] = nuevoValor;
@@ -61,8 +76,8 @@ public class Matrix {
 		for (int i = 0; i < this.tamy; i++) {
 			for (int j = 0; j < this.tamx; j++) {
 			// Si el elemento es encontrado reemplazarlo por 0
-				if (matriz[i][j] == valor) {
-					matriz[i][j] = 0;
+				if (this.matriz[i][j] == valor) {
+					this.matriz[i][j] = 0;
 				}
 			}
 		}
