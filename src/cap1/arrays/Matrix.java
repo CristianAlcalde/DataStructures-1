@@ -6,8 +6,10 @@ public class Matrix {
 	private int size;
 	private int[][] elements;
 	
-	
+	// Step 1.1. Create Constructor		
 	public Matrix(int newsizex, int newsizey) {
+		System.out.println("Creating vector with size=" );
+		this.size = size;
 		this.elements = new int[newsizex][newsizey];
 	}
 	// Step 2. Create methods
@@ -53,11 +55,11 @@ public class Matrix {
 		return this.elements;
 	}
 	
-	public int[][] deleteElement(int element) {
-		
+	public int[][] deleteElement( int positionx, int positiony) {
+		int element=-1;
 		// Recorrer el vector buscando el elemento a eliminar
-		for (int i = 0; i < elements.length ; i++) {
-			for (int j = 0; i < elements.length; j++) {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
 			// Si el elemento es encontrado reemplazarlo por 0
 			if (elements[i][j] == element) {
 				elements[i][j] = 0;

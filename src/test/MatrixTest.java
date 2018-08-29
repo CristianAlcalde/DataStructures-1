@@ -49,12 +49,12 @@ class MatrixTest {
 	@Test
 	void testDeleteElement() {
 		// Step 1. instantiate the tested class using the constructor method
-		Matrix testMatrix = new Matrix(3,3);
+		Matrix testMatrix = new Matrix (3,3);
 		// Step 2. Create the expected value variable
 		int expectedValue = 11;
 		testMatrix.insertElement(expectedValue, 2, 2);		
 		// Step 4. Compare the expected versus actual values
-		int actualValue = testMatrix.searchElementByValue(expectedValue);
-		assertEquals(-1, actualValue);
+		int actualValue = testMatrix.searchElementByPosition(2,2);
+		assertEquals(expectedValue, actualValue);
 	}
 }
