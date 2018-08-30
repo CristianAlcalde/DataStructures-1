@@ -2,36 +2,45 @@ package cap1.arrays;
 
 public class Matrix {
 	// Step 1. Create attributes
-	private int tamano;
-	private int[][] elementos;
-	
+	private int sizeX;
+	private int sizeY;
+	private int[][] matrix;
+		
 	// Step 1.1. Create Constructor
-	public Matrix(int nuevoTamano) {
-		System.out.println("Creating vector with size=" + nuevoTamano);
-		this.tamano = nuevoTamano;
-		this.elementos = new int[nuevoTamano][nuevoTamano];
-	}	
+	public Matrix(int newSizeX, int newSizeY) {
+		System.out.println("Creating vector with size=" + newSizeX + " En X y " + newSizeY +  "en Y");
+		this.sizeX = newSizeX;
+		this.sizeY = newSizeY;
+		this.matrix = new int[newSizeX][newSizeY];
+	}
 	
 	// Step 2. Create methods
+	
 		// Step 2.1. Generate encapsulation methods
-		public int getTamano() {
-			return tamano;
-		}
+	public int getSizeX() {
+		return sizeX;
+	}
 
-		public void seTtamano(int size) {
-			this.tamano = size;
-		}
-
-		public int[][] getElementos() {
-			return elementos;
-		}
-
-		public void setElementos(int[][] elementos) {
-			this.elementos = elementos;
-		}
-
+	public void setSizeX(int sizeX) {
+		this.sizeX = sizeX;
+	}
 	
-	// Step 2. Create methods
-	// Step 2.1. Generate encapsulation methods
+	public int getSizeY() {
+		return sizeY;
+	}
+
+	public void setSizeY(int sizeY) {
+		this.sizeY = sizeY;
+	}
+
+	public int[][] getElements() {
+		return matrix;
+	}
+
+	public void setElements(int[][] matrix) {
+		this.matrix = matrix;
+	}
+	
 	// Step 2.2. Create CRUD methods
+	
 }
