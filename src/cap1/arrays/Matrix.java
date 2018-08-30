@@ -70,4 +70,18 @@ public class Matrix {
 		return this.matrix;
 	}
 	
+	public int[][] deleteElement(int element) {
+
+		// Recorrer la matrix buscando el elemento a eliminar
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+			// Si el elemento es encontrado reemplazarlo por 0
+				if (matrix[i][j] == element) {
+					matrix[i][j] = 0;
+				}
+			}
+		}
+		return this.matrix;
+	}
+	
 }
