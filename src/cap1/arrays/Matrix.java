@@ -47,5 +47,22 @@ public class Matrix {
 		return this.matrix;
 	}
 	
+	public int searchElementByPosition(int positionX,int positionY) {
+		return this.matrix[positionX][positionY];
+	}
+	
+	public int searchElementByValue(int element) {
+		int result = -1;
+		// Recorrer la matrix buscando el elemento a eliminar
+		for (int i = 0; i < matrix.length; i++) {
+			for(int j = 0; j < matrix[i].length; j++) {
+			// Si el elemento es encontrado reemplazarlo por 0
+				if ( matrix[i][j] == element) {
+					result = element;
+				}
+			}
+		}
+		return result;
+	}
 	
 }
