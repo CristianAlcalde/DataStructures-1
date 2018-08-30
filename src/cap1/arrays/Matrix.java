@@ -71,7 +71,6 @@ public class Matrix {
 	}
 	
 	public int[][] deleteElement(int element) {
-
 		// Recorrer la matrix buscando el elemento a eliminar
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
@@ -82,6 +81,17 @@ public class Matrix {
 			}
 		}
 		return this.matrix;
+	}
+	
+	public int[][] listElements() {
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				System.out.print(matrix[i][j] + " ");
+				if ((j + 1) == matrix[i].length)
+					System.out.println("");
+				}
+		}
+	return matrix;
 	}
 	
 }
