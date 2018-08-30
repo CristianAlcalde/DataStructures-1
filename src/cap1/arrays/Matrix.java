@@ -42,6 +42,10 @@ public class Matrix {
 	}
 	
 	// Step 2.2. Create CRUD methods
+	public int[][] insertMatrix(int element, int positionX, int positionY) {
+		this.matrix[positionX][positionY] = element;
+		return this.matrix;
+	}
 	
 	
 }
