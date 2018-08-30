@@ -46,14 +46,16 @@ public class Matrix {
 		return this.elements;
 	}
 	
-	public void searchElement (int item) {
+	public int searchElement (int item) {
 		
 		for (int sizeLines=0; sizeLines<this.sizeLines; sizeLines++);
 		for (int sizeColumns=0; sizeColumns<this.sizeColumns; sizeColumns++);
-		if (this.elements[sizeLines][sizeColumns]==item)
+		{if (this.elements[sizeLines][sizeColumns]==item)
 			System.out.println( sizeLines + "," + sizeColumns);
 	}
-	
+	return item;
+}
+
 	public int[][] updateElement(int newItem, int sizeLines, int sizeColumns) {
 		this.elements[sizeLines][sizeColumns] = newItem;
 		return this.elements;
