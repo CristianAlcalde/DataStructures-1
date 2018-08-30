@@ -33,11 +33,11 @@ public class Matrix {
 		this.sizeY = sizeY;
 	}
 
-	public int[][] getElements() {
+	public int[][] getMatrix() {
 		return matrix;
 	}
 
-	public void setElements(int[][] matrix) {
+	public void setMatrix(int[][] matrix) {
 		this.matrix = matrix;
 	}
 	
