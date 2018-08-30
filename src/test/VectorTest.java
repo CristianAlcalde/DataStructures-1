@@ -9,6 +9,8 @@ import cap1.arrays.Vector;
 
 class VectorTest {
 
+	private int[] actualValues;
+
 	@Test
 	void testInsertElement() {
 		// Step 1. instantiate the tested class using the constructor method
@@ -55,11 +57,18 @@ class VectorTest {
 		// Step 2. Create the expected value variable
 		int expectedValue = 999;
 		testedVector.insertElement(expectedValue, 9);
-		// Step 3. Obtain the actual value
-		int[] actualValue = testedVector.deleteElement(expectedValue);
+		setActualValues(testedVector.deleteElement(expectedValue));
 		// Step 4. Compare the expected versus actual values
 		int pos = testedVector.searchElementByValue(expectedValue);
 
 		assertEquals(-1, pos);
+	}
+
+	public int[] getActualValues() {
+		return actualValues;
+	}
+
+	public void setActualValues(int[] actualValues) {
+		this.actualValues = actualValues;
 	}
 }
