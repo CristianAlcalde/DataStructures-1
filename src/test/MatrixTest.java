@@ -61,4 +61,31 @@ class MatrixTest {
 		assertEquals(expectedValue, actualValue);
 	}
 	
+	@Test
+	void testUpdateElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(5, 5);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = new int [5][5];
+		expectedValue[4][4]= 215;
+		// Step 3. Obtain the actual value
+		testedMatrix.insertElement(700, 4, 4);
+		int[][] actualValue = testedMatrix.updateElement(215, 4, 4);
+		// Step 4. Compare the expected versus actual values
+		assertArrayEquals(expectedValue, actualValue);
+	}
+	
+	@Test
+	void testDeleteElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(5, 5);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = new int [5][5];
+		expectedValue[3][3]= 0;
+		// Step 3. Obtain the actual value
+		testedMatrix.insertElement(850, 3, 3);
+		int[][] actualValue = testedMatrix.deleteElement(850);
+		// Step 4. Compare the expected versus actual values
+		assertArrayEquals(expectedValue, actualValue);
+	}
 }

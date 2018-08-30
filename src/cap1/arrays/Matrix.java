@@ -79,6 +79,20 @@ public class Matrix {
 		return matrix;
 	}
 	
-	
+	public int[][] updateElement(int element, int positionFile, int positionColumn) {
+		this.elements[positionFile][positionColumn] = element;
+		return this.elements;
 	}
+	
+	public int[][] deleteElement(int value) {
+		for(int i = 0; i < elements.length; i++) {
+			for(int j = 0; j < elements[i].length; j++) {
+				if(elements[i][j] == value)
+					elements[i][j] = 0;
+			}
+		}
+		return this.elements;
+	}
+}
+
 
