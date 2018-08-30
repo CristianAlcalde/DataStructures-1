@@ -8,7 +8,7 @@ public class Matrix {
 		
 	// Step 1.1. Create Constructor
 	public Matrix(int newSizeX, int newSizeY) {
-		System.out.println("Creating vector with size=" + newSizeX + " En X y " + newSizeY +  " en Y");
+		System.out.println("Creating vector with size= " + newSizeX + " En X y " + newSizeY +  " en Y");
 		this.sizeX = newSizeX;
 		this.sizeY = newSizeY;
 		this.matrix = new int[newSizeX][newSizeY];
