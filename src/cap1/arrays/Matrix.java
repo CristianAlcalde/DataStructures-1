@@ -65,4 +65,9 @@ public class Matrix {
 		return result;
 	}
 	
+	public int[][] updateElement(int newElement, int positionX, int positionY) {
+		this.matrix[positionX][positionY] = newElement;
+		return this.matrix;
+	}
+	
 }
