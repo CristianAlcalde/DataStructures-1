@@ -52,4 +52,18 @@ class MatrixTest {
 		assertArrayEquals(expectedValue, actualValue);
 	}
 	
+	@Test
+	void testDeleteElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(3, 4);
+		testedMatrix.deleteElement(0);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = new int[3][4];
+		expectedValue[0][0] = 0;
+		// Step 3. Obtain the actual value
+		int[][] actualValue = testedMatrix.deleteElement(0);
+		// Step 4. Compare the expected versus actual values
+		assertArrayEquals(expectedValue, actualValue);
+	}
+	
 }
