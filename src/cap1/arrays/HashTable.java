@@ -5,6 +5,12 @@ public class HashTable {
 	float chargeFactor;
 	int size;
 
+	// Se crea el contructor con la variable size
+	public HashTable(int size) {
+		this.size = size;
+	}
+
+	// Se encapsula las variables publicas
 	public String[] getPerson() {
 		return Person;
 	}
@@ -35,7 +41,7 @@ public class HashTable {
 		return this.Person;
 	}
 
-	// HashFunetion (Metodo de plegado)
+	// HashFunction (Metodo de plegado)
 	public int hashFunction(String element) {
 		int valorHash = 0;
 		int size = element.length();
@@ -44,7 +50,7 @@ public class HashTable {
 		if (number % 1 == 0) {
 			// Se separan los numeros para poder sumarlos
 			String[] concatenar = new String[number];
-			//Se hace for para limpiar ya que el vector inicializa cond atos null
+			// Se hace for para limpiar ya que el vector inicializa cond atos null
 			for (int i = 0; i < number; i++) {
 				concatenar[i] = "";
 			}
@@ -61,10 +67,14 @@ public class HashTable {
 			for (int i = 0; i < number; i++) {
 				valorHash += Integer.parseInt(concatenar[i]);
 			}
-			valorHash = valorHash%number;
-			
+			valorHash = valorHash % this.size;
 		} else {
-
+			// Se crea un vector con el tamaño entero de numero ya que no se puede dividir en
+			// partes iguales
+			for (int i = 0; i < size; i++) {
+				valorHash += Integer.parseInt(element.split("")[i]);
+			}
+			valorHash = valorHash % this.size;
 		}
 		return valorHash;
 	}

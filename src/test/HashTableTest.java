@@ -10,7 +10,7 @@ class HashTableTest {
 
 	@Test
 	void hashFunctionTest() {
-		HashTable Hash = new HashTable();		
+		HashTable Hash = new HashTable(5);		
 		int actualValue = Hash.hashFunction("1568175974151758");
 		int expectedValue = 0;
 		assertEquals(expectedValue, actualValue);
