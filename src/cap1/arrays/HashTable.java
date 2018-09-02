@@ -12,7 +12,6 @@ public class HashTable {
 		System.out.println("Creating vector with size: " + newSize);
 		this.size = newSize;
 		this.elements = new Person[newSize];
-
 	}
 
 	// Step 2. Generate encapsulation methods
@@ -39,12 +38,10 @@ public class HashTable {
 	public void setSize(int size) {
 		this.size = size;
 	}
-
 	
 	// metodo para hallar el indice Hash
-	public Integer hashFunction(Person intDocument) {
+	public Integer hashFunction(String code) {
 
-		String code = intDocument.getDocument();
 		Integer[] vec = new Integer[code.length() / 2 + 1];
 		int suma = 0;
 		int pos = 0;
@@ -55,7 +52,6 @@ public class HashTable {
 				vec[pos] = Integer.parseInt(separate);
 				pos = pos + 1;
 				vec[pos] = 0;
-
 			}
 		} else {
 			for (int i = 0; i <= code.length() - 2; i += 2) {
@@ -69,11 +65,14 @@ public class HashTable {
 		for (int i = 0; i < vec.length; i++) {
 			suma = suma + vec[i];
 		}
+		
+		Integer index = suma%elements.length;
 
-		return 0;
-
+		return index;
+		
 	}
-
+	
+		
 //	}
 //		intDocument.setDocument()
 
