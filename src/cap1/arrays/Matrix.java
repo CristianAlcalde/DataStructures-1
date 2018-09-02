@@ -6,12 +6,13 @@ public class Matrix {
 	private int[][] elements;
 	private int[][] expectedValue;
 	
-	public Matrix(int newsize,int newsize1) {
 	// Step 1.1. Create Constructor
+	public Matrix(int newsize, int newsize1) {
 		System.out.println("Creating Matrix with size=" + newsize + newsize1);
 		this.size = newsize;
 		this.elements = new int[newsize] [newsize1];
 	}
+	
 	// Step 2. Create methods
 	// Step 2.1. Generate encapsulation methods
 	public int getSize() {
