@@ -1,27 +1,22 @@
 package test;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
 import cap1.arrays.HashTable;
-import cap1.arrays.Person;
-import cap1.arrays.Vector;
+
 
 class HashTableTest {
 
 	@Test
-	void testInsertElement() {
+	void testHashFunction() {
 		// Step 1. instantiate the tested class using the constructor method
-		HashTable testedHashTable = new HashTable(5);
+		HashTable testedHashTable = new HashTable(13);
 		// Step 2. Create the expected value variable
-		int[] expectedValue = new int[5];
-		expectedValue[0] = 3;
+		int expectedValue = 7;
 		// Step 3. Obtain the actual value
-		Person actualValue = testedHashTable.insertElement(actualValue, 0);
-		// Step 4. Compare the expected versus actual values
-	//	assertArrayEquals(expectedValue, actualValue);
-		assertEquals(actualValue, 3);
+		int actualValue = testedHashTable.hashFunction("1088352207");
+		// assertArrayEquals(expectedValue, actualValue);
+		assertEquals(actualValue, expectedValue);
 	}
 
 }
