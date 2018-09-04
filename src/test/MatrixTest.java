@@ -18,7 +18,6 @@ class MatrixTest {
 		assertEquals(expectedValue, expectedPosition);
 	}
 	
-	
 	@Test
 	public void testListMatrix() {
 
