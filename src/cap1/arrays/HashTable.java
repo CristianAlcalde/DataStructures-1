@@ -10,7 +10,7 @@ public class HashTable {
 	// Step 1.1. Create Constructor
 	public HashTable(int newSize) {
 		System.out.println("Creating vector with size= " + newSize);
-		this.chargeFactor = 0;
+		this.chargeFactor = 7.14f;
 		this.size = newSize;
 		this.elements = new Person[newSize];
 	}
@@ -42,7 +42,6 @@ public class HashTable {
 	}
 
 	// Step 2.2. Create CRUD methods
-	
 
 	public int hashFunction(String document) {
 
@@ -57,10 +56,20 @@ public class HashTable {
 		return ((a + b + c + d + e + f + g) % this.size);
 
 	}
-	
-	/*public Person[] insertElement1(Person[] element) {
-		this.elements[hashFunction] = element;
+
+	public Person[] insertElement(String document, String name, String phone) {
+		Person newPerson = new Person();
+		newPerson.setDocument(document);
+		newPerson.setName(name);
+		newPerson.setPhone(phone);
+
+		this.elements[hashFunction(document)] = newPerson;
 		return this.elements;
-	}*/
+	}
 	
+	public Person[] deleteElement(String document) {
+		this.elements[hashFunction(document)] = null;
+		return this.elements;
+	}
+
 }
