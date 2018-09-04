@@ -41,8 +41,6 @@ public class HashTable {
 		this.size = size;
 	}
 
-	// Step 2.2. Create CRUD methods
-
 	// FUNCION HASH
 	public int hashFunction(String document) {
 
@@ -54,7 +52,23 @@ public class HashTable {
 		Integer f = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
 		Integer g = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
 
-		return ((a + b + c + d + e + f + g) % this.size)+1;
+		return ((a + b + c + d + e + f + g) % this.size);
+	}
+	// Step 2.2. Create CRUD methods
+
+	public Person[] insertElement(String document, String name, String phone) {
+		Person nuevapersona = new Person();
+		nuevapersona.setDocument(document);
+		nuevapersona.setName(name);
+		nuevapersona.setPhone(phone);
+		this.elements[hashFunction(document)] = nuevapersona;
+		return this.elements;
+
 	}
 
+	public Person[] deleteElement(String document) {
+		this.elements[hashFunction(document)] = null;
+		return this.elements;
+
+	}
 }

@@ -18,6 +18,7 @@ class VectorTest {
 		expectedValue[0] = 999;
 		// Step 3. Obtain the actual value
 		int[] actualValue = testedVector.insertElement(999, 0);
+		System.out.println("Document" + testedVector.insertElement(999, 0));
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
 	}
@@ -62,4 +63,5 @@ class VectorTest {
 
 		assertEquals(-1, pos);
 	}
+	
 }
