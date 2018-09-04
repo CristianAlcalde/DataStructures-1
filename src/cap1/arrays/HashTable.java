@@ -6,6 +6,7 @@ public class HashTable {
 	private Person[] elements;
 	private float chargeFactor;
 	private int size;
+	
 
 	// Step 1.1. Create Constructor
 	public HashTable(int newSize) {
@@ -72,13 +73,20 @@ public class HashTable {
 		
 	}
 	
-		
-//	}
-//		intDocument.setDocument()
-
-//	}
-
 	// Step 3. Create CRUD methods
+	public Person[] insertElements(Person element, String position) {
+		this.elements[hashFunction(position)] = element;
+		return this.elements;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	// Step 3.1 Creating Insert methods
 
