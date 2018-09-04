@@ -42,8 +42,12 @@ public class hashTable {
 	}	
 	
 	// Step 2.2. Create CRUD methods
-	public Persons[] insertPersona(Persons expectedPersonas) {
+	public Persons[] insertPersona(int docN, String nomN, String phoneN) {
 		//Get the index which we will use to save the Person's data
+		Persons expectedPersonas = new Persons();
+		expectedPersonas.setDocument(docN);
+		expectedPersonas.setName(nomN);
+		expectedPersonas.setPhone(phoneN);
 		int positionExpected = hashFunction(expectedPersonas.getDocument());
 		//Save the Person's data in the index that we get previously
 		elements[positionExpected]=expectedPersonas;
@@ -69,6 +73,63 @@ public class hashTable {
 		}else {
 			//We return the document in case of the field indicated by the Position is empty
 			return Document;
+		}
+	}
+	
+	public boolean printPersonas() {
+		//Count the times that the print works
+		int Impresiones = 0;
+		//Loop for the elements contained
+		for(int i=0; i<size; i++) {
+			if(elements[i]==null) {
+				//Don't print data, because in this section the value of data is null or empty
+			}
+			else
+			{
+				//This section is filled, print document, name, phone.
+				System.out.println("\tDocumento de identidá: "+elements[i].getDocument());
+				System.out.println("\tNombre de usuario: "+elements[i].getName());
+				System.out.println("\tTeléfono: "+elements[i].getPhone());
+				System.out.println("\n");
+				//Charge the Impresiones variable because the print function was used.
+				Impresiones++;
+			}
+		}
+		if(Impresiones>0) {
+			//Impresiones was used at least once.
+			return true;
+		}else {
+			//Impresiones wasn't used at least once.
+			return false;
+		}
+		
+	}
+	
+	public Persons[] updatePersonas(int docPrev,int docNew,String nameNew,String phoneNew) {
+		//Calculate the index by the docPrev (docPrev is the document of the person, this value can be modified)
+		int indexToUpdate = hashFunction(docPrev);
+		//If a value to modify is empty or in 0, the update process will not be executed
+		if(docNew==0) {/*Don't update*/}else{elements[indexToUpdate].setDocument(docNew);}
+		if(nameNew=="") {/*Don't update*/}else{elements[indexToUpdate].setName(nameNew);}
+		if(phoneNew=="") {/*Don't update*/}else{elements[indexToUpdate].setPhone(phoneNew);}
+		//Return the data
+		return elements;
+	}
+	
+	public boolean deletePerson(int docPerson) {
+		//Calculate the index by the docPerson
+		int indexToRemove = hashFunction(docPerson);
+		//If in the section following the index exists data, remove all of these section
+		if(elements[indexToRemove].getDocument()==docPerson) {
+			elements[indexToRemove].setDocument(0);
+			elements[indexToRemove].setName("");
+			elements[indexToRemove].setPhone("");
+		}
+		if(elements[indexToRemove].getDocument()==docPerson) {
+			//The remove data process doesn't work correctly
+			return false;
+		}else {
+			return true;
 		}
 	}
 }
