@@ -40,6 +40,8 @@ public class HashTable {
 		this.size = size;
 	}
 	
+	
+	
 	// metodo para hallar el indice Hash
 	public Integer hashFunction(String code) {
 

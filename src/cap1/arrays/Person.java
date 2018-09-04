@@ -7,6 +7,13 @@ public class Person {
 	private String name;
 	private String phone;
 	
+	// Step 1.1. Create Constructor
+		public Person(String document, String name, String phone) {
+			this.document = document;
+			this.name = name;
+			this.phone = phone;
+		}
+	
 	// Step 2. Generate encapsulation methods
 	public String getDocument() {
 		return document;
