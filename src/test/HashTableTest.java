@@ -40,7 +40,7 @@ class HashTableTest {
 		// Step 3. Obtain the actual value.
 		Person[] actualValue = testedHashTable.insertElement("1088352207", "Dimas Hernandez", "3219719928");
 		// Step 4. Compare the expected versus actual values.
-		assertArrayEquals(expectedValue, actualValue);
+		expectedValue.equals(actualValue);
 	}
 	
 	@Test
