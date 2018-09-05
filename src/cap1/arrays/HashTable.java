@@ -76,13 +76,27 @@ public class HashTable {
 	}
 	
 	// Step 3. Create CRUD methods
+	
+	// Step 3.1 Creating Insert methods
 	public Person[] insertElements(Person element, String position) {
 		this.elements[hashFunction(position)] = element;
 		return this.elements;
 	}
 	
+	// Step 3.2 Creating Search methods
+	public Person[] searchElements(String document) { // Se inserta un elemento para despues buscarlo
+		if(document==elements[hashFunction(document)].getDocument()) {
+			return this.elements;
+		}
+		else { return null;}
+	}
+	
+	// Step 3.2 Creating Update methods
 	
 	
+	
+	
+
 	
 	
 	
@@ -90,6 +104,6 @@ public class HashTable {
 	
 	
 
-	// Step 3.1 Creating Insert methods
+	
 
 }
