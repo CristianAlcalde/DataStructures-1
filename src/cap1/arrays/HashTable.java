@@ -1,13 +1,14 @@
 package cap1.arrays;
 
 public class HashTable {
-	String[] Person;
-	float chargeFactor;
-	int size;
+	private String[] Person;
+	private float chargeFactor;
+	private int size;
 
 	// Se crea el contructor con la variable size
 	public HashTable(int size) {
 		this.size = size;
+		Person = new String[size];
 	}
 
 	// Se encapsula las variables publicas
@@ -36,7 +37,8 @@ public class HashTable {
 	}
 
 	// CRUD
-	public String[] insertElement(int position, String element) {
+	public String[] insertElement(String element) {
+		int position = hashFunction(element);
 		this.Person[position] = element;
 		return this.Person;
 	}
@@ -69,13 +71,24 @@ public class HashTable {
 			}
 			valorHash = valorHash % this.size;
 		} else {
-			// Se crea un vector con el tamaño entero de numero ya que no se puede dividir en
+			// Se crea un vector con el tamaño entero de numero ya que no se puede dividir
+			// en
 			// partes iguales
 			for (int i = 0; i < size; i++) {
 				valorHash += Integer.parseInt(element.split("")[i]);
 			}
 			valorHash = valorHash % this.size;
 		}
+		return valorHash;
+	}
+
+	public int hashFunction1(String element) {
+		int numero = Integer.parseInt(element);
+		Integer cuadrado = numero * numero;
+		int cifras = cuadrado.toString().length();
+		int mitad = (int) cifras / 2;
+		String valor = cuadrado.toString().substring(mitad - 1, mitad + 1);
+		int valorHash = Integer.parseInt(valor) % size;
 		return valorHash;
 	}
 

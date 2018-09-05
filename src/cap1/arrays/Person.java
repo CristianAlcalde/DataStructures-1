@@ -1,9 +1,9 @@
 package cap1.arrays;
 
 public class Person {
-	String document;
-	String name;
-	String phone;
+	private String document;
+	private String name;
+	private String phone;
 
 	public String getDocument() {
 		return document;
