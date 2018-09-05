@@ -31,6 +31,16 @@ public class Person {
 		this.phone = phone;
 	}
 
-	
+	public boolean equals(Person[] person1, Person[] person2) {
+		boolean response = false;
+		HashTable hash = new HashTable(13);
+		if (person1[hash.hashFunction(this.document)].document
+				.equals(person2[hash.hashFunction(this.document)].document)) {
+			response = true;
+		}
+
+		return response;
+
+	}
 
 }
