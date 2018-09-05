@@ -65,4 +65,22 @@ class HashTableTest {
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
 	}
+	
+	@Test
+	void UpdateTableHash() {
+		// Step 1. instantiate the tested class using the constructor method
+		HashTable testedHash = new HashTable(13);
+		Person newperson = new Person();
+		newperson.setDocument("18609698");
+		newperson.setName("Jairo Delgado Lopez");
+		newperson.setPhone("3147890");
+		// Step 2. Create the expected value variable
+		Person[] expectedValue = new Person[13];
+		expectedValue[12] = newperson;
+		// Step 3. Obtain the actual value
+		testedHash.InserTableHash("18609698","Jairo Delgado","3254777");
+		Person[] actualValue = testedHash.UpdateHashTable("18609698", "Jairo Delgado Lopez", "3147890");
+		// Step 4. Compare the expected versus actual values
+		newperson.assertArrayEquals(expectedValue, actualValue);
+	}
 }

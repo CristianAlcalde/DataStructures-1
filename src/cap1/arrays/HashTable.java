@@ -84,6 +84,11 @@ public class HashTable {
 		return found;
 	}
 	
+	public Person[] UpdateHashTable(String document, String name, String phone) {
+		this.elements[FuntionHash(document)].setName(name);
+		this.elements[FuntionHash(document)].setPhone(phone);
+		return this.elements;
+	}
 
 
 }
