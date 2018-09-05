@@ -2,7 +2,7 @@ package cap1.arrays;
 
 public class Person {
     private String name;
-    static String document="1088014584";
+    private String document;
     private String phone;
     
 	public String getName() {
@@ -23,4 +23,12 @@ public class Person {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+    public boolean equals(Person[] persona1,Person[] persona2) {
+    	boolean respon = false;
+    	HashTable hash= new HashTable(13);
+    	if(persona1[hash.HashFuntion(this.document)].document.equals(persona2[hash.HashFuntion(this.document)].document)) {
+    		respon=true;
+    	}
+    	return respon;
+    }
 }
