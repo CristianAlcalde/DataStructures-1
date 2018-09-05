@@ -91,22 +91,22 @@ public class HashTable {
 		else { return null;}
 	}
 	
-	// Step 3.2 Creating Update methods
+	// Step 3.3 Creating Update methods
 	public Person[] updateElements(Person newPerson, String document) {
 		this.elements[hashFunction(document)] = newPerson;
 		return this.elements;
 	}
 	
 	
-	
+	// Step 3.4 Creating Delete methods
+	public Person[] deleteElements(String document) {
+		if(document==elements[hashFunction(document)].getDocument()) {
+			this.elements[hashFunction(document)] = null;
+			return this.elements;
+		}
+		else { return this.elements;}
+				
+	}
 
-	
-	
-	
-	
-	
-	
-
-	
 
 }
