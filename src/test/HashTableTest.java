@@ -52,6 +52,6 @@ class HashTableTest {
 		// Step 3. Obtain the actual value
 		Person[] actualValue = testedHashTable.insertElements("anibal","1088014584","3057987534");
 		// Step 4. Compare the expected versus actual values
-		assertEquals(expectedValue, actualValue);
+		newdato.equals(expectedValue, actualValue);
 	}
 }
