@@ -47,7 +47,6 @@ public class HashTable {
 		int mitad = (int) cifras / 2;
 		String valor = cuadrado.substring(mitad - 1, mitad + 1);
 		int valorHash = Integer.parseInt(valor) % size;
-		contador++;
 		return valorHash;
 	}
 
@@ -55,6 +54,7 @@ public class HashTable {
 	public String[] insertElement(String element) {
 		int position = hashFunction(element);
 		this.Person[position] = element;
+		contador++;
 		return this.Person;
 	}
 
