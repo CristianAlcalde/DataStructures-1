@@ -80,6 +80,14 @@ class HashTableTest {
 		String[] actualValue = Hash.deleteElement("1225090354");
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
+		// --------------------------------------------------------------------
+		// --------------------------------------------------------------------
+		// Step 2. Create the expected value variable
+		float expectedValueFactor = 0 / 5;
+		// Step 3. Obtain the actual value
+		float actualValueFactor = Hash.getChargeFactor();
+		// Step 4. Compare the expected versus actual values
+		assertEquals(expectedValueFactor, actualValueFactor);
 	}
 
 	@Test
@@ -94,6 +102,14 @@ class HashTableTest {
 		String[] actualValue = Hash.deletePosition(4);
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
+		// --------------------------------------------------------------------
+		// --------------------------------------------------------------------
+		// Step 2. Create the expected value variable
+		float expectedValueFactor = 0 / 5;
+		// Step 3. Obtain the actual value
+		float actualValueFactor = Hash.getChargeFactor();
+		// Step 4. Compare the expected versus actual values
+		assertEquals(expectedValueFactor, actualValueFactor);
 	}
 
 }
