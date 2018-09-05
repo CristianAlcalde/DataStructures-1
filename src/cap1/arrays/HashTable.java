@@ -1,35 +1,63 @@
 package cap1.arrays;
 
 public class HashTable {
-	
-	// Step 1. Create attributes
+
+	// Step 1. Creando atributos
 	Person[] elements;
 	float changeFactor;
 	int size;
-	
-	// Step 2. Create methods
-	 // Step 2.1. Generate encapsulation methods
-	
+
+	// Step 2. Creando Metodos
+	// Step 2.1. Generando metodos de encapsulacion
+
 	public Person[] getElements() {
 		return elements;
 	}
+
 	public void setElements(Person[] elements) {
 		this.elements = elements;
 	}
+
 	public float getChangeFactor() {
 		return changeFactor;
 	}
+
 	public void setChangeFactor(float changeFactor) {
 		this.changeFactor = changeFactor;
 	}
+
 	public int getSize() {
 		return size;
 	}
+
 	public void setSize(int size) {
 		this.size = size;
 	}
-	
-	
-	
 
+	// 3. Creando Constructor
+
+	public HashTable(int newsize) {
+		this.size = newsize;
+		this.changeFactor = 0;
+		this.elements = new Person[newsize];
+	}
+
+	// 4. Creando Cruds.
+
+	public int FuntionHash(String document) {
+		// Se crea metodo del Plegado para la funcion Hash
+		// Se Analiza el argumento de cadena como un entero.
+		Integer OnePar = (Integer.parseInt(document)) % 100;
+		Integer TwoPar = (Integer.parseInt(document)) / 100 % 100;
+		Integer ThreePar = (Integer.parseInt(document)) / 100 / 100 % 100;
+		Integer FourPar = (Integer.parseInt(document)) / 100 / 100 / 100 % 100;
+		Integer FivePar = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 % 100;
+		Integer SixPar = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
+		Integer SevenPar = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
+
+		// Se suman todos los pares de digitos y se divide entre el tamaño de la tabla.
+		// El resultado es el residuo.
+		return ((OnePar + TwoPar + ThreePar + FourPar + FivePar + SixPar + SevenPar) % this.size);
+
+	}
 }
