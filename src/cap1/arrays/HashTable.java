@@ -78,8 +78,8 @@ public class HashTable {
 	// Step 3. Create CRUD methods
 	
 	// Step 3.1 Creating Insert methods
-	public Person[] insertElements(Person element, String position) {
-		this.elements[hashFunction(position)] = element;
+	public Person[] insertElements(Person element, String document) {
+		this.elements[hashFunction(document)] = element;
 		return this.elements;
 	}
 	
@@ -92,7 +92,10 @@ public class HashTable {
 	}
 	
 	// Step 3.2 Creating Update methods
-	
+	public Person[] updateElements(Person newPerson, String document) {
+		this.elements[hashFunction(document)] = newPerson;
+		return this.elements;
+	}
 	
 	
 	
