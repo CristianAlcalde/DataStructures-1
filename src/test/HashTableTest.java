@@ -24,24 +24,17 @@ class HashTableTest {
 
 	@Test
 	void insertELement() {
-		// Step 1. instantiate the tested class using the constructor method
-		// String document="1088341248"; String name="Oscar"; String phone= "3269737";
+		
 		HashTable testedHashTable = new HashTable(13);
 		Person newperson = new Person();
 		newperson.setDocument("1088341248");
 		newperson.setName("Oscar");
 		newperson.setPhone("3269737");
-		// Step 2. Create the expected value variable
-		// Person[] expectedValue = new Person[10];
-		// Person[] expectedValue =testedHashTable.insertElement("1088341248", "Oscar",
-		// "3269737");
-		int expectedValue[] = this.getDocument("1088341248");
-		// System.out.println(expectedValue);
-		// System.out.println(newperson);
-		// Step 3. Obtain the actual value
+		Person expectedValue[] = new Person[13];
+		expectedValue[12]= newperson;
 		Person[] actualValue = testedHashTable.insertElement("1088341248", "Oscar", "3269737");
 		// System.out.println(actualValue);
-		assertEquals(expectedValue, actualValue);
+		actualValue.equals(expectedValue);
 	}
 
 	// Step 1. instantiate the tested class using the constructor method
