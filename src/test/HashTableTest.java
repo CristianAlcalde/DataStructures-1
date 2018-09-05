@@ -52,4 +52,17 @@ class HashTableTest {
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
 	}
+	
+	@Test
+	void SearchTableHash() {
+		// Step 1. instantiate the tested class using the constructor method
+		HashTable testedHash = new HashTable(13);
+		// Step 2. Create the expected value variable
+		String expectedValue = "18609698";
+		// Step 3. Obtain the actual value
+		testedHash.InserTableHash("18609698","Jairo Delgado","3254777");
+		String actualValue = testedHash.SearchTableHash("18609698");
+		// Step 4. Compare the expected versus actual values
+		assertEquals(expectedValue, actualValue);
+	}
 }

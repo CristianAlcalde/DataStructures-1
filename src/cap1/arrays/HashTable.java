@@ -76,9 +76,12 @@ public class HashTable {
 		return this.elements;
 	}
 	
-	public Person[] SearchTableHash(String document) {
-		
-		return this.elements;
+	public String SearchTableHash(String document) {
+		String found="";
+		if (this.elements[FuntionHash(document)].getDocument().equals(document)) {
+			found=document;
+		}
+		return found;
 	}
 	
 
