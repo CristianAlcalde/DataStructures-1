@@ -47,6 +47,7 @@ class HashTableTest {
 		// Step 2. Create the expected value variable
 		Person[] expectedValue = new Person[13];
 		// Step 3. Obtain the actual value
+		testedHash.InserTableHash("18609698","Jairo Delgado","3254777");
 		Person[] actualValue = testedHash.DeleteTableHash("18609698");
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
