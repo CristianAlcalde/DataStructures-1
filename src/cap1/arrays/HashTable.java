@@ -4,6 +4,7 @@ public class HashTable {
 	private String[] Person;
 	private float chargeFactor;
 	private int size;
+	private int contador = 0;
 
 	// Se crea el contructor con la variable size
 	public HashTable(int size) {
@@ -21,6 +22,7 @@ public class HashTable {
 	}
 
 	public float getChargeFactor() {
+		chargeFactor = contador / size;
 		return chargeFactor;
 	}
 
@@ -36,6 +38,19 @@ public class HashTable {
 		this.size = size;
 	}
 
+	// HashFunction (Metodo de mitad del cuadrado)
+	public int hashFunction(String element) {
+		int numero = Integer.parseInt(element);
+		double cuadrado1 = Math.pow(numero, 2);
+		String cuadrado = String.valueOf(cuadrado1);
+		int cifras = cuadrado.length();
+		int mitad = (int) cifras / 2;
+		String valor = cuadrado.substring(mitad - 1, mitad + 1);
+		int valorHash = Integer.parseInt(valor) % size;
+		contador++;
+		return valorHash;
+	}
+
 	// CRUD
 	public String[] insertElement(String element) {
 		int position = hashFunction(element);
@@ -43,53 +58,28 @@ public class HashTable {
 		return this.Person;
 	}
 
-	// HashFunction (Metodo de plegado)
-	public int hashFunction(String element) {
-		int valorHash = 0;
-		int size = element.length();
-		int number = (int) Math.sqrt(size);
-		// Se hace condicional para saber si se puede separar por la misma cantidad
-		if (number % 1 == 0) {
-			// Se separan los numeros para poder sumarlos
-			String[] concatenar = new String[number];
-			// Se hace for para limpiar ya que el vector inicializa cond atos null
-			for (int i = 0; i < number; i++) {
-				concatenar[i] = "";
-			}
-			int contador = 0;
-			// Se hace for para llenar las ranuras de la tabla hash de tamaño number
-			for (int c = 0; c < number; c++) {
-				// Se hace for para guardar size numero en cada pocision de la tabla
-				for (int z = 0; z < number; z++) {
-					concatenar[c] += element.split("")[z + contador];
-				}
-				contador += number;
-			}
-			// Se suma los elementos
-			for (int i = 0; i < number; i++) {
-				valorHash += Integer.parseInt(concatenar[i]);
-			}
-			valorHash = valorHash % this.size;
-		} else {
-			// Se crea un vector con el tamaño entero de numero ya que no se puede dividir
-			// en
-			// partes iguales
-			for (int i = 0; i < size; i++) {
-				valorHash += Integer.parseInt(element.split("")[i]);
-			}
-			valorHash = valorHash % this.size;
-		}
-		return valorHash;
+	public int serchElement(String element) {
+		int position = hashFunction(element);
+		return position;
 	}
 
-	public int hashFunction1(String element) {
-		int numero = Integer.parseInt(element);
-		Integer cuadrado = numero * numero;
-		int cifras = cuadrado.toString().length();
-		int mitad = (int) cifras / 2;
-		String valor = cuadrado.toString().substring(mitad - 1, mitad + 1);
-		int valorHash = Integer.parseInt(valor) % size;
-		return valorHash;
+	public String[] updateElement(String oldElement, String newElement) {
+		int position = hashFunction(oldElement);
+		this.Person[position] = newElement;
+		return this.Person;
+	}
+
+	public String[] deleteElement(String element) {
+		int position = hashFunction(element);
+		this.Person[position] = "null";
+		contador = contador - 1;
+		return this.Person;
+	}
+
+	public String[] deletePosition(int position) {
+		this.Person[position] = "null";
+		contador = contador - 1;
+		return this.Person;
 	}
 
 }
