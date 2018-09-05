@@ -1,6 +1,7 @@
 package cap1.arrays;
 
 import java.util.StringTokenizer;
+import java.util.function.DoubleConsumer;
 
 public class HashTable {
 
@@ -48,17 +49,38 @@ public class HashTable {
 	// Step 2.2. Create CRUD methods
 
 	public int FuntionHash(String document) {
-		
-		Integer par1 = (Integer.parseInt(document))%100;
+
+		Integer par1 = (Integer.parseInt(document)) % 100;
 		Integer par2 = (Integer.parseInt(document)) / 100 % 100;
 		Integer par3 = (Integer.parseInt(document)) / 100 / 100 % 100;
 		Integer par4 = (Integer.parseInt(document)) / 100 / 100 / 100 % 100;
-		Integer par5 = (Integer.parseInt(document)) / 100 / 100 / 100 /100 % 100;
-		Integer par6 = (Integer.parseInt(document)) / 100 / 100 / 100 /100 /100 % 100;
-		Integer par7 = (Integer.parseInt(document)) / 100 / 100 / 100 /100 /100 % 100;
-		
-		return ((par1+par2+par3+par4+par5+par6+par7) % this.size);
+		Integer par5 = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 % 100;
+		Integer par6 = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
+		Integer par7 = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
+
+		return ((par1 + par2 + par3 + par4 + par5 + par6 + par7) % this.size);
 
 	}
+	
+	public Person [] InserTableHash(String document, String name, String phone) {
+		Person newperson = new Person();
+		newperson.setDocument(document);
+		newperson.setName(name);
+		newperson.setPhone(phone);
+		this.elements[FuntionHash(document)] = newperson;
+		return this.elements;
+	}
+	
+	public Person[] DeleteTableHash(String document) {
+		this.elements[FuntionHash(document)] = null;
+		return this.elements;
+	}
+	
+	public Person[] SearchTableHash(String document) {
+		
+		return this.elements;
+	}
+	
+
 
 }
