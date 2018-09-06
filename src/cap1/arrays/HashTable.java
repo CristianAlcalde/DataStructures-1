@@ -1,27 +1,59 @@
 package cap1.arrays;
 
 public class HashTable {
-	String [] Person;
+	//Attributes
+	person[] element;
 	int size;
-	float changefactor;
-	public String[] getPerson() {
-		return Person;
+	float changeFactor;
+	
+	
+	//Constructor
+	
+	public HashTable(int newSize) {
+		System.out.println("Creating hastTable with size= " + newSize);
+		this.size=newSize;
+		this.element = new person [newSize];		
+		this.changeFactor =0;
 	}
-	public void setPerson(String[] person) {
-		Person = person;
+
+	//encapsulation methods
+	public person[] getElement() {
+		return element;
 	}
+
+
+	public void setElement(person[] element) {
+		this.element = element;
+	}
+
+
 	public int getSize() {
 		return size;
 	}
+
+
 	public void setSize(int size) {
 		this.size = size;
 	}
-	public float getChangefactor() {
-		return changefactor;
+
+
+	public float getChangeFactor() {
+		return changeFactor;
 	}
-	public void setChangefactor(float changefactor) {
-		this.changefactor = changefactor;
+
+
+	public void setChangeFactor(float changeFactor) {
+		this.changeFactor = changeFactor;
 	}
+	
+
+
+	//CRUD
+	
+	
+	
+	
+	
 	
 	
 }
