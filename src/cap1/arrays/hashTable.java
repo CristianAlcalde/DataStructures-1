@@ -51,8 +51,28 @@ public class hashTable {
 		int positionExpected = hashFunction(expectedPersonas.getDocument());
 		//Save the Person's data in the index that we get previously
 		elements[positionExpected]=expectedPersonas;
+		//Calculate and print the charge factor
+		int chargFact = calculateCharge();
+		System.out.println("El factor de carga se encuentra en su "+chargFact+"% completado.");
 		//return the elements array
 		return elements;
+	}
+	
+	public int calculateCharge() {
+		//tempCalc to save the number of elements found on the array
+		//Out is the int value to show in the console to know the charge factor
+		int tempCalc = 0; int Out = 0;
+		for(int i=0; i<size; i++) {
+			if(elements[i]==null) {
+				/*There is not data, don't calculate and don't up the tempCalc value*/
+			}else {
+				//There is data on the array position
+				tempCalc++;
+				//Out = (100% divided by the array size) and multiplied by the number of elements found
+				Out = (100 / size) * tempCalc ;
+			}
+		}
+		return Out;
 	}
 	
 	public int hashFunction(int Document) {
