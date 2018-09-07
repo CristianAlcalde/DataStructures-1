@@ -24,6 +24,18 @@ class HashTableTest {
 	}
 	
 	@Test
+	void testChargeFactor() {
+		// Step 1. instantiate the tested class using the constructor method
+		HashTable testedHashTable = new HashTable(4); // Se crea una variable "testedHashTable" de la clase HashTable y se llama al metodo constructor "HashTable" dandole un tamaño al vector elements
+		// Step 2. Create the expected value variable
+		float expectedValue = 0.5f;			// Crear una variable la cual va a almacenar el resultado de la prueba y le doy el valor del resultado de la prueba
+		// Step 3. Obtain the actual value
+		float actualValue = testedHashTable.chargeFactor(2);		// Ejecuto el metodo que voy a probar con el valor "person1"
+		// Step 4. Compare the expected versus actual values
+		assertEquals(expectedValue, actualValue);
+	}
+	
+	@Test
 	void testInsertElements() {
 		// Step 1. instantiate the tested class using the constructor method
 		HashTable testedHashTable = new HashTable(13); // Se crea una variable "testedHashTable" de la clase HashTable y se llama al metodo constructor "HashTable" dandole un tamaño al vector elements
