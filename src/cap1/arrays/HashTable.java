@@ -7,7 +7,14 @@ public class HashTable {
 	    Person[] elements;
 		float changeFactor;
 		int size;
+	// Step 1.1 Create constructor
 		
+		public HashTable(int newsize) {
+			this.size = newsize;
+			this.changeFactor = 0;
+			this.elements = new Person[newsize];
+		}
+
 		
 	// Step 2. Create methods
 	// Step 2.1. Generate encapsulation methods	
@@ -34,4 +41,18 @@ public class HashTable {
 		
 		
 	 // Step 2.2. Create CRUD methods
+		
+		public int hashFunction(String document) {
+			
+			Integer a = (Integer.parseInt(document)) % 100;
+			Integer b = (Integer.parseInt(document)) / 100 % 100;
+			Integer c = (Integer.parseInt(document)) / 100 / 100 % 100;
+			Integer d = (Integer.parseInt(document)) / 100 / 100 / 100 % 100;
+			Integer e = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 % 100;
+			Integer f = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
+			Integer g = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
+
+			return ((a + b + c + d + e  + f + g) % this.size);
+
+		}
 }
