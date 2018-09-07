@@ -33,5 +33,15 @@ public class Person {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	public boolean Equals(Person[] onePerson, Person[] twoPerson) {
+		boolean result = false;
+		HashTable hash = new HashTable(13);
+		if (onePerson[hash.hashFunction(this.document)].document.equals(twoPerson[hash.hashFunction(this.document)].document)) {
+			result = true;
+		}
+		return result;
+	}
+	
 
 }

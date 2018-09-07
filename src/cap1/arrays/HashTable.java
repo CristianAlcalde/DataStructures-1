@@ -71,5 +71,11 @@ public class HashTable {
 		this.elements[hashFunction(document)] = null;
 		return this.elements;
 	}
+	
+	public Person[] updateElement(String document, String newName, String newPhone) {
+		this.elements[hashFunction(document)].setName(newName);
+		this.elements[hashFunction(document)].setPhone(newPhone);
+		return this.elements;
+	} 
 
 }

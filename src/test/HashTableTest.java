@@ -38,21 +38,41 @@ class HashTableTest {
 		Person[] expectedValue = new Person[13];
 		expectedValue[6] = newPerson;
 		// Step 3. Obtain the actual value.
-		Person[] actualValue = testedHashTable.insertElement("1088352207", "Dimas Hernandez", "3219719928");
+		Person[] actualValue = testedHashTable.insertElement(newPerson.getDocument(), newPerson.getName(),
+				newPerson.getPhone());
 		// Step 4. Compare the expected versus actual values.
-		expectedValue.equals(actualValue);
+		newPerson.Equals(expectedValue, actualValue);
 	}
-	
+
 	@Test
 	void testDeleteElement() {
 		// Step 1. instantiate the tested class using the constructor method.
-		HashTable  testedHashTable = new HashTable(13);
+		HashTable testedHashTable = new HashTable(13);
 		// Step 2. Create the expected value variable
 		Person[] expectedValue = new Person[13];
+		testedHashTable.insertElement("1088352207", "Dimas Hernandez", "3219719928");
 		// Step 3. Obtain the actual value.
 		Person[] actualValue = testedHashTable.deleteElement("1088352207");
 		// Step 4. Compare the expected versus actual values.
 		assertArrayEquals(expectedValue, actualValue);
+	}
+
+	@Test
+	void testUpdateElement() {
+		// Step 1. instantiate the tested class using the constructor method.
+		HashTable testedHashTable = new HashTable(13);
+		Person newPerson = new Person();
+		newPerson.setDocument("1088352207");
+		newPerson.setName("Dimas Hernandez");
+		newPerson.setPhone("3219719928");
+		// Step 2. Create the expected value variable
+		Person[] expectedValue = new Person[13];
+		expectedValue[6] = newPerson;
+		testedHashTable.insertElement(newPerson.getDocument(), newPerson.getName(), newPerson.getPhone());
+		// Step 3. Obtain the actual value.
+		Person[] actualValue = testedHashTable.updateElement("1088352207", "Jhon Rambo", "3333335");
+		// Step 4. Compare the expected versus actual values.
+		newPerson.Equals(expectedValue, actualValue);
 	}
 
 }
