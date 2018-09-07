@@ -55,4 +55,14 @@ public class HashTable {
 			return ((a + b + c + d + e  + f + g) % this.size);
 
 		}
+		
+		public Person[] insertElement(String document, String name, String phone) {
+			Person person1 = new Person();
+			person1.setDocument(document);
+			person1.setName(name);
+			person1.setPhone(phone);
+			this.elements[hashFunction(document)] = person1;
+			return this.elements;
+
+		}
 }
