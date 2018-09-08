@@ -1,17 +1,15 @@
 package cap1.arrays;
 
-import java.util.Scanner;
-
 public class HashTable {
 	private Person[] elements;
 	private float chargefactor;
 	private int size;
 	private Integer num;
-	private static String Documento;
-	
 
 	
 
+	
+  
 	// Step 1. Create attributes
 	
 	public int getSize() {
@@ -43,57 +41,39 @@ public class HashTable {
 	public void setNum(Integer num) {
 		this.num = num;
 	}
-	public String getDocumento() {
-		return Documento;
-	}
-	public void setDocumento(String documento) {
-		Documento = documento;
-	}
+	
 	public HashTable(int newSize) 
-	{
+	{ 
 		System.out.println("The Size the HashTable is: "+newSize);
 		this.size = newSize;
 		this.elements = new Person[newSize];
 	} 
 	
+	                                           
+	public int HashFuntion(String documents) {
+		Integer dijit1 = (Integer.parseInt(documents))%100;
+		Integer dijit2 = (Integer.parseInt(documents))/100 % 100;
+		Integer dijit3 = (Integer.parseInt(documents))/100 /100 % 100;
+		Integer dijit4 = (Integer.parseInt(documents))/100 /100 /100 %100;
+		Integer dijit5 = (Integer.parseInt(documents))/100 /100 /100 /100 %100;
+		Integer dijit6 = (Integer.parseInt(documents))/100 /100 /100 /100 /100 %100;
+		Integer dijit7 = (Integer.parseInt(documents))/100 /100 /100 /100 /100 /100 %100;
+		
+		return ((dijit1+dijit2+dijit3+dijit3+dijit4+dijit5+dijit6+dijit7)%11);
+		
+	}
 	
+	
+	public Person[] insertElements(String name, String document, String phone) {
+		Person NewDato = new Person();
+		NewDato.setDocument(document);
+		NewDato.setName(name);
+		NewDato.setPhone(phone);
+		this.elements[HashFuntion(document)] = NewDato;
+		return this.elements;
+	}
 	// Step 2.2. Create CRUD methods
 	
-	
-	
-	public static void main(String[] args) {
-		
-	
-		HashTable Ejecutar = new HashTable(13);
-	    Scanner entradaEscaner = new Scanner (System.in); 
-		
-		System.out.println("Digite el documento: ");
-		Documento = entradaEscaner.nextLine();
-		
-		
-		Integer suma=0;			
-		String deCerooaUno = "";
-		String deDosaTres = "";
-		String deCuatroaCinco= "";
-		String deSeisaSiete = "";
-		String deOchoaNueve = "";
-		int cont = 0;
-		
-		for(int i = 0; i<=20;i= i+2){
-			//if(Ejecutar.Documento.length<10)
-			deCerooaUno = "" + Ejecutar.Documento.charAt(i) + Ejecutar.Documento.charAt(i+1);
-			System.out.println(deCerooaUno);
-		}
-
-		System.out.println(deDosaTres);
-		System.out.println(deCuatroaCinco);
-		System.out.println(deSeisaSiete);
-		System.out.println(deOchoaNueve);
-		
-		
-		System.out.println(suma);
-		//System.out.println(suma % 13);
-	}
 
 	
 }
