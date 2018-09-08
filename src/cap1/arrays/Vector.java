@@ -68,4 +68,9 @@ public class Vector {
 		}
 		return this.elements;
 	}
+	
+	public int hashFunction(String document) {
+		
+		return -1;
+	}
 }
