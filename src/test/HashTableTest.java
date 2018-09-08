@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import cap1.arrays.HashTable;
-import cap1.arrays.Person;
 import cap1.arrays.Vector;
+import utility.Person;
 
 class HashTableTest {
 
@@ -22,24 +22,22 @@ class HashTableTest {
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
 	}
-	
+
 	@Test
 	void InsertTableHash() {
 		// Step 1. instantiate the tested class using the constructor method
 		HashTable testedHash = new HashTable(13);
-		Person newperson = new Person();
-		newperson.setDocument("18609698");
-		newperson.setName("Jairo Delgado");
-		newperson.setPhone("3254777");
+		Person newperson = new Person("18609698", "Jairo Delgado", "3254777");
 		// Step 2. Create the expected value variable
 		Person[] expectedValue = new Person[13];
 		expectedValue[12] = newperson;
 		// Step 3. Obtain the actual value
-		Person[] actualValue = testedHash.InserTableHash("18609698","Jairo Delgado","3254777");
+		Person[] actualValue = testedHash.InserTableHash("18609698", "Jairo Delgado", "3254777");
 		// Step 4. Compare the expected versus actual values
+		System.out.println("Charge factor in (insert) : " + testedHash.getChangefactor() + " % ");
 		newperson.assertArrayEquals(expectedValue, actualValue);
 	}
-	
+
 	@Test
 	void DeleteTableHash() {
 		// Step 1. instantiate the tested class using the constructor method
@@ -47,12 +45,13 @@ class HashTableTest {
 		// Step 2. Create the expected value variable
 		Person[] expectedValue = new Person[13];
 		// Step 3. Obtain the actual value
-		testedHash.InserTableHash("18609698","Jairo Delgado","3254777");
+		testedHash.InserTableHash("18609698", "Jairo Delgado", "3254777");
 		Person[] actualValue = testedHash.DeleteTableHash("18609698");
 		// Step 4. Compare the expected versus actual values
+		System.out.println("Charge factor in (delete): " + testedHash.getChangefactor() + " % ");
 		assertArrayEquals(expectedValue, actualValue);
 	}
-	
+
 	@Test
 	void SearchTableHash() {
 		// Step 1. instantiate the tested class using the constructor method
@@ -60,25 +59,22 @@ class HashTableTest {
 		// Step 2. Create the expected value variable
 		String expectedValue = "18609698";
 		// Step 3. Obtain the actual value
-		testedHash.InserTableHash("18609698","Jairo Delgado","3254777");
+		testedHash.InserTableHash("18609698", "Jairo Delgado", "3254777");
 		String actualValue = testedHash.SearchTableHash("18609698");
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
 	}
-	
+
 	@Test
 	void UpdateTableHash() {
 		// Step 1. instantiate the tested class using the constructor method
 		HashTable testedHash = new HashTable(13);
-		Person newperson = new Person();
-		newperson.setDocument("18609698");
-		newperson.setName("Jairo Delgado Lopez");
-		newperson.setPhone("3147890");
+		Person newperson = new Person("18609698", "Jairo Delgado Lopez", "3147890");
 		// Step 2. Create the expected value variable
 		Person[] expectedValue = new Person[13];
 		expectedValue[12] = newperson;
 		// Step 3. Obtain the actual value
-		testedHash.InserTableHash("18609698","Jairo Delgado","3254777");
+		testedHash.InserTableHash("18609698", "Jairo Delgado", "3254777");
 		Person[] actualValue = testedHash.UpdateHashTable("18609698", "Jairo Delgado Lopez", "3147890");
 		// Step 4. Compare the expected versus actual values
 		newperson.assertArrayEquals(expectedValue, actualValue);

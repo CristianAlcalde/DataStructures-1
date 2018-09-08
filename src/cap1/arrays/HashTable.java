@@ -3,6 +3,8 @@ package cap1.arrays;
 import java.util.StringTokenizer;
 import java.util.function.DoubleConsumer;
 
+import utility.Person;
+
 public class HashTable {
 
 	// Step 1. Create attributes
@@ -61,34 +63,32 @@ public class HashTable {
 		return ((par1 + par2 + par3 + par4 + par5 + par6 + par7) % this.size);
 
 	}
-	
-	public Person [] InserTableHash(String document, String name, String phone) {
-		Person newperson = new Person();
-		newperson.setDocument(document);
-		newperson.setName(name);
-		newperson.setPhone(phone);
+
+	public Person[] InserTableHash(String document, String name, String phone) {
+		Person newperson = new Person(document, name, phone);
 		this.elements[FuntionHash(document)] = newperson;
+		this.setChangefactor(getChangefactor() + (float) 7.69);
 		return this.elements;
 	}
-	
+
 	public Person[] DeleteTableHash(String document) {
 		this.elements[FuntionHash(document)] = null;
+		this.setChangefactor(getChangefactor() - (float) 7.69);
 		return this.elements;
 	}
-	
+
 	public String SearchTableHash(String document) {
-		String found="";
+		String found = "";
 		if (this.elements[FuntionHash(document)].getDocument().equals(document)) {
-			found=document;
+			found = document;
 		}
 		return found;
 	}
-	
+
 	public Person[] UpdateHashTable(String document, String name, String phone) {
 		this.elements[FuntionHash(document)].setName(name);
 		this.elements[FuntionHash(document)].setPhone(phone);
 		return this.elements;
 	}
-
 
 }

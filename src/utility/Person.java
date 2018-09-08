@@ -1,4 +1,6 @@
-package cap1.arrays;
+package utility;
+
+import cap1.arrays.HashTable;
 
 public class Person {
 
@@ -9,6 +11,14 @@ public class Person {
 	private String phone;
 
 	// Step 1.1. Create Constructor
+
+	public Person(String document, String name, String phone) {
+		super();
+		this.document = document;
+		this.name = name;
+		this.phone = phone;
+	}
+
 	// Step 2. Create methods
 	// Step 2.1. Generate encapsulation methods
 
@@ -36,11 +46,12 @@ public class Person {
 		this.phone = phone;
 	}
 
-	public boolean assertArrayEquals(Person[] person1,Person[] person2) {
+	public boolean assertArrayEquals(Person[] person1, Person[] person2) {
 
 		boolean response = false;
 		HashTable hash = new HashTable(13);
-		if (person1[hash.FuntionHash(this.document)].document.equals(person2[hash.FuntionHash(this.document)].document)) {
+		if (person1[hash.FuntionHash(this.document)].document
+				.equals(person2[hash.FuntionHash(this.document)].document)) {
 			response = true;
 		}
 		return response;
