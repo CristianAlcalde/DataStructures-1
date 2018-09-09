@@ -7,6 +7,7 @@ public class HashTable {
 	    Person[] elements;
 		float changeFactor;
 		int size;
+		private  String Person;
 	// Step 1.1 Create constructor
 		
 		public HashTable(int newsize) {
@@ -65,4 +66,35 @@ public class HashTable {
 			return this.elements;
 
 		}
+		
+		
+		public Person[] deleteElement(String document) {
+			this.elements[hashFunction(document)] = null;
+			return this.elements;
+		}
+		
+		
+		public Person[] updateElement(Person newDocument,int HashFuntion) {
+			this.elements[hashFunction(Person)]= newDocument;
+			return this.elements;
+		}
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 }
