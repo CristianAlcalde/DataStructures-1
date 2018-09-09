@@ -48,10 +48,8 @@ public class HashTable {
 	}
 	public Person[] insertElements(String name, String document, String phone) {
 		Person NewDato = new Person();
-	    NewDato.getDocument();
-	    NewDato.getName();
-	    NewDato.getPhone();
 	    this.elements[HashFuntion(document)]= NewDato;
+	    this.setChargeFactor(getChargeFactor() + (float) 7.69);
 		return this.elements;
 	}	
 	public Person searchElement(String document) {
@@ -63,6 +61,13 @@ public class HashTable {
 	}
 	public Person[] deleteElement(String document) {
 		this.elements[HashFuntion(document)]=null;
+		this.setChargeFactor(getChargeFactor() - (float) 7.69);
 		return this.elements;
+	}
+	public void listperson(String document1, String document2,String document3) {
+		System.out.println("list of the person:");
+		System.out.println(this.elements[HashFuntion(document1)].getDocument()+ "-"+ this.elements[HashFuntion(document1)]);
+		System.out.println(this.elements[HashFuntion(document2)].getDocument()+ "-"+ this.elements[HashFuntion(document2)]);
+		System.out.println(this.elements[HashFuntion(document3)].getDocument()+ "-"+ this.elements[HashFuntion(document3)]);
 	}
 }
