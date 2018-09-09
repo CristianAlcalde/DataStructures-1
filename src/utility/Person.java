@@ -13,7 +13,6 @@ public class Person {
 	// Step 1.1. Create Constructor
 
 	public Person(String document, String name, String phone) {
-		super();
 		this.document = document;
 		this.name = name;
 		this.phone = phone;
