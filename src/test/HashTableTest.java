@@ -79,4 +79,22 @@ class HashTableTest {
 		// Step 4. Compare the expected versus actual values
 		newperson.assertArrayEquals(expectedValue, actualValue);
 	}
+	
+	@Test
+	void ListTableHash() {
+		// Step 1. instantiate the tested class using the constructor method
+		HashTable testedHash = new HashTable(13);
+		Person newperson = new Person("18609698", "Jairo Delgado", "3254777");
+		// Step 2. Create the expected value variable
+		Person[] expectedValue = new Person[13];
+		expectedValue[12] = newperson;
+		// Step 3. Obtain the actual value
+		testedHash.InserTableHash("1089100774", "Santiago Delgado", "3256789");
+		testedHash.InserTableHash("24525887", "Rosalba Lopez", "3409870");
+		Person[] actualValue = testedHash.InserTableHash("18609698", "Jairo Delgado", "3254777");
+		// Step 4. Compare the expected versus actual values
+		testedHash.ListHashTable("1089100774", "24525887", "18609698");
+		System.out.println("Charge factor in (insert) : " + testedHash.getChangefactor() + " % ");
+		newperson.assertArrayEquals(expectedValue, actualValue);
+	}
 }

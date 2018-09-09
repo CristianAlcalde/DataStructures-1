@@ -52,7 +52,13 @@ public class Person {
 		HashTable hash = new HashTable(13);
 		if (person1[hash.FuntionHash(this.document)].document
 				.equals(person2[hash.FuntionHash(this.document)].document)) {
-			response = true;
+			if (person1[hash.FuntionHash(this.document)].name.equals(person2[hash.FuntionHash(this.document)].name)) {
+				if (person1[hash.FuntionHash(this.document)].phone
+						.equals(person2[hash.FuntionHash(this.document)].phone)) {
+					response = true;
+				}
+			}
+
 		}
 		return response;
 	}

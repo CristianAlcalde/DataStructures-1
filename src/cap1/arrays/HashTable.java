@@ -3,6 +3,8 @@ package cap1.arrays;
 import java.util.StringTokenizer;
 import java.util.function.DoubleConsumer;
 
+import javax.swing.text.Document;
+
 import utility.Person;
 
 public class HashTable {
@@ -89,6 +91,13 @@ public class HashTable {
 		this.elements[FuntionHash(document)].setName(name);
 		this.elements[FuntionHash(document)].setPhone(phone);
 		return this.elements;
+	}
+
+	public void ListHashTable(String document1,String document2,String document3) {
+		System.out.println("-----  List persons  -------");
+		System.out.println(this.elements[FuntionHash(document1)].getDocument()+ "," + this.elements[FuntionHash(document1)].getName()+ "," +this.elements[FuntionHash(document1)].getPhone());
+		System.out.println(this.elements[FuntionHash(document2)].getDocument()+ "," + this.elements[FuntionHash(document2)].getName()+ "," +this.elements[FuntionHash(document2)].getPhone());
+		System.out.println(this.elements[FuntionHash(document3)].getDocument()+ "," + this.elements[FuntionHash(document3)].getName()+ "," +this.elements[FuntionHash(document3)].getPhone());
 	}
 
 }
