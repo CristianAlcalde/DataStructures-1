@@ -53,8 +53,7 @@ public class HashTable {
 	    NewDato.getPhone();
 	    this.elements[HashFuntion(document)]= NewDato;
 		return this.elements;
-	}
-	
+	}	
 	public Person searchElement(String document) {
 		return this.elements[HashFuntion(document)];
 	}
