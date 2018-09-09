@@ -34,11 +34,11 @@ class HashTableTest {
 		expectedValue [7] = newdato;
 		// Step 3. Obtain the actual value
 		Person[] actualValue = testedHashTable.insertElements("anibal","1088014584","3057987534");
-		System.out.println("chareFactor in (insert):" + testedHashTable.getChargeFactor() + "%");
+		System.out.println("chargeFactor in (insert):" + testedHashTable.getChargeFactor() + "%");
 		// Step 4. Compare the expected versus actual values
 		newdato.equals(actualValue);
 	}
-	
+	@Test
 	void testsearchtElements() {
 		// Step 1. instantiate the tested class using the constructor method
 		HashTable testedHashTable = new HashTable (13);
@@ -80,7 +80,7 @@ class HashTableTest {
 		// Step 3. Obtain the actual value
 		testedHashTable.insertElements("anibal","1088014584","3057987534");
 		Person[] actualValue = testedHashTable.deleteElement("1088014584");
-		System.out.println("chareFactor in (insert):" + testedHashTable.getChargeFactor() + "%");
+		System.out.println("chargeFactor in (insert):" + testedHashTable.getChargeFactor() + "%");
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
 	}
