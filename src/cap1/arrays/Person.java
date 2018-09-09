@@ -23,5 +23,15 @@ public class Person {
 	public void setPhone(String phone) {
 		Phone = phone;
 	} 
+	
+	public boolean equals(Person person2) {
+		boolean response=false;
+		if (this.Name.equals(person2.Name) && this.Documento.equals(person2.Documento) && this.Phone.equals(person2.Phone));
+		{
+			response=true;
+		}
+		
+		return response;
+	}
 
 }
