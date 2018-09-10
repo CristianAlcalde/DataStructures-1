@@ -7,7 +7,6 @@ public class Matrix {
 
 	// Create constructor
 	public Matrix(int newsizex, int newsizey) {
-		System.out.println("Creating Matrix with size = " + newsizex + "x" + newsizey + "\n");
 		this.sizex = newsizex;
 		this.sizey = newsizey;
 		this.elements = new int[newsizex][newsizey];

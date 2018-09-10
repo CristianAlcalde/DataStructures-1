@@ -2,16 +2,15 @@ package cap1.arrays;
 
 public class HashTable {
 	// Step 1. Create attributes
-	private Person[] elements;
+	private Person[] elements = null;
 	private float chargefactor;
 	private int size;
 
 	// Create constructor
-	public HashTable(Person[] elements, float chargefactor, int size) {
-		System.out.println("Creating HashTable with size=" + size + "\n");
-		this.elements = elements;
-		this.chargefactor = chargefactor;
+	public HashTable(int size) {
+		System.out.println("Creating HashTable with size = " + size + "\n");
 		this.size = size;
+		this.elements = new Person[size];
 	}
 
 	// Step 2. Create methods
@@ -28,8 +27,6 @@ public class HashTable {
 
 	public float getChargefactor()
 	{
-		this.chargefactor = this.size; // falta generar el numerador que hace referancia al numero de elementos
-										// ocupados en el vector.
 		return chargefactor;
 	}
 
@@ -48,21 +45,51 @@ public class HashTable {
 		this.size = size;
 	}
 
-	// Step 2.2. Create CRUD methods
+	// Step 2.2. Create CRUD and others methods
 
-	public Person[] insertElement(String document, Person name)
+	public void occupied()
 	{
+		int occupieds = 0;
 
-		int value = 0;
-		int doc = Integer.parseInt(document);
-
-		for (int i = 2; i <= document.length(); i = +2)
+		for (int i = 0; i < elements.length; i++)
 		{
-			value = +(int) (doc / (Math.pow(10, document.length() - i)));
-			doc = (int) (doc % (Math.pow(10, document.length() - i)));
+			if (elements[i] != null)
+			{
+				occupieds++;
+			}
 		}
 
-		this.elements[value % getSize()] = name;
+		this.setChargefactor(occupieds / elements.length);
+	}
+
+	public int ToHash(Person obj)
+	{
+
+		int position;
+		int sum = 0;
+		String value = obj.getDocument();
+		int doc = Integer.parseInt(value);
+
+		for (int i = 2; i <= value.length(); i += 2)
+		{
+			sum += (int) (doc / (Math.pow(10, value.length() - i)));
+			doc = (int) (doc % (Math.pow(10, value.length() - i)));
+		}
+
+		position = sum % getSize();
+
+		return position;
+
+	}
+
+	public Person[] insertElement(String document, String name, String phone)
+	{
+		Person person = new Person();
+		person.setDocument(document);
+		person.setName(name);
+		person.setPhone(phone);
+		int position = ToHash(person);
+		this.elements[position] = person;
 
 		return this.elements;
 	}
@@ -72,48 +99,45 @@ public class HashTable {
 		return this.elements[hashvalue];
 	}
 
-	public int searchElementbyValue(int value)
+	public Person searchElementbyValue(String document)
 	{
-		int position = -1;
-		for (int i = 0; i < elements.length; i++)
-		{
-			if (elements[i] == value)
-				position = i;
-		}
-		return position;
+		person = null;
+		person.setDocument(document);
+		int position = ToHash(person);
+
+		return this.elements[position];
 	}
 
-	public String listElement(int[] elements)
+	public String listElement(Person[] elements)
 	{
-		String vector = "";
+		String list = "";
 		for (int i = 0; i < elements.length; i++)
 		{
 			if (i != elements.length - 1)
 			{
-				vector += this.elements[i] + " ";
+				list += this.elements[i] + ", ";
 
 			} else
 			{
-				vector += this.elements[i];
+				list += this.elements[i];
 			}
 		}
-		return vector;
+		return list;
 	}
 
-	public int[] updateElement(int element, int position)
+	public Person[] updateElement(String document, String name)
 	{
-		this.elements[position] = element;
+		person = null;
+		person.setDocument(document);
+		person.setName(name);
+		int position = ToHash(person);
+		this.elements[position] = person;
 		return this.elements;
 	}
 
-	public int[] deleteElement(int value)
-	{
-		for (int i = 0; i < elements.length; i++)
-		{
-			if (elements[i] == value)
-				elements[i] = 0;
-		}
-		return this.elements;
-	}
+	/*
+	 * public int[] deleteElement(int value) { for (int i = 0; i < elements.length;
+	 * i++) { if (elements[i] == value) elements[i] = 0; } return this.elements; }
+	 */
 
 }

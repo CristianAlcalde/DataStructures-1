@@ -2,7 +2,7 @@ package cap1.arrays;
 
 public class Person {
 
-	String document, name, phone;
+	private String document, name, phone;
 
 	public String getDocument()
 	{
@@ -33,5 +33,7 @@ public class Person {
 	{
 		this.phone = phone;
 	}
+	
+	
 
 }
