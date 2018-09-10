@@ -49,7 +49,7 @@ public class person {
 		
 	}
 	public void Equals(person[] expectedValue, person[] actualValue) {
-		// TODO Auto-generated method stub
+
 		
 	}
 	

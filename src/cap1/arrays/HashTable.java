@@ -63,9 +63,12 @@ public class HashTable {
 		return this.elements;
 	}
 
-	public int searchElement( String document) {
-		int position = hashfuntion(document);
-		return position;
+	public String searchElement(String document){
+  	  String elementFound= "*";
+  	  if(this.elements[hashfuntion(document)].getDocument().equals(document)){
+  		  elementFound = document;    
+	          }
+  	  return elementFound;
 	}
 
 	public person[] updateElement(String name, String document, String Phone) {

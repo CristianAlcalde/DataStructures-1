@@ -36,6 +36,19 @@ class HashTableTest {
 	}
 
 	@Test
+	void testSearchElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		HashTable testedHashtable = new HashTable(13);
+		// Step 2. Create the expected value variable
+		String expectedValue = "1088347722";
+		// Step 3. Obtain the actual value
+		testedHashtable.insertElement("Paola Ramirez ", "1088347722", "3146207044");
+		String actualValue = testedHashtable.searchElement("1088347722");
+		// Step 4. Compare the expected versus actual values
+		assertEquals(expectedValue, actualValue);
+	}
+
+	@Test
 	void testUpdateElement() {
 		// Step 1. instantiate the tested class using the constructor method.
 		HashTable testedHashTable = new HashTable(10);
