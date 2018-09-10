@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import cap1.arrays.HashTable;
 import cap1.arrays.Person;
-import cap1.arrays.Vector;
+
 
 class HashTableTest {
 
@@ -47,19 +47,20 @@ class HashTableTest {
 		@Test
 		void testUpdateElement() {
 			// Step 1. instantiate the tested class using the constructor method
+			// Step 1. instantiate the tested class using the constructor method
 			HashTable Hash = new HashTable(11);
 			// Step 2. Create the expected value variable
 			Person NewDato = new Person();
-			NewDato.setDocument("1088348033");
+			NewDato.setDocument("42011394");
 			NewDato.setName("Alejandro");
 			NewDato.setPhone("3142193936");
 			Person[]  expectedvalue = new Person[11];
-			expectedvalue[3] = NewDato;
+			expectedvalue[8] = NewDato;
 			// Step 3. Obtain the actual value
-			Person[] actualValue = Hash.updateElements("1088348033", "Alejandro", "3142193936");
+			Person[] actualValue = Hash.updateElements("42011394", "Alejandro", "3142193936");
 					// Step 4. Compare the expected versus actual values
 			NewDato.assertArrayEquals(expectedvalue, actualValue);
-		}/
+		}
 		@Test
 		void DeleteTableHash() {
 			// Step 1. instantiate the tested class using the constructor method
@@ -67,10 +68,10 @@ class HashTableTest {
 			// Step 2. Create the expected value variable
 			Person[] expectedValue = new Person[11];
 			// Step 3. Obtain the actual value
-			testedHash.InserTableHash("1088348033", "Alejandro", "3142193936");
+			testedHash.insertElements("1088348033", "Alejandro", "3142193936");
 			Person[] actualValue = testedHash.DeleteTableHash("1088348033");
 			// Step 4. Compare the expected versus actual values
-			System.out.println("Charge factor in (delete): " + testedHash.getChangefactor() + " % ");
+			System.out.println("Charge factor in (delete): " + testedHash.getChargefactor() + " % ");
 			assertArrayEquals(expectedValue, actualValue);
 		}
 
@@ -81,12 +82,11 @@ class HashTableTest {
 			// Step 2. Create the expected value variable
 			String expectedValue = "1088348033";
 			// Step 3. Obtain the actual value
-			testedHash.InserTableHash("1088348033", "Alejandro", "3142193936");
-			String actualValue = testedHash.SearchTableHash("18609698");
+			testedHash.insertElements("1088348033", "Alejandro", "3142193936");
+			String actualValue = testedHash.SearchTableHash("1088348033");
 			// Step 4. Compare the expected versus actual values
 			assertEquals(expectedValue, actualValue);
 		}
 
 	
 	}
-
