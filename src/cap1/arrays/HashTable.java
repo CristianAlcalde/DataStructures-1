@@ -2,7 +2,7 @@ package cap1.arrays;
 
 public class HashTable {
 	// Step 1. Create attributes
-	private Person[] elements = null;
+	private Person[] elements;
 	private float chargefactor;
 	private int size;
 
@@ -101,7 +101,7 @@ public class HashTable {
 
 	public Person searchElementbyValue(String document)
 	{
-		person = null;
+		Person person = new Person();
 		person.setDocument(document);
 		int position = ToHash(person);
 
@@ -127,7 +127,7 @@ public class HashTable {
 
 	public Person[] updateElement(String document, String name)
 	{
-		person = null;
+		Person person = new Person();
 		person.setDocument(document);
 		person.setName(name);
 		int position = ToHash(person);

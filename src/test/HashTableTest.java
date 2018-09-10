@@ -41,9 +41,13 @@ class HashTableTest {
 		Person[] expectedValue = new Person[5];
 		expectedValue[0] = personproof;
 		// Step 3. Obtain the actual value
-		Person[] actualValue = testedHash.insertElement("1088019214","JonathanMafla","");
+		Person[] actualValue = testedHash.insertElement("1088019214","JonathanMafla","3217630333");
 		// Step 4. Compare the expected versus actual values
-		assertArrayEquals(expectedValue, actualValue);
+		assertArraysEquals(expectedValue, actualValue);
+	}
+	
+	private void assertArraysEquals(Person[] expectedValue, Person[] actualValue)
+	{		
 	}
 
 }

@@ -33,7 +33,5 @@ public class Person {
 	{
 		this.phone = phone;
 	}
-	
-	
 
 }
