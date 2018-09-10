@@ -1,5 +1,7 @@
 package cap1.arrays;
 
+import Utils.Person;
+
 public class HashTable {
 
 	// Step 1. Create attributes
@@ -71,10 +73,22 @@ public class HashTable {
 		return this.elements;
 
 	}
-	
-	public Person[] updateElement(String document, String newName, String newPhone ) {
+
+	public Person[] updateElement(String document, String newName, String newPhone) {
 		this.elements[hashFunction(document)].setName(newName);
 		this.elements[hashFunction(document)].setPhone(newPhone);
 		return this.elements;
+
 	}
+
+	public Person [] searchElementByPosition(String document) {
+		//int hashFunction;
+		//hashFunction = this.hashFunction(document);
+		if (document == this.elements[hashFunction(document)].getDocument()) {
+			return this.elements;
+		} else {
+			return null;
+		}
+	}
+
 }

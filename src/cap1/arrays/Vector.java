@@ -38,6 +38,7 @@ public class Vector {
 	}
 
 	public int searchElementByPosition(int position) {
+		
 		return this.elements[position];
 	}
 	

@@ -1,4 +1,6 @@
-package cap1.arrays;
+package Utils;
+
+import cap1.arrays.HashTable;
 
 public class Person {
 	String document;
