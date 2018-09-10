@@ -106,6 +106,7 @@ public class HashTable {
 				+ this.elements[hashFunction(documentThreePerson)].getName() + "\n" + "Phone:"
 				+ this.elements[hashFunction(documentThreePerson)].getPhone());
 		System.out.println("\n" + "Charge factor (Lits Hash Table):" + this.getChargeFactor() + "%");
+		
 	}
 
 }
