@@ -1,4 +1,6 @@
-package cap1.arrays;
+package utils;
+
+import cap1.arrays.HashTable;
 
 public class Person {
 

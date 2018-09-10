@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import cap1.arrays.HashTable;
-import cap1.arrays.Person;
+import utils.Person;
 
 class HashTableTest {
 

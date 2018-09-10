@@ -1,5 +1,7 @@
 package cap1.arrays;
 
+import utils.Person;
+
 public class HashTable {
 
 	// Step 1. Create attributes
