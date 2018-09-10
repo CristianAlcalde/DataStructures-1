@@ -59,48 +59,34 @@ class HashTableTest {
 			Person[] actualValue = Hash.updateElements("1088348033", "Alejandro", "3142193936");
 					// Step 4. Compare the expected versus actual values
 			NewDato.assertArrayEquals(expectedvalue, actualValue);
-		}/*
+		}/
 		@Test
-		void testDeleteElement() {
+		void DeleteTableHash() {
 			// Step 1. instantiate the tested class using the constructor method
-			Matrix testedMatrix = new Matrix(5,5);
+			HashTable testedHash = new HashTable(11);
 			// Step 2. Create the expected value variable
-			int expectedValue = 999;
-			testedMatrix.insertElement(expectedValue, 0, 0);
+			Person[] expectedValue = new Person[11];
 			// Step 3. Obtain the actual value
-			int[][] actualValue = testedMatrix.deleteElement(expectedValue);
+			testedHash.InserTableHash("1088348033", "Alejandro", "3142193936");
+			Person[] actualValue = testedHash.DeleteTableHash("1088348033");
 			// Step 4. Compare the expected versus actual values
-			int pos = testedMatrix.searchElementByValue(expectedValue);
+			System.out.println("Charge factor in (delete): " + testedHash.getChangefactor() + " % ");
+			assertArrayEquals(expectedValue, actualValue);
+		}
 
-			assertEquals(-1, pos);
-		}
-		
 		@Test
-		void testSearchElement() {
+		void SearchTableHash() {
 			// Step 1. instantiate the tested class using the constructor method
-			Matrix testedMatrix = new Matrix(5,5);
+			HashTable testedHash = new HashTable(11);
 			// Step 2. Create the expected value variable
-			int expectedValue = 999;
-			testedMatrix.insertElement(expectedValue, 0, 0);
+			String expectedValue = "1088348033";
 			// Step 3. Obtain the actual value
-			int actualValue = testedMatrix.searchElementByPosition(0, 0);
+			testedHash.InserTableHash("1088348033", "Alejandro", "3142193936");
+			String actualValue = testedHash.SearchTableHash("18609698");
 			// Step 4. Compare the expected versus actual values
 			assertEquals(expectedValue, actualValue);
 		}
-		
-		@Test
-		void ListElement() {
-			// Step 1. instantiate the tested class using the constructor method
-			Matrix testedMatrix = new Matrix(5,5);
-			// Step 2. Create the expected value variable
-			int expectedValue = 999;
-			testedMatrix.insertElement(expectedValue, 0, 0);
-			// Step 3. Obtain the actual value
-			int actualValue = testedMatrix.searchElementByPosition(0, 0);
-			//int[][] actualValue = testedMatrix.ListElement(999, 0, 0);
-			// Step 4. Compare the expected versus actual values
-			assertEquals(expectedValue, actualValue);
-						}
-		*/
-}
+
+	
+	}
 
