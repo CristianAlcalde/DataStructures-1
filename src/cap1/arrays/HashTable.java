@@ -81,7 +81,7 @@ public class HashTable {
 	
 		public String SearchTableHash(String document) {
 		String found = "";
-		if (this.elements[FuntionHash(document)].getDocument().equals(document)) {
+		if (this.elements[HashFuntion(document)].getDocument().equals(document)) {
 			found = document;
 		}
 		return found;
@@ -89,8 +89,8 @@ public class HashTable {
 
 	
 	public Person[] DeleteTableHash(String document) {
-		this.elements[FuntionHash(document)] = null;
-		this.setChangefactor(getChangefactor() - (float) 7.69);
+		this.elements[HashFuntion(document)] = null;
+		this.setChargefactor(getChargefactor() - (float) 7.69);
 		return this.elements;
 	}
 	// Step 2.2. Create CRUD methods
