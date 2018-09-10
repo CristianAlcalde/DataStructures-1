@@ -45,17 +45,33 @@ public class HashTable {
 
 	// FUNCION HASH
 	public int hashFunction(String document) {
-
-		Integer a = (Integer.parseInt(document)) % 100;
-		Integer b = (Integer.parseInt(document)) / 100 % 100;
-		Integer c = (Integer.parseInt(document)) / 100 / 100 % 100;
-		Integer d = (Integer.parseInt(document)) / 100 / 100 / 100 % 100;
-		Integer e = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 % 100;
-		Integer f = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
-		Integer g = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
-
-		return ((a + b + c + d + e + f + g) % this.size);
+		if (document.length() == 9) {
+			document = "0" + document;
+		}
+		if (document.length() == 8) {
+			document = "00" + document;
+		}
+		if (document.length() == 7) {
+			document = "000" + document;
+		}
+		if (document.length() == 6) {
+			document = "00000" + document;
+		}
+		if (document.length() == 5) {
+			document = "000000" + document;
+		}
+		String a = document.substring(0,2);
+		String b = document.substring(2,4);
+		String c = document.substring(4,6);
+		String d = document.substring(6,8);
+		String e = document.substring(8,10);
+		return ((Integer.parseInt(a) + Integer.parseInt(b) + Integer.parseInt(c) +
+				Integer.parseInt(d) + Integer.parseInt(e)) % this.size);
+		
 	}
+
+	
+
 	// Step 2.2. Create CRUD methods
 
 	public Person[] insertElement(String document, String name, String phone) {
