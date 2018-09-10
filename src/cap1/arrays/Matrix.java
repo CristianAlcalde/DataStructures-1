@@ -1,68 +1,104 @@
 package cap1.arrays;
 
 public class Matrix {
-	// Step 1. Crear atributos
-	private int columnas;
-	private int filas;
-	private int elementos[][];
+	// Step 1. Create attributes
 
-	public Matrix(int filas, int columnas) {
-		this.filas = filas;
-		this.columnas = columnas;
-		this.elementos = new int[this.filas][this.columnas];
-	}
-	// Step 2. crea methods
-	// Step 2.1. genera el encapsulamiento de los metodos
+private int files;
+private int columns;
+private int elements[][];
 
-	public int getFilas() {
-		return filas;
-	}
+// Step 1.1. Create Constructor
+public Matrix(int newFiles, int newColumns) {
+	System.out.println("Creating matrix with size = " + "[" + newFiles + "*" + newColumns + "]");
+	this.files = newFiles;
+	this.columns = newColumns;
+	this.elements = new int[newFiles][newColumns];
+}
 
-	public void setFilas(int filas) {
-		this.filas = filas;
-	}
+// Step 2. Create methods
+// Step 2.1. Generate encapsulation methods
 
-	public int getColumnas() {
-		return columnas;
-	}
+public int getFiles() {
+	return files;
+}
 
-	public void setColumnas(int columnas) {
-		this.columnas = columnas;
-	}
-		
-	// Step 2.2. Creamos los CRUD
+public void setFiles(int files) {
+	this.files = files;
+}
 
-	public int insertarElemento(int filas, int columnas, int elementos) {
+public int getColumns() {
+	return columns;
+}
 
-		this.elementos[filas][columnas] = elementos;
-		return this.elementos[filas][columnas];
+public void setColumns(int columns) {
+	this.columns = columns;
+}
 
-	}
+public int[][] getelements() {
+	return elements;
+}
 
-	public int[][] updateElement(int filas, int columnas, int elementos) {
+public void setElements(int[][] elements) {
+	this.elements = elements;
+}
 
-		this.elementos[filas][columnas] = elementos;
-		return this.elementos;
-	}
+// Step 2.2. Create CRUD methods
 
-	public int[][] deleteElement(int filas, int columnas) {
+public int[][] insertElement(int element, int files, int columns) {
+	this.elements[files][columns] = element;
+	//System.out.println("El nuevo elemento en la matriz es: " + element);
+	//System.out.println("La posición del elemento en la matriz es: " + "(" + files + "," + columns + ")");
+	return this.elements;
+}
 
-		this.elementos[filas][columnas] = 0;
-		return this.elementos;
-	}
+public int searchElementByPosition(int filePosition, int columnPosition) {
+	return this.elements[filePosition][columnPosition];
+}
 
-	public int[] serchElement(int elemento) {
-		int[] salida = new int[2];
-		for (int i = 0; i < filas; i++) {
-			for (int j = 0; j < columnas; j++) {
-				if (this.elementos[i][j] == elemento) {
-					salida[0] = i;
-					salida[1] = j;
-					break;
-				}
+public int searchElementByValue(int element) {
+	int result = 5;
+	// Recorrer la matriz buscando el elemento dado.
+	for (int i = 0; i < elements.length; i++) {
+		for (int j = 0; j < elements.length; j++) {
+			if (elements[i][j] == element) {
+				result = element;
+				
 			}
 		}
-		return salida;
 	}
+	return result;
+
+}
+
+public int[][] updateElement(int newElement, int filePosition, int columnsPosition) {
+	this.elements[filePosition][columnsPosition] = newElement;
+	// System.out.println("El Nuevo elemento de la matriz es: " + newElement);
+	// System.out.println("Coodenadas de la matriz: " + filePosition + "," +
+	// columnsPosition);
+	return this.elements;
+}
+
+public int[][] deleteElement(int element) {
+	// Recorrer la matriz buscando el elemento a eliminar.
+	for(int i=0; i<elements.length; i++) {
+		for (int j = 0; j < elements.length; j++) {
+			// Si el elemento de la matriz es encontrado, reeemplazarlo por cero.
+			if (elements[i][j] == element) {
+				elements[i][j] = 0;
+			}
+		}
+	}
+	return this.elements;
+}
+
+public int[][] listElements() {
+	for (int i = 0; i < elements.length; i++) {
+		for (int j = 0; j < elements.length; j++) {
+			System.out.print(elements[i][j] + " ");
+		}
+		System.out.println(" ");
+	}
+	return elements;
+}
 
 }

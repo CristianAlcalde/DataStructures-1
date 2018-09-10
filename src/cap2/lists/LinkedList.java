@@ -1,4 +1,4 @@
-package cap2.arrays;
+package cap2.lists;
 
 public class LinkedList {
 

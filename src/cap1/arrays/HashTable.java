@@ -1,5 +1,7 @@
 package cap1.arrays;
 
+import utils.Person;
+
 public class HashTable {
 	private float ChargeFactor;
 	int Size;
@@ -26,10 +28,41 @@ public class HashTable {
 		this.elements = elements;
 	}
 	
-	//Create CRUD Methods
+	//Create CRUD Methods + Funtion Hash.
 	
-		public Person insertElements(Person elements,int module) {
-			this.elements[module]= elements;
-			return elements;
-		}
+	public int hashFunction(String document) {
+
+		Integer a = (Integer.parseInt(document)) % 100;
+		Integer b = (Integer.parseInt(document)) / 100 % 100;
+		Integer c = (Integer.parseInt(document)) / 100 / 100 % 100;
+		Integer d = (Integer.parseInt(document)) / 100 / 100 / 100 % 100;
+		Integer e = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 % 100;
+		Integer f = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
+		Integer g = (Integer.parseInt(document)) / 100 / 100 / 100 / 100 / 100 % 100;
+
+		return ((a + b + c + d + e + f + g) % this.Size);
+
+	}
+
+	public Person[] insertElement(String document, String name, String phone) {
+		Person newPerson = new Person(phone, phone, phone);
+		newPerson.setDocument(document);
+		newPerson.setName(name);
+		newPerson.setPhone(phone);
+
+		this.elements[hashFunction(document)] = newPerson;
+		return this.elements;
+	}
+	
+	public Person[] deleteElement(String document) {
+		this.elements[hashFunction(document)] = null;
+		return this.elements;
+	}
+	
+	public Person[] updateElement(String document, String newName, String newPhone) {
+		this.elements[hashFunction(document)].setName(newName);
+		this.elements[hashFunction(document)].setPhone(newPhone);
+		return this.elements;
+	} 
+
 }
