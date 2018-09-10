@@ -27,6 +27,17 @@ public class HashTable {
 
 	public float getChargefactor()
 	{
+		float occupieds = 0;
+
+		for (int i = 0; i < elements.length; i++)
+		{
+			if (elements[i] != null)
+			{
+				occupieds++;
+			}
+		}
+		
+		this.chargefactor = (occupieds/elements.length)*100;
 		return chargefactor;
 	}
 
@@ -46,21 +57,6 @@ public class HashTable {
 	}
 
 	// Step 2.2. Create CRUD and others methods
-
-	public void occupied()
-	{
-		int occupieds = 0;
-
-		for (int i = 0; i < elements.length; i++)
-		{
-			if (elements[i] != null)
-			{
-				occupieds++;
-			}
-		}
-
-		this.setChargefactor(occupieds / elements.length);
-	}
 
 	public int ToHash(Person obj)
 	{
@@ -90,7 +86,6 @@ public class HashTable {
 		person.setPhone(phone);
 		int position = ToHash(person);
 		this.elements[position] = person;
-
 		return this.elements;
 	}
 

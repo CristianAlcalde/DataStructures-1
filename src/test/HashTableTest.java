@@ -44,6 +44,8 @@ class HashTableTest {
 		Person[] actualValue = testedHash.insertElement("1088019214","JonathanMafla","3217630333");
 		// Step 4. Compare the expected versus actual values
 		assertArraysEquals(expectedValue, actualValue);
+		System.out.println(testedHash.getChargefactor()+"% has been occupied.");
+		
 	}
 	
 	private void assertArraysEquals(Person[] expectedValue, Person[] actualValue)
