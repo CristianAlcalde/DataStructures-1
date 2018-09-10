@@ -8,7 +8,6 @@ public class HashTable {
 
 	// Create constructor
 	public HashTable(int size) {
-		System.out.println("Creating HashTable with size = " + size + "\n");
 		this.size = size;
 		this.elements = new Person[size];
 	}
@@ -36,8 +35,8 @@ public class HashTable {
 				occupieds++;
 			}
 		}
-		
-		this.chargefactor = (occupieds/elements.length)*100;
+
+		this.chargefactor = (occupieds / elements.length) * 100;
 		return chargefactor;
 	}
 
@@ -120,19 +119,25 @@ public class HashTable {
 		return list;
 	}
 
-	public Person[] updateElement(String document, String name)
+	public Person[] updateElement(String document, String name,String phone)
 	{
 		Person person = new Person();
 		person.setDocument(document);
 		person.setName(name);
+		person.setName(phone);
 		int position = ToHash(person);
 		this.elements[position] = person;
 		return this.elements;
 	}
 
-	/*
-	 * public int[] deleteElement(int value) { for (int i = 0; i < elements.length;
-	 * i++) { if (elements[i] == value) elements[i] = 0; } return this.elements; }
-	 */
+	public Person[] deleteElement(int hashvalue)
+	{
+		for (int i = 0; i < elements.length; i++)
+		{
+			if (i == hashvalue)
+				elements[i] = null;
+		}
+		return this.elements;
+	}
 
 }
