@@ -26,19 +26,34 @@ class HasTableTest {
 		
 		@Test
 		void insertELement() {
-			
+			// Step 1. instantiate the tested class using the constructor method.
 			HashTable testedHashTable = new HashTable(17);
 			Person person1 = new Person();
 			person1.setDocument("1088346790");
 			person1.setName("maicol");
 			person1.setPhone("3455250");
+			// Step 2. Create the expected value variable
 			Person expectedValue[] = new Person[17];
 			expectedValue[12]= person1;
+			// Step 3. Obtain the actual value.
 			Person[] actualValue = testedHashTable.insertElement("1088346790", "maicol", "3455250");
-			// System.out.println(actualValue);
+			// Step 4. Compare the expected versus actual values.
 			actualValue.equals(expectedValue);
 		}
 		
+		
+		@Test
+		void searchElement() {
+			// Step 1. instantiate the tested class using the constructor method
+			HashTable testedHash = new HashTable(17);
+			// Step 2. Create the expected value variable
+			String expectedValue = "1088346790";
+			// Step 3. Obtain the actual value
+			testedHash.insertElement("1088346790", "maicol", "3455250");
+			String actualValue = testedHash.searchElement("1088346790");
+			// Step 4. Compare the expected versus actual values
+			assertEquals(expectedValue, actualValue);
+		}
 		
 		@Test
 		void testDeleteElement() {
@@ -71,5 +86,7 @@ class HasTableTest {
 			// Step 4. Compare the expected versus actual values
 			person1.equals(expectedValue, actualValue);
 		}
+		
+		
 		
 }

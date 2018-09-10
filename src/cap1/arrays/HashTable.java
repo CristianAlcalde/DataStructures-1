@@ -8,6 +8,7 @@ public class HashTable {
 		float changeFactor;
 		int size;
 		private  String Person;
+		
 	// Step 1.1 Create constructor
 		
 		public HashTable(int newsize) {
@@ -67,6 +68,14 @@ public class HashTable {
 
 		}
 		
+		public String searchElement(String document) {
+			String foundElement = "";
+			if (this.elements[hashFunction(document)].getDocument().equals(document)) {
+				foundElement = document;
+			}
+			return foundElement;
+		}
+		
 		
 		public Person[] deleteElement(String document) {
 			this.elements[hashFunction(document)] = null;
@@ -79,22 +88,5 @@ public class HashTable {
 			return this.elements;
 		}
 			
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 }
