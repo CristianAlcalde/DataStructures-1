@@ -1,9 +1,6 @@
 package test;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 import cap1.arrays.Matrix;
@@ -12,55 +9,82 @@ class MatrixTest {
 
 	@Test
 	void testInsertElement() {
-		// Step 1. Instanciamos el dato a testear usando los metodos creados
-		Matrix testedMatrix = new Matrix(77);
-		// Step 2. Creamos el dato a esperar
-		int[] expectedValue = new int[77];
-		expectedValue[0] = 100;
-		// Step 3. Obtiene el valor actual
-		int[] actualValue = testedMatrix.insertElement(100, 0);
-		// Step 4. Compara el valor actual con el esperado
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(3, 3);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = new int[3][3];
+		expectedValue[0][0] = 200;
+		// Step 3. Obtain the actual value
+		int[][] actualValue = testedMatrix.insertElement(200, 0, 0);
+		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
 	}
 
 	@Test
-	void testSearchElement() {
-		// Step 1. Instanciamos el dato a testear usando los metodos creados
-		Matrix testedMatrix = new Matrix(10);
-		// Step 2. Creamos el dato a esperar
-		int expectedValue = 999;
-		testedMatrix.insertElement(expectedValue, 9);
-		// Step 3. Obtiene el valor actual
-		int actualValue = testedMatrix.searchElementByPosition(9);
-		// Step 4. Compara el valor actual con el esperado
+	void testSearchElementbyPosition() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(3, 3);
+		// Step 2. Create the expected value variable
+		int expectedValue = 500;
+		testedMatrix.insertElement(expectedValue, 0, 0);
+		// Step 3. Obtain the actual value
+		int actualValue = testedMatrix.searchElementbyPosition(0, 0);
+		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
 	}
 
 	@Test
-	void testUpdateElement() {
-		// Step 1. Instanciamos el dato a testear usando los metodos creados
-		Matrix testedMatrix = new Matrix(10);
-		// Step 2. Creamos el dato a esperar
-		int[] expectedValue = new int[10];
-		expectedValue[0] = 888;
-		// Step 3. Obtiene el valor actual
-		int[] actualValue = testedMatrix.updateElement(888, 0);
-		// Step 4. Compara el valor actual con el esperado
+	void testSearchElementbyValue() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(3, 3);
+		// Step 2. Create the expected value variable
+		int[] expectedValue = { 1, 2 };
+		testedMatrix.insertElement(250, 1, 2);
+		// Step 3. Obtain the actual value
+		int [] actualValue = testedMatrix.searchElementbyValue(250);
+		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
 	}
 
 	@Test
-	void testDeleteElement() {
-		// Step 1. Instanciamos el dato a testear usando los metodos creados
-		Matrix testedMatrix = new Matrix(10);
-		// Step 2. Creamos el dato a esperar
-		int expectedValue = 999;
-		testedMatrix.insertElement(expectedValue, 9);
-		// Step 3. Obtiene el valor actual
-		int[] actualValue = testedMatrix.deleteElement(expectedValue);
-		// Step 4. Compara el valor actual con el esperado
-		int pos = testedMatrix.searchElementByValue(expectedValue);
-
-		assertEquals(-1, pos);
+	void testListElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(3, 3);
+		// Step 2. Create the expected value variable
+		String expectedValue = "0 0 0\n" + "0 0 0\n" + "0 0 300\n";
+		// Step 3. Obtain the actual value
+		int[][] oldValue = testedMatrix.insertElement(300, 2, 2);
+		String actualValue = testedMatrix.listElement(oldValue);
+		// Step 4. Compare the expected versus actual values
+		assertEquals(expectedValue, actualValue);
 	}
+
+	@Test
+	void testUpdatetElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(3, 3);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = new int[3][3];
+		expectedValue[2][2] = 555;
+		// Step 3. Obtain the actual value
+		testedMatrix.insertElement(300, 2, 2);
+		int[][] actualValue = testedMatrix.updateElement(555, 2, 2);
+		// Step 4. Compare the expected versus actual values
+		assertArrayEquals(expectedValue, actualValue);
+	}
+
+	@Test
+	void testDeletetElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(3, 3);
+		// Step 2. Create the expected value variable
+		int[][] expectedValue = new int[3][3];
+		expectedValue[1][1] = 0;
+		// Step 3. Obtain the actual value
+		testedMatrix.insertElement(125, 1, 1);
+		int[][] actualValue = testedMatrix.deleteElement(125);
+		// Step 4. Compare the expected versus actual values
+		assertArrayEquals(expectedValue, actualValue);
+	}
+
 }
