@@ -74,12 +74,20 @@ public class HashTable {
 	}
 	
 	
+	
+	
 	public Person[] updateElements(String documento, String name, String phone) {
 		Person NewDato = new Person();
 		NewDato.setDocument(documento);
 		NewDato.setName(name);
 		NewDato.setPhone(phone);
 		this.elements[HashFuntion(documento)] = NewDato;
+		return this.elements;
+	}
+	
+	public Person[] DeleteTableHash(String document) {
+		this.elements[FuntionHash(document)] = null;
+		this.setChangefactor(getChangefactor() - (float) 7.69);
 		return this.elements;
 	}
 	// Step 2.2. Create CRUD methods
