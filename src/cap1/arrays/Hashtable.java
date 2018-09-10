@@ -48,8 +48,9 @@ public class Hashtable {
 	// Step 2.2. Create CRUD methods
 		
 	 public int Hashfunction(String document){
-			int num = Integer.parseInt(document);
-			int hashresult = num % size;
+			Integer num = Integer.parseInt(document) * Integer.parseInt(document);
+			int dig = num.toString().length();
+			int hashresult = Integer.parseInt(num.toString().substring((dig/2),((dig/2)+1)));
 			return hashresult;
 	   
 	    }

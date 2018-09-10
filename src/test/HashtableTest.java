@@ -13,8 +13,8 @@ class HashtableTest {
 	void testHashfunction() {
 	
 		Hashtable testedHashtable = new Hashtable(5);
-		int actualValue = testedHashtable.Hashfunction("13477");
-		int expectedValue = 2;
+		int actualValue = testedHashtable.Hashfunction("1088019819");
+		int expectedValue = 9;
 		assertEquals(expectedValue,actualValue);
 	}
 		
