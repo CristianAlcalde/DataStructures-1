@@ -60,4 +60,25 @@ public class HashTable {
 		return ((OnePar + TwoPar + ThreePar + FourPar + FivePar + SixPar + SevenPar) % this.size);
 
 	}
+	
+	public Person[] insertPerson(String name, String document, String phone) {
+		Person NewDato = new Person();
+	    NewDato.getDocument();
+	    NewDato.getName();
+	    NewDato.getPhone();
+	    this.elements[FuntionHash(document)]= NewDato;
+		return this.elements;
+	}
+	
+	public Person searchPerson(String document) {
+		return this.elements[FuntionHash(document)];
+	}
+	public Person[] updatePerson(Person newdocument,int FuntionHash) {
+		this.elements[FuntionHash(null)]= newdocument;
+		return this.elements;
+	}
+	public Person[] deletePerson(String document) {
+		this.elements[FuntionHash(document)]=null;
+		return this.elements;
+	}
 }
