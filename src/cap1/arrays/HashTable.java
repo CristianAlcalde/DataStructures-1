@@ -6,10 +6,7 @@ public class HashTable {
 	private int size;
 	private Integer num;
 
-	
 
-	
-  
 	// Step 1. Create attributes
 	
 	public int getSize() {
@@ -18,8 +15,7 @@ public class HashTable {
 	public void setSize(int size) {
 		this.size = size;
 	}
-	
-	
+		
 	
 	// Step 1.1. Create Constructor
 	
