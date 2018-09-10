@@ -22,7 +22,7 @@ class HashTableTest {
 	@Test
 	void testInsertPerson() {
 		// Step 1. instantiate the tested class using the constructor method
-		HashTable FuntionHash = new HashTable(10);
+		HashTable FuntionHash = new HashTable(17);
 		Person Person = new Person();
 		Person.setDocument("1088346790");
 		Person.setName("Vladimir");
@@ -37,10 +37,24 @@ class HashTableTest {
 	}
 	
 	@Test
+	void searchElement() {
+		// Step 1. instantiate the tested class
+		HashTable FuntionHash = new HashTable(17);
+		Person Persons = new Person();
+		Persons.setDocument("1088346790");
+		Persons.setName("Vladimir");
+		Persons.setPhone("3165209805");
+		Person [] expectedValue = new Person[17]; 
+		FuntionHash.insertPerson("Vladimir", "1088346790", "3165209805");
+		Person[] actualValue = FuntionHash.searchPerson(Persons.getDocument());
+		assertEquals(expectedValue, actualValue);
+	}
+	
+	@Test
 	void TestdeletePerson() {
 		// Step 1. instantiate the tested class using the constructor method
-		HashTable FuntionHash = new HashTable(10);
-		Person[] expectedValue = new Person[10];
+		HashTable FuntionHash = new HashTable(17);
+		Person[] expectedValue = new Person[17];
 		Person[] actualValue = FuntionHash.deletePerson("1088346790");
 		assertArrayEquals(expectedValue, actualValue);
 	}

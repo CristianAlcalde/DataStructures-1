@@ -2,6 +2,7 @@ package cap1.arrays;
 
 public class HashTable {
 
+	private static final String Person = null;
 	// Step 1. Creando atributos
 	Person[] elements;
 	float changeFactor;
@@ -70,20 +71,19 @@ public class HashTable {
 		return this.elements;
 	}
 	
-	public String SearchPerson(String document) {
-		String found="";
-		if (this.elements[FuntionHash(document)].getDocument().equals(document)) {
-			found=document;
+	public Person [] searchPerson(String document) {
+		if (document == this.elements[FuntionHash(document)].getDocument()) {
+			return this.elements;
+		} else {
+			return null;
 		}
-		return found;
 	}
-		
-	public Person[] UpdatePerson(String document, String name, String phone) {
-		this.elements[FuntionHash(document)].setName(name);
-		this.elements[FuntionHash(document)].setPhone(phone);
+ 		
+	public Person[] UpdatePerson(Person newDocument,int FuntionHash) {
+		this.elements[FuntionHash(Person)]= newDocument;
 		return this.elements;
 	}
-		
+	
 	public Person[] deletePerson(String document) {
 		this.elements[FuntionHash(document)]=null;
 		return this.elements;

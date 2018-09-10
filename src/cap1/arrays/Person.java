@@ -25,6 +25,15 @@ public class Person {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+		
+	public boolean Equals(Person[] person1, Person[] person2) {
+    	boolean respon = false;
+    	HashTable hash= new HashTable(17);
+    	if(person1[hash.FuntionHash(this.document)].document.equals(person2[hash.FuntionHash(this.document)].document)) {
+    		respon=true;
+    	}
+    	return respon;
+    }
 	
 	
 }
