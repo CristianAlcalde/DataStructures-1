@@ -96,6 +96,7 @@ public class HashTable {
 				+ this.elements[hashFunction(documentOnePerson)].getName() + "\n" + "Phone:"
 				+ this.elements[hashFunction(documentOnePerson)].getPhone() + "\n");
 		
+		
 		System.out.println("****Second Person****");
 		System.out.println("Document:" + this.elements[hashFunction(documentTwoPerson)].getDocument() + "\n" + "Name:"
 				+ this.elements[hashFunction(documentTwoPerson)].getName() + "\n" + "Phone:"
