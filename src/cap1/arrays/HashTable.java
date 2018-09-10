@@ -11,7 +11,7 @@ public class HashTable {
 	// Step 1.1. Create Constructor
 
 	public HashTable(int newSize) {
-		System.out.println("Creating tabla with size=" + newSize);
+		System.out.println("Creating table with size=" + newSize);
 		this.size = newSize;
 		this.elements = new Person[newSize];
 	}
@@ -52,9 +52,30 @@ public class HashTable {
 	}
 
 	public Person[] insertElement(String name, String document, String telephone) {
-		Person personInserted = new Person ();
-		this.elements[hashFunction(document)]= personInserted;
+		Person personInserted = new Person();
+		this.elements[hashFunction(document)] = personInserted;
 		return this.elements;
-		
+
 	}
+
+	public Person[] searchElement(String document) {
+
+		if (this.elements[hashFunction(document)].getDocument().equals(document)) {
+			return this.elements;
+		} else {
+			return null;
+		}
+	}
+
+	public Person[] updateElement(String name, String document, String telephone) {
+		this.elements[hashFunction(document)].setName(name);
+		this.elements[hashFunction(document)].setTelephone(telephone);
+		return this.elements;
+	}
+
+	public Person[] deleteElement(String document) {
+		this.elements[hashFunction(document)] = null;
+		return this.elements;
+	}
+
 }
