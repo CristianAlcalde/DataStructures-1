@@ -9,8 +9,7 @@ public class HashTable {
 
 	// Step 1.1. Create Constructor
 	public HashTable(int newSize) {
-		System.out.println("Creating vector with size= " + newSize);
-		this.chargeFactor = 7.14f;
+		System.out.println("Creating Hash Table with size = " + newSize);
 		this.size = newSize;
 		this.elements = new Person[newSize];
 	}
@@ -64,18 +63,49 @@ public class HashTable {
 		newPerson.setPhone(phone);
 
 		this.elements[hashFunction(document)] = newPerson;
+		this.setChargeFactor(this.getChargeFactor() + (float) 7.69);
+		System.out.println("Charge factor (Insert Element):" + this.getChargeFactor() + "%");
 		return this.elements;
 	}
-	
+
 	public Person[] deleteElement(String document) {
 		this.elements[hashFunction(document)] = null;
+		this.setChargeFactor(this.getChargeFactor() - (float) 7.69);
+		System.out.println("Charge factor (Delete Element):" + this.getChargeFactor() + "%");
 		return this.elements;
 	}
-	
+
 	public Person[] updateElement(String document, String newName, String newPhone) {
 		this.elements[hashFunction(document)].setName(newName);
 		this.elements[hashFunction(document)].setPhone(newPhone);
 		return this.elements;
-	} 
+	}
+
+	public boolean searchElement(String document) {
+		boolean result = false;
+		if (this.elements[hashFunction(document)].getDocument().equals(document)) {
+			result = true;
+		}
+		return result;
+	}
+
+	public void listElement(String documentOnePerson, String documentTwoPerson, String documentThreePerson) {
+		System.out.println("\n" + "*********************************List Hash Table.*********************************");
+		System.out.println("****Firts Person****");
+		System.out.println("Document:" + this.elements[hashFunction(documentOnePerson)].getDocument() + "\n" + "Name:"
+				+ this.elements[hashFunction(documentOnePerson)].getName() + "\n" + "Phone:"
+				+ this.elements[hashFunction(documentOnePerson)].getPhone() + "\n");
+		
+		System.out.println("****Second Person****");
+		System.out.println("Document:" + this.elements[hashFunction(documentTwoPerson)].getDocument() + "\n" + "Name:"
+				+ this.elements[hashFunction(documentTwoPerson)].getName() + "\n" + "Phone:"
+				+ this.elements[hashFunction(documentTwoPerson)].getPhone() + "\n");
+		
+		System.out.println("****Third Person****");
+		System.out.println("Document:" + this.elements[hashFunction(documentThreePerson)].getDocument() + "\n" + "Name:"
+				+ this.elements[hashFunction(documentThreePerson)].getName() + "\n" + "Phone:"
+				+ this.elements[hashFunction(documentThreePerson)].getPhone());
+		System.out.println("\n" + "Charge factor (Lits Hash Table):" + this.getChargeFactor() + "%");
+	}
 
 }
