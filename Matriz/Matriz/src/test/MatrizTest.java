@@ -1,34 +1,34 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 
 class MatrizTest {
-	private int rows;
-	private int columns;
+	private int numeroFilas;
+	private int numeroColumnas;
 	private int[][] elements;
 
-	public MatrizTest(int newRows, int newColumns) {
-		this.rows = newRows;
-		this.columns = newColumns;
-		this.elements = new int[newRows][newColumns];
+	public MatrizTest(int newnumeroFilas, int newnumeroColumnas) {
+		this.numeroFilas = newnumeroFilas;
+		this.numeroColumnas = newnumeroColumnas;
+		this.elements = new int[newnumeroFilas][newnumeroColumnas];
 	}
 
-	public int getRows() {
-		return rows;
+	public int getnumeroFilas() {
+		return numeroFilas;
 	}
 
-	public void setRows(int rows) {
-		this.rows = rows;
+	public void setnumeroFilas(int numeroFilas) {
+		this.numeroFilas = numeroFilas;
 	}
 
-	public int getColumns() {
-		return columns;
+	public int getnumeroColumnas() {
+		return numeroColumnas;
 	}
 
-	public void setColumns(int columns) {
-		this.columns = columns;
+	public void setnumeroColumnas(int numeroColumnas) {
+		this.numeroColumnas = numeroColumnas;
 	}
 
 	public int[][] getElements() {
@@ -39,17 +39,17 @@ class MatrizTest {
 		this.elements = elements;
 	}
 
-	public int[][] insertElement(int row, int column, int element) {
-		this.elements[row][column] = element;
+	public int[][] insertarElemento(int numeroFilas, int numeroColumnas, int element) {
+		this.elements[numeroFilas][numeroColumnas] = element;
 		return this.elements;
 	}
 
-	public String searchElement(int element) {
+	public String buscarElemento(int element) {
 		int i = 0;
 		int j = 0;
 		int yes = 0;
-		for (i = 0; i < this.rows; i++) {
-			for (j = 0; j < this.columns; j++) {
+		for (i = 0; i < this.numeroFilas; i++) {
+			for (j = 0; j < this.numeroColumnas; j++) {
 				int serchElement = elements[i][j];
 				if (serchElement == element) {
 					yes = 1;
@@ -63,13 +63,13 @@ class MatrizTest {
 		return i + ", "+ j;
 	}
 
-	public int[][] updateElement(int row, int column, int element) {
-		this.elements[row][column] = element;
+	public int[][] updateElement(int numeroFilas, int numeroColumnas, int element) {
+		this.elements[numeroFilas][numeroColumnas] = element;
 		return this.elements;
 	}
 
-	public int[][] deleteElement(int row, int column) {
-		this.elements[row][column] = 0;
+	public int[][] eliminarElemento(int numeroFilas, int numeroColumnas) {
+		this.elements[numeroFilas][numeroColumnas] = 0;
 		return this.elements;
 	}
 
