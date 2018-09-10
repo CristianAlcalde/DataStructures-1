@@ -81,14 +81,18 @@ public class HashTable {
 
 	}
 
-	public Person [] searchElementByPosition(String document) {
-		//int hashFunction;
-		//hashFunction = this.hashFunction(document);
+	public Person[] searchElementByPosition(String document) {
 		if (document == this.elements[hashFunction(document)].getDocument()) {
 			return this.elements;
 		} else {
 			return null;
 		}
+	}
+
+	public float chargeFactor(float porcentage) {
+		this.setChargeFactor(porcentage / elements.length);
+		return this.getChargeFactor();
+
 	}
 
 }
