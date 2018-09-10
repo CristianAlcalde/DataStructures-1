@@ -7,7 +7,7 @@ public class Person {
 	private String document;
 	private String phone;
 	
-	// Step 1.1. Create constructor
+	// Step 1.1. Create constructor. Initializing parameters.
 		public Person(String name, String document, String phone) {
 			this.document = name;
 			this.name = document; 

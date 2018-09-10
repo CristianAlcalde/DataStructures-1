@@ -3,19 +3,27 @@ package cap1.arrays;
 public class HashTable {
 	// Step 1. Create attributes
 	    private int size;	
-	    private Person[] elements; //Import to Person. 
+	    private Person[] elements; //Import to class Person. 
 		private float chargeFactor;
-		int cont = 0; // definir funcion de este int 
+
 
 		// Step 1.1. Create Constructor
 		public HashTable(int newSize) {
 			System.out.println("Creating vector with size: " + newSize);
 			this.size = newSize;
 			this.elements = new Person[newSize];
-			//this.elements = new Person[newSize];
+		
+		}
+		
+		// Step 1.1. Create Constructor
+		public int getSize() {
+			return size;
 		}
 
-		// Step 2. Generate encapsulation methods
+		public void setSize(int size) {
+			this.size = size;
+		}
+
 		public Person[] getElements() {
 			return elements;
 		}
@@ -32,20 +40,19 @@ public class HashTable {
 			this.chargeFactor = chargeFactor;
 		}
 
-		public int getSize() {
-			return size;
+		public int getCont() {
+			return contador;
 		}
 
-		public void setSize(int size) {
-			this.size = size;
+		public void setCont(int cont) {
+			this.contador = contador;
 		}
+
 		
-/*
-
-		// metodo para hallar el indice Hash
+	// metodo para hallar el indice Hash
 		public Integer hashFunction(String code) {
 
-			Integer[] vec = new Integer[code.length() / 2 + 1];
+			Integer[] vec = new Integer[code.length() / 2 + 1]; //length: Returns the length of this string.
 			int suma = 0;
 			int pos = 0;
 
@@ -86,8 +93,8 @@ public class HashTable {
 		// Step 3.1 Creating Insert methods
 		public Person[] insertElements(Person element, String document) {
 			this.elements[hashFunction(document)] = element;
-			cont = cont + 1;
-			float porcent = chargeFactor(cont);
+			contador = contador + 1;
+			float porcent = chargeFactor(contador);
 			if (porcent > 0.5) {
 				System.out.println("The charge factor is " + porcent * 100 + "%");
 			}
@@ -115,14 +122,14 @@ public class HashTable {
 			float porcent;
 			if (document == elements[hashFunction(document)].getDocument()) {
 				this.elements[hashFunction(document)] = null;
-				cont = cont - 1;
-				porcent = chargeFactor(cont);
+				contador = contador - 1;
+				porcent = chargeFactor(contador);
 				if (porcent > 0.5) {
 					System.out.println("The charge factor is " + porcent * 100 + "%");
 				}
 				return this.elements;
 			} else {
-				porcent = chargeFactor(cont);
+				porcent = chargeFactor(contador);
 				if (porcent > 0.5) {
 					System.out.println("The charge factor is " + porcent * 100 + "%");
 				}
@@ -130,7 +137,6 @@ public class HashTable {
 			}
 
 		}
-*/
 
-
-}
+	}
+		
