@@ -97,7 +97,7 @@ public class Hashtable {
 	public Person[] borrarPersona(String doc) {
 		int indice =hashFunction(doc);
 		this.elements[indice]=null;
-		this.nroelem= this.nroelem-1;
+		this.nroelem= this.nroelem-1; 
 		setChargefactor(CalculaFactorCarga(this.nroelem));
 		return 	this.elements;	
 	}
