@@ -74,8 +74,6 @@ public class HashTable {
 	}
 	
 	
-	
-	
 	public Person[] updateElements(String documento, String name, String phone) {
 		Person NewDato = new Person();
 		NewDato.setDocument(documento);
@@ -84,6 +82,15 @@ public class HashTable {
 		this.elements[HashFuntion(documento)] = NewDato;
 		return this.elements;
 	}
+	
+		public String SearchTableHash(String document) {
+		String found = "";
+		if (this.elements[FuntionHash(document)].getDocument().equals(document)) {
+			found = document;
+		}
+		return found;
+	}
+
 	
 	public Person[] DeleteTableHash(String document) {
 		this.elements[FuntionHash(document)] = null;
