@@ -1,5 +1,7 @@
 package utils;
 
+import cap1.arrays.HashTable;
+
 public class Person {
 	String document;
 	String name;

@@ -7,7 +7,13 @@ public class HashTable {
 	int Size;
 	private Person[] elements;
 	
-	//In this line, create the getters n setters.
+	public HashTable(int newSize) {
+		System.out.println("Creating vector with size: " + newSize);
+		this.Size = newSize;
+		this.elements = new Person[newSize];
+	}
+	
+	//In this line, create the getters n setters.}
 	
 	public float getChargeFactor() {
 		return ChargeFactor;
@@ -45,7 +51,7 @@ public class HashTable {
 	}
 
 	public Person[] insertElement(String document, String name, String phone) {
-		Person newPerson = new Person(phone, phone, phone);
+		Person newPerson = new Person();
 		newPerson.setDocument(document);
 		newPerson.setName(name);
 		newPerson.setPhone(phone);
