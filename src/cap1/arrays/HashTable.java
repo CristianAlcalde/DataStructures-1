@@ -64,12 +64,22 @@ public class HashTable {
 	}
 	
 	
-	public Person[] insertElements(String name, String document, String phone) {
+	public Person[] insertElements( String document, String name,String phone) {
 		Person NewDato = new Person();
 		NewDato.setDocument(document);
 		NewDato.setName(name);
 		NewDato.setPhone(phone);
 		this.elements[HashFuntion(document)] = NewDato;
+		return this.elements;
+	}
+	
+	
+	public Person[] updateElements(String documento, String name, String phone) {
+		Person NewDato = new Person();
+		NewDato.setDocument(documento);
+		NewDato.setName(name);
+		NewDato.setPhone(phone);
+		this.elements[HashFuntion(documento)] = NewDato;
 		return this.elements;
 	}
 	// Step 2.2. Create CRUD methods

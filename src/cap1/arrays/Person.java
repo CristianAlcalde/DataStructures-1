@@ -29,18 +29,19 @@ public class Person {
 	}
 	
 	
-	public boolean assertArrayEquals(int documento, Person[] person1, Person[] person2) {
+	public boolean assertArrayEquals(Person[] person1, Person[] person2) {
 		boolean resquest = false;
-		HashTable Hash = new HashTable(13);
-		if(person1[Hash.HashFuntion(documents).documento]==person2[Hash.HashFuntion(documents).documento]) {
+		
+		HashTable Hash = new HashTable(11);
+		
+		if(person1[Hash.HashFuntion(getDocument())].getDocument()==person2[Hash.HashFuntion(getDocument())].getDocument()){
 			
 			resquest = true;
 			
 		}else {
 			
+			resquest = false;
 		}
-		
-		
 		
 		return resquest;
 	}

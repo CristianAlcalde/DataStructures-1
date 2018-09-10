@@ -1,10 +1,13 @@
 package test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 import cap1.arrays.HashTable;
+import cap1.arrays.Person;
+import cap1.arrays.Vector;
 
 class HashTableTest {
 
@@ -22,32 +25,41 @@ class HashTableTest {
 	}
 
 	
-	/*
+
 		@Test
 		void testInsertElement() {
 			// Step 1. instantiate the tested class using the constructor method
-			Matrix testedMatrix = new Matrix(5,5);
+			HashTable Hash = new HashTable(11);
 			// Step 2. Create the expected value variable
-			int[][] expectedValue = new int[5][5];
-			expectedValue[0][0] = 999;
+			Person NewDato = new Person();
+			NewDato.setDocument("42011394");
+			NewDato.setName("Alejandro");
+			NewDato.setPhone("3142193936");
+			Person[]  expectedvalue = new Person[11];
+			expectedvalue[8] = NewDato;
 			// Step 3. Obtain the actual value
-			int[][] actualValue = testedMatrix.insertElement(999, 0, 0);
-			// Step 4. Compare the expected versus actual values
-			assertArrayEquals(expectedValue, actualValue);
+			Person[] actualValue = Hash.insertElements("42011394", "Alejandro", "3142193936");
+					// Step 4. Compare the expected versus actual values
+			NewDato.assertArrayEquals(expectedvalue, actualValue);
 		}
+
 		
 		@Test
 		void testUpdateElement() {
 			// Step 1. instantiate the tested class using the constructor method
-			Matrix testedMatrix = new Matrix(5,5);
+			HashTable Hash = new HashTable(11);
 			// Step 2. Create the expected value variable
-			int[][] expectedValue = new int[5][5];
-			expectedValue[0][0] = 888;
+			Person NewDato = new Person();
+			NewDato.setDocument("1088348033");
+			NewDato.setName("Alejandro");
+			NewDato.setPhone("3142193936");
+			Person[]  expectedvalue = new Person[11];
+			expectedvalue[3] = NewDato;
 			// Step 3. Obtain the actual value
-			int[][] actualValue = testedMatrix.updateElement(888, 0, 0);		// Step 4. Compare the expected versus actual values
-			assertArrayEquals(expectedValue, actualValue);
-		}
-
+			Person[] actualValue = Hash.updateElements("1088348033", "Alejandro", "3142193936");
+					// Step 4. Compare the expected versus actual values
+			NewDato.assertArrayEquals(expectedvalue, actualValue);
+		}/*
 		@Test
 		void testDeleteElement() {
 			// Step 1. instantiate the tested class using the constructor method
