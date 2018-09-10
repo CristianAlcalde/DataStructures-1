@@ -70,13 +70,20 @@ public class HashTable {
 		return this.elements;
 	}
 	
-	public Person searchPerson(String document) {
-		return this.elements[FuntionHash(document)];
+	public String SearchPerson(String document) {
+		String found="";
+		if (this.elements[FuntionHash(document)].getDocument().equals(document)) {
+			found=document;
+		}
+		return found;
 	}
-	public Person[] updatePerson(Person newdocument,int FuntionHash) {
-		this.elements[FuntionHash(null)]= newdocument;
+		
+	public Person[] UpdatePerson(String document, String name, String phone) {
+		this.elements[FuntionHash(document)].setName(name);
+		this.elements[FuntionHash(document)].setPhone(phone);
 		return this.elements;
 	}
+		
 	public Person[] deletePerson(String document) {
 		this.elements[FuntionHash(document)]=null;
 		return this.elements;

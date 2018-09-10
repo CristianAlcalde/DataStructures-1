@@ -22,18 +22,32 @@ class HashTableTest {
 	@Test
 	void testInsertPerson() {
 		// Step 1. instantiate the tested class using the constructor method
-		HashTable FuntionHash = new HashTable(5);
-		Person per = new Person();
-		per.setDocument("1088346790");
-		per.setName("Vladimir");
-		per.setPhone("3165209805");
+		HashTable FuntionHash = new HashTable(10);
+		Person Person = new Person();
+		Person.setDocument("1088346790");
+		Person.setName("Vladimir");
+		Person.setPhone("3165209805");
 		// Step 2. Create the expected value variable
 		Person[] actualValue = FuntionHash.insertPerson("Vladimir", "1088346790", "3165209805");
 		// Step 3. Obtain the actual value
 		Person[] expectedValue = FuntionHash.getElements();
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
+		
 	}
+	
+	@Test
+	void TestdeletePerson() {
+		// Step 1. instantiate the tested class using the constructor method
+		HashTable FuntionHash = new HashTable(10);
+		Person[] expectedValue = new Person[10];
+		Person[] actualValue = FuntionHash.deletePerson("1088346790");
+		assertArrayEquals(expectedValue, actualValue);
+	}
+	
+	
+	
 }
+
 
 
