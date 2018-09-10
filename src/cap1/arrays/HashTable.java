@@ -95,18 +95,16 @@ public class HashTable {
 		System.out.println("Document:" + this.elements[hashFunction(documentOnePerson)].getDocument() + "\n" + "Name:"
 				+ this.elements[hashFunction(documentOnePerson)].getName() + "\n" + "Phone:"
 				+ this.elements[hashFunction(documentOnePerson)].getPhone() + "\n");
-				
+
 		System.out.println("****Second Person****");
 		System.out.println("Document:" + this.elements[hashFunction(documentTwoPerson)].getDocument() + "\n" + "Name:"
 				+ this.elements[hashFunction(documentTwoPerson)].getName() + "\n" + "Phone:"
 				+ this.elements[hashFunction(documentTwoPerson)].getPhone() + "\n");
-		
+
 		System.out.println("****Third Person****");
 		System.out.println("Document:" + this.elements[hashFunction(documentThreePerson)].getDocument() + "\n" + "Name:"
 				+ this.elements[hashFunction(documentThreePerson)].getName() + "\n" + "Phone:"
 				+ this.elements[hashFunction(documentThreePerson)].getPhone());
 		System.out.println("\n" + "Charge factor (Lits Hash Table):" + this.getChargeFactor() + "%");
-		
 	}
-
 }
