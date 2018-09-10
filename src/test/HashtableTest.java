@@ -1,91 +1,91 @@
 package test;
 
-import static org.junit.Assert.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 import cap1.arrays.Hashtable;
 import cap1.arrays.Person;
 
+class HashtableTest {
 
-class Hashtabletest {
-	
 	@Test
-	public void testHashfunction() {
-		Hashtable testedHashtable = new Hashtable(10);
-		Person Person = new Person();
-		Person.setDocument("1088019819");
-		Person[] expectedValue = new Person[10];
-		int actualValue = testedHashtable.Hashfunction(Person.getDocument());
-		assertEquals(expectedValue, actualValue);
+	void testHashfunction() {
+	
+		Hashtable testedHashtable = new Hashtable(5);
+		int actualValue = testedHashtable.Hashfunction("13477");
+		int expectedValue = 2;
+		assertEquals(expectedValue,actualValue);
 	}
-	 
+		
 	@Test
 	void testInsertElement() {
 		// Step 1. instantiate the tested class using the constructor method
 		Hashtable testedHashtable = new Hashtable(10);
-		Person Person = new Person();
-		Person.setName("Mauricio Garcia");
-		Person.setDocument("1088019819");
-		Person.setPhone("3217086618");
+		Person person = new Person();
+		person.setName("Mauricio Garcia");
+		person.setDocument("1088019819");
+		person.setPhone("3217086618");
 		// Step 2. Create the expected value variable
 		Person[] expectedValue = new Person[10];
-		expectedValue[4] = Person;
+		expectedValue[6] = person;
 		// Step 3. Obtain the actual value
-		Person[] actualValue = testedHashtable.insertElement(Person.getName(), Person.getDocument(), Person.getPhone());
+		Person[] actualValue = testedHashtable.insertElement(person.getName(), person.getDocument(), person.getPhone());
 		// Step 4. Compare the expected versus actual values
-		Person.equals(expectedValue, actualValue);
+		person.Equals(expectedValue, actualValue);
 	}
-
+	
 	@Test
 	void testSearchElement() {
 		// Step 1. instantiate the tested class using the constructor method
-		Hashtable testedHashtable = new Hashtable(10);
-		Person Person = new Person();
-		Person.setName("Mauricio Garcia");
-		Person.setDocument("1088019819");
-		Person.setPhone("3217086618");
+		Hashtable testedHashtable = new Hashtable(13);
 		// Step 2. Create the expected value variable
-		Person[] expectedValue = new Person[10];
-		testedHashtable.insertElement(Person.getName(), Person.getDocument(), Person.getPhone());
+		String expectedValue = "1088019819";
 		// Step 3. Obtain the actual value
-		Person[] actualValue = testedHashtable.searchElement(Person.getDocument());
+		testedHashtable.insertElement("Mauricio Garcia","1088019819", "3222343");
+		String actualValue = testedHashtable.searchElement("1088019819");
 		// Step 4. Compare the expected versus actual values
-		Person.equals(expectedValue, actualValue);
+		assertEquals(expectedValue, actualValue);
 	}
-
+	
 	@Test
 	void testUpdateElement() {
 		// Step 1. instantiate the tested class using the constructor method
 		Hashtable testedHashtable = new Hashtable(10);
-		Person Person = new Person();
-		Person.setName("Alexis Sanchez");
-		Person.setDocument("18019813");
-		Person.setPhone("3345667");
+		Person person = new Person();
+		person.setName("Mauricio Garcia");
+		person.setDocument("1088019819");
+		person.setPhone("3217086618");
 		// Step 2. Create the expected value variable
 		Person[] expectedValue = new Person[10];
-		expectedValue[0] = Person;
+		expectedValue[6]= person;
 		// Step 3. Obtain the actual value
-		Person[] actualValue = testedHashtable.updateElement(Person.getName(), Person.getDocument(), Person.getPhone());
+		testedHashtable.insertElement("Mauricio Garcia","1088019819", "3222343");
+		Person[] actualValue = testedHashtable.updateElement(person.getName(),person.getDocument(),person.getPhone());
 		// Step 4. Compare the expected versus actual values
-		Person.equals(expectedValue, actualValue);
+		person.Equals(expectedValue, actualValue);
 	}
-
+	
 	@Test
 	void testDeleteElement() {
 		// Step 1. instantiate the tested class using the constructor method
-		Hashtable testedHashtable = new Hashtable(10);
-		Person Person = new Person();
-		Person.setName("Mauricio Garcia");
-		Person.setDocument("1088019819");
-		Person.setPhone("3217086618");
+		Hashtable testedHashtable = new Hashtable(13);
+		Person person = new Person();
+		person.setName("Mauricio Garcia");
+		person.setDocument("1088019819");
+		person.setPhone("3217086618");
 		// Step 2. Create the expected value variable
-		int expectedValue = 8;
-		testedHashtable.insertElement(Person.getName(),Person.getDocument(),Person.getDocument());
+		Person[] expectedValue = new Person[13];
 		// Step 3. Obtain the actual value
-		Person[] actualValue = testedHashtable.deleteElement(Person.getDocument());
+		testedHashtable.insertElement(person.getName(),person.getDocument(),person.getPhone());
+		Person[] actualValue = testedHashtable.deleteElement(person.getDocument());
 		// Step 4. Compare the expected versus actual values
-		assertEquals(expectedValue, actualValue);
+		person.Equals(expectedValue, actualValue);
 	}
+
 }
+
+
+
+	
+

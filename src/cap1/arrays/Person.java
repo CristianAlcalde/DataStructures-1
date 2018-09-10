@@ -15,8 +15,8 @@ public class Person {
 	public String getDocument() {
 		return document;
 	}
-	public void setDocument(String document2) {
-		this.document = document2;
+	public void setDocument(String doc) {
+		this.document = doc;
 	}
 
 	public String getPhone() {
@@ -25,23 +25,26 @@ public class Person {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	public boolean delete(String document) {
+		return false;
+	}
 	
 	
-	public boolean equals(Person person2) {
+	public boolean Equals(Person[] person1, Person[] person2) {
 		boolean response = false;
-		if(this.name.equals(person2.name) && (this.document.equals(person2.document))) {
+		Hashtable hash = new Hashtable(13);
+		if(person1[hash.Hashfunction(document)]==person2[hash.Hashfunction(document)]) {
 			response = true;
+		}
+		else {
 			
 		}
-		
 		return response;
-		
 	}
-	public void equals(Person[] expectedValue, Person[] actualValue) {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	
 }
+
 
 
 
