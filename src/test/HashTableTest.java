@@ -60,5 +60,16 @@ class HashTableTest {
 		personInserted.Equals(expectedValue, actualValue);
 	}
 	
- 
-}
+	@Test
+	void testDeleteElement() {
+		// Step 1. instantiate the tested class using the constructor method.
+		HashTable testedHashTable = new HashTable(17);
+		// Step 2. Create the expected value variable
+		Person[] expectedValue = new Person[17];
+		testedHashTable.insertElement("leandro", "1088004926", "3114562692");
+		// Step 3. Obtain the actual value.
+		Person[] actualValue = testedHashTable.deleteElement("1088004926");
+		// Step 4. Compare the expected versus actual values.
+		assertArrayEquals(expectedValue, actualValue);
+	}
+ }

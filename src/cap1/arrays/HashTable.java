@@ -58,13 +58,12 @@ public class HashTable {
 
 	}
 
-	public Person[] searchElement(String document) {
-
+	public boolean searchElement(String document) {
+		boolean result = false;
 		if (this.elements[hashFunction(document)].getDocument().equals(document)) {
-			return this.elements;
-		} else {
-			return null;
+			return true;
 		}
+		return result;
 	}
 
 	public Person[] updateElement(String name, String document, String telephone) {
