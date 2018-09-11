@@ -5,12 +5,15 @@ public class HashTable {
 	private Person[] elements;
 	private float chargeFactor;
 	private int size;
-
+	private int numElements;
+	
+	
 	public HashTable(int newSize) {
 		System.out.println("Creating vector with size: " + newSize);
 		this.size = newSize;
 		this.elements = new Person[newSize];
 	}
+
 
 	public Person[] getElements() {
 		return elements;
@@ -28,13 +31,46 @@ public class HashTable {
 		this.chargeFactor = chargeFactor;
 	}
 
+
+
+
+
+
 	public int getSize() {
 		return size;
 	}
 
+
+
+
+
+
 	public void setSize(int size) {
 		this.size = size;
 	}
+
+
+
+
+
+
+	public int getNumElements() {
+		return numElements;
+	}
+
+
+
+
+
+
+	public void setNumElements(int numElements) {
+		this.numElements = numElements;
+	}
+
+
+
+
+
 
 	public Integer hashFunction(String cedula) {
 
@@ -68,6 +104,7 @@ public class HashTable {
 
 	public Person[] insertElement(Person element, String identification) {
 		this.elements[hashFunction(identification)] = element;
+		this.numElements++;
 		return this.elements;
 	}
 	
@@ -86,6 +123,7 @@ public class HashTable {
 	public Person[] deleteElements(String cedula) {
 		if (cedula == elements[hashFunction(cedula)].getDocumento()) {
 			this.elements[hashFunction(cedula)] = null;
+			this.numElements--;
 			}
 			return this.elements;
 	}
