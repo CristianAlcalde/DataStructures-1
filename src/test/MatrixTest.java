@@ -50,4 +50,20 @@ class MatrixTest {
 		assertArrayEquals(expectedValue, actualValue);
 	}
 	
+	@Test
+	void testDeleteElement() {
+		// Step 1. instantiate the tested class using the constructor method
+		Matrix testedMatrix = new Matrix(10,10);
+		// Step 2. Create the expected value variable
+		int expectedValue = 999;
+		testedMatrix.insertElement(expectedValue, 9, 9);
+		// Step 3. Obtain the actual value
+		int[][] actualValue = testedMatrix.deleteElement(expectedValue);
+		// Step 4. Compare the expected versus actual values
+		int pos = testedMatrix.searchElementByValue(expectedValue);
+
+		assertEquals(-1, pos);
+	}
+	
+	
 }
