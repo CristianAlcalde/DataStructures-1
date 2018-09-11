@@ -6,11 +6,12 @@ public class Person {
 	private String name;
 	private String document;
 	private String phone;
+ 
 	
 	// Step 1.1. Create constructor. Initializing parameters.
 		public Person(String name, String document, String phone) {
-			this.document = name;
-			this.name = document; 
+			this.document = document;
+			this.name = name; 
 			this.phone = phone;
 		}
 	
