@@ -3,6 +3,10 @@ package cap2.arrays;
 public class LinkedList {
 
 	private Node head; // Cabeza
+	private Node tail; // Cola
+	private int size = 0;
+	
+	//Encapsulate the required fields
 	public Node getHead() {
 		return head;
 	}
@@ -18,11 +22,7 @@ public class LinkedList {
 	public void setTail(Node tail) {
 		this.tail = tail;
 	}
-
-	private Node tail; // Cola
-	private int size = 0;
-
-	//Encapsulate the required fields
+	
 	public int getSize() {
 		return size;
 	}
