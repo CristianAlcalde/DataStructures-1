@@ -26,7 +26,7 @@ public class DoubleLinkedList {
 	}
 	
 	//CRUD	
-	public void insertaPorCabeza(String author, String file, String name, String trackNo) {
+	public void insertaPorCola(String author, String file, String name, String trackNo) {
 
 		// Step 1. create the new node
 		DoubleLinkNode newNode = new DoubleLinkNode(author, file, name, trackNo);
@@ -35,6 +35,7 @@ public class DoubleLinkedList {
 			// The new node is the head
 			this.head = newNode;
 			this.tail = newNode;
+			this.cursor=newNode;
 		} else {
 			// The tail's next is newNode
 			this.tail.setNext(newNode);

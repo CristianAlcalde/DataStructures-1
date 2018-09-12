@@ -11,7 +11,7 @@ import utils.Mp3;
 class DoubleLinkedListTest {
 
 	@Test
-	void testInsertaPorCabeza() {
+	void testInsertaPorCola() {
 		// Creating the data structure
 		DoubleLinkedList myList = new DoubleLinkedList();
 		
@@ -23,9 +23,9 @@ class DoubleLinkedListTest {
 		String name = "Amazing";
 		String trackNo = "004";
 
-		myList.insertaPorCabeza(author, file, name, trackNo);
-		myList.insertaPorCabeza("queen","sdfaerwer", "bohemia", "001");
-		myList.insertaPorCabeza("kraken","sdfaerwessefr", "fragil", "003");
+		myList.insertaPorCola(author, file, name, trackNo);
+		myList.insertaPorCola("queen","sdfaerwer", "bohemia", "001");
+		myList.insertaPorCola("kraken","sdfaerwessefr", "fragil", "003");
 		
 		
 		//Query to database
