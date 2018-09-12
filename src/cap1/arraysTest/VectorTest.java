@@ -1,4 +1,4 @@
-package test;
+package cap1.arraysTest;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
