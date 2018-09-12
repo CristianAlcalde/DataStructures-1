@@ -24,8 +24,6 @@ class DoubleLinkedListTest {
 		String trackNo = "004";
 
 		myList.insertaPorCola(author, file, name, trackNo);
-		myList.insertaPorCola("queen","sdfaerwer", "bohemia", "001");
-		myList.insertaPorCola("kraken","sdfaerwessefr", "fragil", "003");
 		
 		
 		//Query to database
@@ -37,4 +35,31 @@ class DoubleLinkedListTest {
 		assertEquals(trackNo, cancion.getTrackNo());
 	}
 
+	
+	@Test
+	void testInsertaPorCabeza() {
+		// Creating the data structure
+		DoubleLinkedList myList = new DoubleLinkedList();
+		
+
+		// Expected values
+
+		String author = "kraken";
+		String file = "sdfaerwessefr##@#";
+		String name = "fragil";
+		String trackNo = "003";
+
+		
+		myList.insertaPorCabeza(author, file, name, trackNo);
+		
+		
+		
+		//Query to database
+		Mp3 cancion = myList.getHead().getDato();
+		
+		assertEquals(author, cancion.getAuthor());
+		assertEquals(file, cancion.getFile());
+		assertEquals(name, cancion.getName());
+		assertEquals(trackNo, cancion.getTrackNo());
+	}
 }
