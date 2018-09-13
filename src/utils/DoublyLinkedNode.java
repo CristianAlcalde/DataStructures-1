@@ -1,16 +1,16 @@
 package utils;
 
 public class DoublyLinkedNode {
-	String dato;
+	Mp3 dato;
 	DoublyLinkedNode anterior;
 	DoublyLinkedNode siguiente;
 
-	public String getDato() {
+	public Mp3 getDato() {
 		return dato;
 	}
 
-	public void setDato(String dato) {
-		this.dato = dato;
+	public void setDato(Mp3 dato2) {
+		this.dato = dato2;
 	}
 
 	public DoublyLinkedNode getAnterior() {

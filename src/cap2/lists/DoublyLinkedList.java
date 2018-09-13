@@ -1,18 +1,18 @@
 package cap2.lists;
 
 import utils.DoublyLinkedNode;
+import utils.Mp3;
 
 public class DoublyLinkedList {
 	DoublyLinkedNode head = new DoublyLinkedNode();
 	DoublyLinkedNode tail = new DoublyLinkedNode();
 
 	// CRUD
-	public DoublyLinkedNode insertNodeHead(String dato) {
+	public DoublyLinkedNode insertNodeHead(Mp3 dato) {
+		DoublyLinkedNode newnode = new DoublyLinkedNode();
 		if (head == null) {
 			// Significa que no hay nada en la lista entonces olo hay que insertar el nodo
-			this.head.setDato(dato);
-			this.head.setAnterior(null);
-			this.head.setSiguiente(null);
+			this.head = newnode;
 		} else {
 			// Significa que hay cabeza pero no cola por ende hacemos a cola cabeza ya a
 			// cabeza tempo que seria el nodo
