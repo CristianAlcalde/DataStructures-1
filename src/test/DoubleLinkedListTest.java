@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import cap2.arrays.DoubleLinkedList;
+import cap2.lists.DoubleLinkedList;
 import utils.Mp3;
 
 class DoubleLinkedListTest {
