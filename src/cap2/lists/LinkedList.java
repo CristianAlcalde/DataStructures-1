@@ -72,17 +72,20 @@ public class LinkedList {
 	public Mp3 getAt(int pos) {
 		// Instanciamos el dato de respuesta
 		Mp3 result = null;
-		// Creamos un nodo temporal para recorrer los demas nodos
+		// Creamos un nodo temporal para recorrer los nodos
 		Node tmp = this.head;
+		// Creating the position indicator
 		int posTmp = 0;
-		// Mientras el siguiente del temporal no sea null
+		// While we are not in the input position
 		while (posTmp <= pos) {
-			// Compare el dato del temporal con el dato de entrada
-				// Si lo encuentra la respuesta es el dato encontrado
+			//Storing the current value in tmp object
 			result = tmp.getDato();
-			tmp = tmp.getNext();
+			//Incrementing the pos
 			posTmp = posTmp + 1;
+			//Incrementing tmp
+			tmp = tmp.getNext();
 		}
+		//When the while finish tmp is located in the correct node.
 		return result;
 	}
 }
