@@ -3,6 +3,7 @@ package cap2.lists;
 public class DoubleLinkedList {
 	private DoubleLinkNode head;
 	private DoubleLinkNode tail;
+	//Creating cursor
 	private DoubleLinkNode cursor;
 	
 	//Encapsulate the required fields	
