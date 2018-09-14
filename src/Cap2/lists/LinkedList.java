@@ -1,5 +1,7 @@
 package Cap2.lists;
 
+import utils.Mp3;
+
 public class LinkedList {
 
 	// creacion de la cabeza y cola, el punto de inicio y fin de la lista
@@ -66,5 +68,39 @@ public class LinkedList {
 		// return result;
 		this.size = this.size + 1;
 	}
-
+	//se pedira que devuelva una cancion si no la encuentra retorna null
+	//se instancia el dato de respuesta
+	public Mp3 searchByName(String name) {
+		Mp3 result = null;
+		//node temporal, me recorrera toda la lista nodoxnodo hasta escontrar o llegar a null
+		Node temp = this.head;//temporal creado y apuntando a la cabeza
+		//mientras el siguiente del temporal no sea null
+		while(temp!=null) {              //el temporal al nodo siguiente de la cabeza y asi avanza a los demas
+			//compare el dato del temporal con el dato de entrada
+			if(temp.getData().getName().equals(name)) {
+				//si lo encuentra la respuesta es el dato encontrado
+				result = temp.getData();
+				
+			}
+			temp = temp.getNext();			
+		}
+		
+		return result;
+	}
+	//meted para buscar por posisition
+	public Mp3 getAt(int pos) {
+		Mp3 result = null;
+		//node temporal, me recorrera toda la lista nodoxnodo hasta escontrar o llegar a null
+		Node temp = this.head;//temporal creado y apuntando a la cabeza
+		int posTemp =0;
+		//mientras el siguiente del temporal  sea menor o igual a la pos que esta o null
+		while(posTemp <= pos) {              //el temporal al nodo siguiente de la cabeza y asi avanza a los demas
+			//compare el dato del temporal con el dato de entrada
+			result = temp.getData();
+			temp = temp.getNext();
+			posTemp =posTemp + 1;	
+			}	
+		return result;
+	}
+	
 }
