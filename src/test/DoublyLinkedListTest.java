@@ -1,11 +1,12 @@
 package test;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 import cap2.lists.DoublyLinkedList;
 import utils.DoublyLinkedNode;
+import utils.Mp3;
 
 public class DoublyLinkedListTest {
 
@@ -15,13 +16,16 @@ public class DoublyLinkedListTest {
 		DoublyLinkedList tested = new DoublyLinkedList();
 		// Step 2. Create the expected value variable
 		DoublyLinkedNode expectedValue = new DoublyLinkedNode();
-		expectedValue.setDato("A");
-		expectedValue.setSiguiente(null);
-		expectedValue.setAnterior(null);
+		Mp3 cancion = new Mp3();
+		cancion.setArtista("Violeta");
+		cancion.setCancion("jasfhndrchkanr hu<ebn");
+		cancion.setNombre("Feels");
+		cancion.setTrack(5);
+		expectedValue.setDato(cancion);
 		// Step 3. Obtain the actual value
-		int[] actualValue = tested.insertNodeHead("A");
+		DoublyLinkedNode actualValue = tested.insertNodeHead(cancion);
 		// Step 4. Compare the expected versus actual values
-		assertArrayEquals(expectedValue, actualValue);
+		assertEquals(expectedValue, actualValue);
 	}
 
 }
