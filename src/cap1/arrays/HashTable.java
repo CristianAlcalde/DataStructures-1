@@ -1,6 +1,6 @@
 package cap1.arrays;
 
-import Utils.Person;
+import utils.Person;
 
 public class HashTable {
 
@@ -69,9 +69,6 @@ public class HashTable {
 				Integer.parseInt(d) + Integer.parseInt(e)) % this.size);
 		
 	}
-
-	
-
 	// Step 2.2. Create CRUD methods
 
 	public Person[] insertElement(String document, String name, String phone) {

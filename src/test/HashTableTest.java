@@ -5,9 +5,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import Utils.Person;
 import cap1.arrays.HashTable;
 import cap1.arrays.Vector;
+import utils.Person;
 
 class HashTableTest {
 

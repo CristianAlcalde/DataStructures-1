@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import cap1.arrays.HashTable;
 

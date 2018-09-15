@@ -1,4 +1,4 @@
-package cap2.arrays;
+package cap2.list;
 
 import utils.Mp3;
 
