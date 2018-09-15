@@ -1,43 +1,24 @@
 package Cap2.list;
 
+import Utils.MP3;
+
 public class Node {
-	
-	String data; 
-	Node next;
-	
-	//Encapsulate
-	public String getData() {
-		return data;
+	public Node(String author, String file, String name, String trackNo) {
+		this.dato = new MP3(author, file, name, trackNo); 
 	}
-	public void setData(String data) {
-		this.data = data;
+	private MP3 dato;
+	private Node next;
+	public MP3 getDato() {
+		return dato;
+	}
+	public void setDato(MP3 dato) {
+		this.dato = dato;
 	}
 	public Node getNext() {
 		return next;
 	}
 	public void setNext(Node next) {
 		this.next = next;
-	} 
-	
-	//Constructor
-   
-	public Node (String data) {
-		this.data = data;  
-	}
-	
-	//Metodo para enlazar los nodos 
-	public void linkedNext (Node n) {
-		next = n; 
-	}
-	
-	//Metodo para obtener siguente nodo
-	public Node procureNext() {
-		return next; 
-	}
-	
-	//Metodo para obtener el valor del nodo
-	public String procuredata () {
-		return data;
 	}
 
 }
