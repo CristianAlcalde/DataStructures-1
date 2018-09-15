@@ -2,13 +2,13 @@ package Cap2.lists;
 
 import utils.Mp3;
 
-public class Node {
+public class LinkedListNode {
 
 	private Mp3 data;
-	private Node next;
+	private LinkedListNode next;
 	
 	//contructor solo
-	public Node() {
+	public LinkedListNode() {
 		
 	}
 
@@ -24,7 +24,7 @@ public class Node {
 	 * se quita el "this.next = next" ya que se estaba creando en el limbo, y se quita del constructor y de la asigancion
 	  */
 	 
-	public Node(String author, String file, String name, String trackNo) {
+	public LinkedListNode(String author, String file, String name, String trackNo) {
 		
 		this.data = new Mp3(author, file, name, trackNo);
 	}
@@ -40,11 +40,11 @@ public class Node {
 		this.data = data;
 	}
 
-	public Node getNext() {
+	public LinkedListNode getNext() {
 		return next;
 	}
 
-	public void setNext(Node next) {
+	public void setNext(LinkedListNode next) {
 		this.next = next;
 	}
 
