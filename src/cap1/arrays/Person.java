@@ -35,5 +35,15 @@ public class Person {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	public boolean AssertPersonEquals(Person expectedValue, Person actualValue) {
+		boolean result;;
+		if((expectedValue.getDocument()==actualValue.getDocument()) && (expectedValue.getName()==actualValue.getName()) && (expectedValue.getPhone()==actualValue.getPhone())){
+			result = true; 
+		}
+		else { result = false;}
+		
+		return result;
+	}
 
 }

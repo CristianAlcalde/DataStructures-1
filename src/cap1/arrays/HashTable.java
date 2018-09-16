@@ -92,8 +92,21 @@ public class HashTable {
 
 		return this.elements;
 	}
+	
+	// Step 3.2 Creating Insert in the Person methods
+	public Person insertElementsInThePerson(String document, String name, String phone) {
+		Person person = new Person(document, name, phone);
+		this.elements[hashFunction(document)] = person;
+		cont = cont + 1;
+		float porcent = chargeFactor(cont);
+		if (porcent > 0.5) {
+			System.out.println("The charge factor is " + porcent * 100 + "%");
+		}
 
-	// Step 3.2 Creating Search methods
+		return this.elements[hashFunction(document)];
+	}
+
+	// Step 3.3 Creating Search methods
 	public Person[] searchElements(String document) { // Se inserta un elemento para despues buscarlo
 		if (document == elements[hashFunction(document)].getDocument()) {
 			return this.elements;
@@ -102,13 +115,21 @@ public class HashTable {
 		}
 	}
 
-	// Step 3.3 Creating Update methods
+	// Step 3.4 Creating Update methods
 	public Person[] updateElements(Person newPerson, String document) {
 		this.elements[hashFunction(document)] = newPerson;
 		return this.elements;
 	}
+	
+	// Step 3.5 Creating Update in the Person methods
+	public Person updateElementsInThePerson(String document, String name, String phone) {
+		this.elements[hashFunction(document)].setName(name);
+		this.elements[hashFunction(document)].setPhone(phone);
+		return this.elements[hashFunction(document)];
+	}
+	
 
-	// Step 3.4 Creating Delete methods
+	// Step 3.6 Creating Delete methods
 	public Person[] deleteElements(String document) {
 		float porcent;
 		if (document == elements[hashFunction(document)].getDocument()) {
@@ -126,7 +147,5 @@ public class HashTable {
 			}
 			return this.elements;
 		}
-
 	}
-
 }

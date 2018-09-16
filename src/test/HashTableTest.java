@@ -2,7 +2,7 @@ package test;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.*;
-
+import cap1.arrays.*;
 import org.junit.jupiter.api.Test;
 
 import cap1.arrays.HashTable;
@@ -47,6 +47,24 @@ class HashTableTest {
 		Person[] actualValue = testedHashTable.insertElements(person1, person1.getDocument());		// Ejecuto el metodo que voy a probar con el valor "person1"
 		// Step 4. Compare the expected versus actual values
 		assertArrayEquals(expectedValue, actualValue);
+	}
+	
+	@Test
+	void testInsertElementsInThePerson() {
+		// Step 1. instantiate the tested class using the constructor method
+		HashTable testedHashTable = new HashTable(13); // Se crea una variable "testedHashTable" de la clase HashTable y se llama al metodo constructor "HashTable" dandole un tamaño al vector elements
+		Person expectedValue;			// Crear una variable la cual va a almacenar el resultado de la prueba y le doy el valor del resultado de la prueba
+		Person person1 = new Person("1087984628","Aleji", "3104062444"); //= new Person(person1.setDocument("1087984628");, "Alejo", "3104062444");
+		//person1.setDocument("1087984628");
+		//person1.setName("Alejo");
+		//person1.setPhone("3104062444");
+		
+		// Step 2. Create the expected value variable
+		expectedValue = person1;
+		// Step 3. Obtain the actual value
+		Person actualValue = testedHashTable.insertElementsInThePerson("1087984628", "Alejo", "3104062444");		// Ejecuto el metodo que voy a probar con el valor "person1"
+		// Step 4. Compare the expected versus actual values
+		person1.AssertPersonEquals(expectedValue, actualValue);
 	}
 	
 	@Test
