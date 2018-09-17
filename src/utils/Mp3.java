@@ -5,22 +5,23 @@ public class Mp3 {
 	private String author;
 	private String file;
 	private String name;
+	private int trackNo;
+	
 
 	// constructor sin nada
-	public Mp3() {		
-		
+	public Mp3() {			
 	}
 	
 	//constructor con todos los campos
-	public Mp3(String author, String file, String name, String trackNo) {
+	public Mp3(String author, String file, String name, int trackNo) {
 		
 		this.author = author;
 		this.file = file;
 		this.name = name;
 		this.trackNo = trackNo;
 	}
-
 	// encapsulado
+
 	public String getAuthor() {
 		return author;
 	}
@@ -45,14 +46,13 @@ public class Mp3 {
 		this.name = name;
 	}
 
-	public String getTrackNo() {
+	public int getTrackNo() {
 		return trackNo;
 	}
 
-	public void setTrackNo(String trackNo) {
+	public void setTrackNum(int trackNo) {
 		this.trackNo = trackNo;
 	}
-
-	private String trackNo;
+	
 
 }

@@ -1,49 +1,97 @@
 package Cap2.listsTest;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.jupiter.api.Test;
-
-import Cap2.lists.LinkedList;
-import cap1.arrays.Vector;
+import Cap2.lists.doubleLinkedList;
 import utils.Mp3;
 
 class doubleLinkedListTest {
 
 	@Test
 	//insertar en una lista
-	void testInsertElementInEmpetyList() {
+	void testInsertElementOrderList() {
 	//inicializar
-		LinkedList myList = new LinkedList();
-		assertEquals(0,myList.getSize());
+		doubleLinkedList myList2 = new doubleLinkedList();
+		assertEquals(0,myList2.getSize());
 		//valor esperado
-		
-		String author ="Toma Tu Lugar Band";
+		//cancion 1
+		String author ="Rescate Rock";
 		String file ="Argentina";
-		String name = "Te amo";
-		String trackNo = "002";		
+		String name = "Buscando Lio Sinfonico";
+		int trackNo = 002;		
 		
-		myList.add(author, file, name, trackNo);		
-		assertEquals(1,myList.getSize());
+		myList2.addOrder(author, file, name, trackNo);		
+		assertEquals(1,myList2.getSize());
 		
-		//OPCION 1		
-		assertEquals(author,myList.getHead().getData().getAuthor());
-		assertEquals(file,myList.getHead().getData().getFile());
-		assertEquals(name,myList.getHead().getData().getName());
-		assertEquals(trackNo,myList.getHead().getData().getTrackNo());
+		/* //cancion2
+		String author2 ="Toma Tu Lugar Band";
+		String file2 ="Argentina";
+		String name2 = "Te amo";
+		int trackNo2 = 004;		
 		
+		myList2.addOrder(author2, file2, name2, trackNo2);		
+		assertEquals(2,myList2.getSize());
+		
+		 //cancion3
+		String author3 ="Hillsong";
+		String file3 ="Australia";
+		String name3 = "El Eco de su Voz";
+		int trackNo3 = 003;		
+		
+		myList2.addOrder(author3, file3, name3, trackNo3);		
+		assertEquals(3,myList2.getSize());
+		*/
 		//OPCION 2		
-		Mp3 cancion =myList.getHead().getData();
+		Mp3 cancion =myList2.getHead().getData();
 		//verificar la informacion que este correcto
 		assertEquals(author,cancion.getAuthor());
 		assertEquals(file,cancion.getFile());
 		assertEquals(name,cancion.getName());
 		assertEquals(trackNo,cancion.getTrackNo());
 	}
+}
 	
-	@Test
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*@Test
 	//Buscar por elemento
 	void testSearchElementInEmpetyList() {
 	//inicializar
@@ -129,4 +177,4 @@ class doubleLinkedListTest {
 		assertEquals(trackNo3,searchResponse.getTrackNo());
 	}	
 	
-}
+}*/
