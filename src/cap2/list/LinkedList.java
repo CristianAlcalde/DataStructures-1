@@ -88,4 +88,28 @@ public class LinkedList {
 		//When the while finish tmp is located in the correct node.
 		return result;
 	}
+	
+	
+	public Mp3 DeletePos(String author,String file,String name,String trackNo) {
+		Mp3 result = null;
+		// Creamos un nodo temporal para recorrer los nodos
+		Node tmp = this.head;
+		// Creating the position indicator
+		int posTmp = 0;
+		result.setAuthor(author);
+		result.setFile(file);
+		result.setName(name);
+		result.setTrackNo(trackNo);
+		
+		
+		
+		while(tmp!=null) {
+			if(tmp.getDato()==result) 
+				{
+					//tmp = tmp + 1;
+					
+				}
+		}
+		return result;
+	}
 }
