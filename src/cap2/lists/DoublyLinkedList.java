@@ -64,14 +64,27 @@ public class DoublyLinkedList {
 		return respuesta;
 	}
 
-	public String listElement() {
+	public String serchNode(int track) {
+		String respuesta = null;
+		DoublyLinkedNode review = new DoublyLinkedNode();
+		review = head;
+		while (respuesta == null) {
+			if (review.getDato().getTrack() == track) {
+				respuesta = review.getDato().getNombre();
+			} else {
+				review = review.getSiguiente();
+			}
+		}
+		return respuesta;
+	}
+
+	public String listNodes() {
 		String respuesta = "";
-		DoublyLinkedNode HOLA = new DoublyLinkedNode();
-		HOLA = head;
-		System.out.println(size);
+		DoublyLinkedNode review = new DoublyLinkedNode();
+		review = head;
 		for (int j = 0; j < size; j++) {
-			System.out.println(HOLA.getDato().getNombre());
-			HOLA = HOLA.getSiguiente();
+			respuesta = respuesta + review.getDato().getNombre();
+			review = review.getSiguiente();
 		}
 		return respuesta;
 	}
