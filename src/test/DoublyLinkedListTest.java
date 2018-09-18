@@ -52,7 +52,7 @@ public class DoublyLinkedListTest {
 	}
 
 	@Test
-	void testSerchElement() {
+	void testDeleteElement() {
 		// Step 1. instantiate the tested class using the constructor method
 		DoublyLinkedList testedList = new DoublyLinkedList();
 		Mp3 ultimo = new Mp3();
@@ -79,10 +79,12 @@ public class DoublyLinkedListTest {
 		testedList.insertNode(primero);
 		testedList.insertNode(segunto);
 		testedList.insertNode(newNode);
+		String mundo = testedList.listNodes();
 		// Step 2. Create the expected value variable
-		String expectedValue = "B";
+		boolean expectedValue = true;
 		// Step 3. Obtain the actual value
-		String actualValue = testedList.serchNode(2);
+		boolean actualValue = testedList.deleteNode(2);
+		String hola = testedList.listNodes();
 		// Step 4. Compare the expected versus actual values
 		assertEquals(expectedValue, actualValue);
 	}
