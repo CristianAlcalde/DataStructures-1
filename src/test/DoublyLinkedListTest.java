@@ -16,6 +16,11 @@ public class DoublyLinkedListTest {
 		DoublyLinkedList testedList = new DoublyLinkedList();
 		// Step 2. Create the expected value variable
 		// Se crean las canciones para probrar
+		Mp3 ultimo = new Mp3();
+		ultimo.setArtista("D");
+		ultimo.setCancion("D");
+		ultimo.setNombre("D");
+		ultimo.setTrack(6);
 		Mp3 primero = new Mp3();
 		primero.setArtista("A");
 		primero.setCancion("A");
@@ -26,7 +31,8 @@ public class DoublyLinkedListTest {
 		segunto.setCancion("C");
 		segunto.setNombre("C");
 		segunto.setTrack(4);
-
+		
+		testedList.insertNode(ultimo);
 		testedList.insertNode(primero);
 		testedList.insertNode(segunto);
 

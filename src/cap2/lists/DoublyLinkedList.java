@@ -11,7 +11,6 @@ public class DoublyLinkedList {
 	// CRUD
 	public boolean insertNode(Mp3 dato) {
 		boolean respuesta = false;
-		int tamano = size;
 		DoublyLinkedNode newNode = new DoublyLinkedNode();
 		newNode.setDato(dato);
 		if (head.getDato() == null) {
@@ -23,27 +22,41 @@ public class DoublyLinkedList {
 			// Significa que hay nodos en la lista
 			DoublyLinkedNode tempo = new DoublyLinkedNode();
 			tempo = head;
-			for (int i = 0; i < tamano; i++) {
+			while (tempo != null) {
 				// Se recorre la lista para saber en que lugar va a quedar el nodo segun el
 				// track
-				if (dato.getTrack() > tempo.getDato().getTrack() && tempo.getSiguiente() != null) {
-					//Si el track ingresado es mayor que el nodo que esta guardado en tempo y el siguiente de tempo no es null
-					//Es decir que no hay mas nodos
+				if (dato.getTrack() > tempo.getDato().getTrack() && size > 1) {
+					// Si el track ingresado es mayor que el nodo que esta guardado en tempo y el
+					// siguiente de tempo no es null
+					// Es decir que no hay mas nodos
 					tempo = tempo.getSiguiente();
-				} else {
-					//Entra si el track es menor que el nodo que sigue o no hay mas nodos despues de tempo
-					DoublyLinkedNode anterior = new DoublyLinkedNode();
-					if (tempo.getAnterior() != null) {
-						//Entra si solo existe la cabeza
-						anterior = tempo.getAnterior();
-						anterior.setSiguiente(newNode);
-					}
-					tempo.setAnterior(newNode);
-					newNode.setAnterior(anterior);
+				} else if (dato.getTrack() < tempo.getDato().getTrack() && size == 1) {
+					head = newNode;
 					newNode.setSiguiente(tempo);
+					tempo.setAnterior(newNode);
 					respuesta = true;
 					size++;
-					
+					tempo = null;
+				} else {
+					// Entra si el track es menor que el nodo que sigue o no hay mas nodos despues
+					// de tempo
+					DoublyLinkedNode anterior = new DoublyLinkedNode();
+					if (tempo.getAnterior() != null) {
+						// Entra si existe mas nodos que solo la cabeza
+						anterior = tempo.getAnterior();
+						anterior.setSiguiente(newNode);
+						tempo.setAnterior(newNode);
+						newNode.setAnterior(anterior);
+						newNode.setSiguiente(tempo);
+					} else {
+						tempo.setSiguiente(newNode);
+						newNode.setAnterior(tempo);
+						newNode.setSiguiente(anterior);
+					}
+
+					respuesta = true;
+					size++;
+					tempo = null;
 				}
 			}
 		}
