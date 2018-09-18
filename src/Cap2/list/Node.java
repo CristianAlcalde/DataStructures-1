@@ -3,11 +3,12 @@ package Cap2.list;
 import Utils.MP3;
 
 public class Node {
-	public Node(String author, String file, String name, String trackNo) {
+	public Node(String author, String file, String name, Integer trackNo) {
 		this.dato = new MP3(author, file, name, trackNo); 
 	}
 	private MP3 dato;
 	private Node next;
+	
 	public MP3 getDato() {
 		return dato;
 	}

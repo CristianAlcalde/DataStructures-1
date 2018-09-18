@@ -5,17 +5,17 @@ public class MP3 {
 	private String author;
 	private String file;
 	private String name;
-	private String trackNo; // Con el sque vamos a ordenar.
+	private Integer trackNo; // Con el sque vamos a ordenar.
 	
 	
 	//Constructor con todos los campos.  
 
-	public MP3(String author, String file, String name, String trackNo) {
+	public MP3(String author, String file, String name, Integer trackNo2) {
 		super();
 		this.author = author;
 		this.file = file;
 		this.name = name;
-		this.trackNo = trackNo;
+		this.trackNo = trackNo2;
 	}
 	
 
@@ -49,11 +49,11 @@ public class MP3 {
 		this.name = name;
 	}
 
-	public String getTrackNo() {
+	public Integer getTrackNo() {
 		return trackNo;
 	}
 
-	public void setTrackNo(String trackNo) {
+	public void setTrackNo(Integer trackNo) {
 		this.trackNo = trackNo;
 	}
 

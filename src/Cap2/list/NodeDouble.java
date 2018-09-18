@@ -8,8 +8,10 @@ public class NodeDouble {
 	private NodeDouble next;
 	private NodeDouble previus;
 
-	public NodeDouble(String author, String file, String name, String trackNo) {
+	//Constructor
+	public NodeDouble(String author, String file, String name, Integer trackNo) {
 		this.dato = new MP3(author, file, name, trackNo);
+		
 	}
 
 	public MP3 getDato() {
