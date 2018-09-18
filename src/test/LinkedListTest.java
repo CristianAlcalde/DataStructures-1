@@ -1,10 +1,8 @@
-   package test;
+package test;
 
-import static org.junit.Assert.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
-import cap2.arrays.LinkedList;
+import cap2.list.LinkedList;
 import utils.Mp3;
 
 class LinkedListTest {
@@ -25,15 +23,16 @@ class LinkedListTest {
 
 		myList.add(author, file, name, trackNo);
 		assertEquals(1, myList.getSize());
-		
-		//Query to database
+
+		// Query to database
 		Mp3 cancion = myList.getHead().getDato();
-		
+
 		assertEquals(author, cancion.getAuthor());
 		assertEquals(file, cancion.getFile());
 		assertEquals(name, cancion.getName());
 		assertEquals(trackNo, cancion.getTrackNo());
 	}
+
 	@Test
 	void testSearchElementInEmptyList() {
 
@@ -67,7 +66,7 @@ class LinkedListTest {
 		assertEquals(name, searchResponse.getName());
 		assertEquals(trackNo, searchResponse.getTrackNo());
 	}
-	
+
 	@Test
 	void testSearchByPosition() {
 
@@ -84,7 +83,7 @@ class LinkedListTest {
 
 		myList.add(author, file, name, trackNo);
 		assertEquals(1, myList.getSize());
-		
+
 		String author2 = "Iron Maiden";
 		String file2 = "jjfdsklf34244efffsdzsfd32kdkjsflkjsgf##@#";
 		String name2 = "Flight of icarus";
@@ -92,7 +91,7 @@ class LinkedListTest {
 
 		myList.add(author2, file2, name2, trackNo2);
 		assertEquals(2, myList.getSize());
-		
+
 		String author3 = "Metallica";
 		String file3 = "jjfdsklf34244efffsdzsfd32kdkjsflkjsgf##@#";
 		String name3 = "Ride the lightning";
@@ -100,7 +99,7 @@ class LinkedListTest {
 
 		myList.add(author3, file3, name3, trackNo3);
 		assertEquals(3, myList.getSize());
-		
+
 		Mp3 searchResponse = myList.getAt(2);
 		assertNotNull(searchResponse);
 		assertEquals(author3, searchResponse.getAuthor());
@@ -108,7 +107,6 @@ class LinkedListTest {
 		assertEquals(name3, searchResponse.getName());
 		assertEquals(trackNo3, searchResponse.getTrackNo());
 	}
-}
 
 	@Test
 	void testInsertElementInListWithOnlyHead() {
