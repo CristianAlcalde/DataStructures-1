@@ -9,8 +9,8 @@ public class DoublyLinkedNode {
 		return dato;
 	}
 
-	public void setDato(Mp3 dato2) {
-		this.dato = dato2;
+	public void setDato(Mp3 dato) {
+		this.dato = dato;
 	}
 
 	public DoublyLinkedNode getAnterior() {

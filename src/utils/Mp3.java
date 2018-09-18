@@ -1,17 +1,17 @@
 package utils;
 
 public class Mp3 {
-	String cancion;
 	String artista;
 	String nombre;
+	String cancion;
 	int track;
 
-	public String getCancion() {
-		return cancion;
+	public int getTrack() {
+		return track;
 	}
 
-	public void setCancion(String cancion) {
-		this.cancion = cancion;
+	public void setTrack(int track) {
+		this.track = track;
 	}
 
 	public String getArtista() {
@@ -30,12 +30,12 @@ public class Mp3 {
 		this.nombre = nombre;
 	}
 
-	public int getTrack() {
-		return track;
+	public String getCancion() {
+		return cancion;
 	}
 
-	public void setTrack(int track) {
-		this.track = track;
+	public void setCancion(String cancion) {
+		this.cancion = cancion;
 	}
 
 }
