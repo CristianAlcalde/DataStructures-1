@@ -2,7 +2,7 @@ package utils;
 
 public class Node {
 	Person dato;
-	Node suguiente;
+	Node siguiente;
 
 	public Person getDato() {
 		return dato;
@@ -12,11 +12,11 @@ public class Node {
 		this.dato = dato;
 	}
 
-	public Node getSuguiente() {
-		return suguiente;
+	public Node getSiguiente() {
+		return siguiente;
 	}
 
-	public void setSuguiente(Node suguiente) {
-		this.suguiente = suguiente;
+	public void setSiguiente(Node suguiente) {
+		this.siguiente = suguiente;
 	}
 }

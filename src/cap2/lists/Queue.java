@@ -21,20 +21,26 @@ public class Queue {
 			Node temp = new Node();
 			temp = first;
 			while (respuesta == false) {
-				if (temp.getSuguiente() == null) {
-					temp.setSuguiente(newNode);
+				if (temp.getSiguiente() == null) {
+					temp.setSiguiente(newNode);
 					respuesta = true;
 					size++;
 				} else {
-					temp = temp.getSuguiente();
+					temp = temp.getSiguiente();
 				}
 			}
 		}
 		return respuesta;
 	}
 
-	public boolean deQueue(Person dato) {
+	public boolean deQueue() {
 		boolean respuesta = false;
+		Node temp = new Node();
+		temp = first;
+		first = temp.getSiguiente();
+		temp = null;
+		respuesta = true;
+		size--;
 		return respuesta;
 	}
 
@@ -44,7 +50,7 @@ public class Queue {
 		temp = first;
 		for (int i = 0; i < size; i++) {
 			respuesta = respuesta + temp.getDato().getName();
-			temp = temp.getSuguiente();
+			temp = temp.getSiguiente();
 		}
 		return respuesta;
 	}
