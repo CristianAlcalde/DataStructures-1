@@ -58,7 +58,7 @@ public class LinkedList {
 			// The new node is the tail
 			this.tail = newNode;
 		}
-		this.size ++;
+		this.size++;
 	}
 
 	public Mp3 searchByName(String name)
@@ -91,12 +91,56 @@ public class LinkedList {
 			// Storing the current value in temporal object
 			result = tmp.getDato();
 			// Incrementing the post
-			posTmp ++;
+			posTmp++;
 			// Incrementing temporal
 			tmp = tmp.getNext();
 		}
 		// When the while finish temporal is located in the correct node.
 		return result;
+	}
+
+	public String listElements()
+	{
+		String list = "";
+		
+		Node temp = this.head;
+		
+		int pos = 1;
+		
+		while (temp != null) {
+		
+				list += "N° "+ Integer.toString(pos) + "- ";
+				list += temp.getDato().getAuthor() + ", ";
+				list += temp.getDato().getFile() + ", ";	
+				list += temp.getDato().getName() + ", ";
+				list += temp.getDato().getTrackNo()+ "\n";
+				pos ++;
+				temp = temp.getNext();
+		}
+		return list;
+	}
+	
+	public void deletebyName(String name)
+	{
+		Node newNode = new Node("", "", "", "");
+
+		Node node = this.head;
+
+		Node prevNode = null;
+
+		// While the next to temporal is not null.
+		while (node != null)
+		{
+			// Compare temporal's fact with the entrace's fact
+			if (node.getDato().getName().equals(name))
+			{
+				prevNode.setNext(node.getNext());
+				node = newNode;
+			}
+			prevNode = node;
+			node = node.getNext();
+		}
+		this.size--;
 	}
 
 }
