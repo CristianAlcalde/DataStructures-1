@@ -62,4 +62,32 @@ class DoubleLinkedListTest {
 		assertEquals(name, cancion.getName());
 		assertEquals(trackNo, cancion.getTrackNo());
 	}
+	
+	@Test
+	void testInsertaOrdenado() {
+		// Creating the data structure
+		DoubleLinkedList myList = new DoubleLinkedList();
+		
+
+		// Expected values
+
+		String author = "kraken";
+		String file = "sdfaerwessefr##@#";
+		String name = "fragil";
+		String trackNo = "1";
+
+		myList.insertaOrdenado(author, file, name, trackNo);
+		myList.insertaOrdenado("Kraken", "qWErrt", "vestido", "5");
+		myList.insertaOrdenado("Kraken", "qWsdrt", "escudo", "3");
+		
+		
+		//Query to database
+		Mp3 cancion = myList.getHead().getDato();
+		
+		assertEquals(author, cancion.getAuthor());
+		assertEquals(file, cancion.getFile());
+		assertEquals(name, cancion.getName());
+		assertEquals(trackNo, cancion.getTrackNo());
+	}
+	
 }

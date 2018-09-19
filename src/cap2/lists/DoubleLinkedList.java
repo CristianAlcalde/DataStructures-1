@@ -68,4 +68,61 @@ public class DoubleLinkedList {
 		
 	}
 	
+	//------------------------------------------
+	public void insertaOrdenado(String author, String file, String name, String trackNo) {
+		String mayor="";
+		// Step 1. create the new node
+		DoubleLinkNode newNode = new DoubleLinkNode(author, file, name, trackNo);
+		// If the head is null
+		if (this.head == null) {
+			// The new node is the head
+			this.head = newNode;
+			this.tail = newNode;
+			this.cursor=newNode;
+			newNode.setNext(null);
+			newNode.setPrev(null);
+		} 
+		else{
+			if( Integer.parseInt(trackNo) > Integer.parseInt(cursor.getDato().getTrackNo()) ){
+				mayor="SI";
+			}else{mayor="NO";}
+			
+			while(mayor=="SI" && cursor.getNext()!= null) {
+				if ( Integer.parseInt(trackNo) > Integer.parseInt(cursor.getDato().getTrackNo())){				
+					this.cursor=this.cursor.getNext();				
+				}
+				else{
+					newNode.setNext(this.cursor);
+					newNode.setPrev(this.cursor.getPrev());
+					this.cursor.getPrev().setNext(newNode);
+					this.cursor.setPrev(newNode);
+					this.cursor= this.head;
+					mayor="FIN";
+				}
+			}
+			
+			if(mayor=="SI") {
+				this.cursor.setNext(newNode);
+				newNode.setPrev(this.cursor);
+				newNode.setNext(null);
+				this.tail=newNode;
+			}		
+			
+			if(mayor=="NO") {
+				this.head.setPrev(newNode);
+				newNode.setNext(this.head);
+				newNode.setPrev(null);
+				this.head=newNode;
+			}
+			
+			
+			
+			
+			
+			
+		}
+		
+	}
+	//------------------------------------------
+	
 }
