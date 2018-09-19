@@ -4,8 +4,8 @@ import utils.Mp3;
 
 public class LinkedList {
 
-	private Node head; // Cabeza
-	private Node tail; // Cola
+	private Node head; // Head
+	private Node tail; // Tale
 	private int size = 0;
 
 	// Encapsulate the required fields
@@ -58,22 +58,20 @@ public class LinkedList {
 			// The new node is the tail
 			this.tail = newNode;
 		}
-		this.size = this.size + 1;
+		this.size ++;
 	}
 
 	public Mp3 searchByName(String name)
 	{
-		// Instanciamos el dato de respuesta
 		Mp3 result = null;
-		// Creamos un nodo temporal para recorrer los demas nodos
+		// Create a temporal node to travel around the else nodes.
 		Node tmp = this.head;
-		// Mientras el siguiente del temporal no sea null
+		// While the next to temporal is not null.
 		while (tmp != null)
 		{
-			// Compare el dato del temporal con el dato de entrada
+			// Compare temporal's fact with the entrace's fact
 			if (tmp.getDato().getName().equals(name))
 			{
-				// Si lo encuentra la respuesta es el dato encontrado
 				result = tmp.getDato();
 			}
 			tmp = tmp.getNext();
@@ -83,23 +81,21 @@ public class LinkedList {
 
 	public Mp3 getAt(int pos)
 	{
-		// Instanciamos el dato de respuesta
 		Mp3 result = null;
-		// Creamos un nodo temporal para recorrer los nodos
 		Node tmp = this.head;
 		// Creating the position indicator
 		int posTmp = 0;
 		// While we are not in the input position
 		while (posTmp <= pos)
 		{
-			// Storing the current value in tmp object
+			// Storing the current value in temporal object
 			result = tmp.getDato();
-			// Incrementing the pos
-			posTmp = posTmp + 1;
-			// Incrementing tmp
+			// Incrementing the post
+			posTmp ++;
+			// Incrementing temporal
 			tmp = tmp.getNext();
 		}
-		// When the while finish tmp is located in the correct node.
+		// When the while finish temporal is located in the correct node.
 		return result;
 	}
 

@@ -8,6 +8,7 @@ public class DoubleLinkNode {
 	private DoubleLinkNode next;
 	private DoubleLinkNode prev;
 
+	//Constructor
 	public DoubleLinkNode(String author, String file, String name, String trackNo) {
 		this.dato = new Mp3(author, file, name, trackNo);
 	}
