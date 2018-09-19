@@ -32,7 +32,7 @@ public class DoubleLinkedList {
 	}
 
 	// CRUD
-	
+
 	public void addOrdered(String author, String file, String name, String trackNo) {
 		DoubleLinkedNode compare1;
 		DoubleLinkedNode compare2;
@@ -44,37 +44,37 @@ public class DoubleLinkedList {
 			this.tail = newNode;
 
 		} else {
-			compare1 = head;
-			while (compare1 != null) {
+			compare1 = this.head;
+	
 
 				compare2 = compare1.getNext();
 				Integer newNodeTrack = Integer.parseInt(newNode.getDato().getTrackNo());
 				Integer compare1Track = Integer.parseInt(compare1.getDato().getTrackNo());
-				Integer compare2Track = Integer.parseInt(compare2.getDato().getTrackNo());
+
 				if (newNodeTrack <= compare1Track) {
 					newNode.setNext(compare1);
 					compare1.setPrevious(newNode);
 					this.head = newNode;
 
-				} else {
-					if (newNodeTrack > compare1Track && compare2==null) {
+				} 
+					if (newNodeTrack > compare1Track && compare1.getNext() == null) {
+						newNode.setPrevious(compare1);
 						compare1.setNext(newNode);
 						this.tail = newNode;
-						this.tail.setPrevious(compare1);
-					} else {
-						if (compare1Track < newNodeTrack && compare2Track >= newNodeTrack) {
-							compare1.setNext(newNode);
-							newNode.setNext(compare2);
-							compare2.setPrevious(newNode);
-							newNode.setPrevious(compare1);
-						} else {
-							compare1 = compare1.getNext();
-						}
+						this.head = compare1;
 					}
-				}
-
-			}
-
+					while (compare1 != null) {
+						if (newNodeTrack > compare1Track && newNodeTrack <= Integer.parseInt(compare1.getNext().getDato().getTrackNo())) {
+							newNode.setNext(compare1.getNext());
+							newNode.setPrevious(compare1);
+							compare1.setNext(newNode);
+							compare1.getNext().setPrevious(newNode);
+							compare1 = null;
+						} else {
+						compare1 = compare1.getNext();
+						}
+		
+						}
 		}
 		this.size = this.size + 1;
 	}
