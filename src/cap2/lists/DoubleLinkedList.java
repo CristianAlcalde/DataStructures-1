@@ -131,9 +131,7 @@ public class DoubleLinkedList {
 		
 	}
 	//------------------------------------------
-	
-	//------------------------------------------
-	
+		
 	public String buscarportrack(DoubleLinkedList myList, String notrack) {
 		String sale="no";
 		while(myList.getCursor()!=null && sale=="no") {
@@ -152,6 +150,22 @@ public class DoubleLinkedList {
 		
 		return myList.getCursor().getDato().getName();
 		
+	}
+	//------------------------------------------
+	public String eliminaportrack(DoubleLinkedList myList, String notrack) {
+		String sale="no";
+		while(myList.getCursor()!=null && sale=="no") {
+			if(myList.getCursor().getDato().getTrackNo()==notrack) {				
+				myList.getCursor().getPrev().setNext(myList.getCursor().getNext());
+				myList.getCursor().getNext().setPrev(myList.getCursor().getPrev());
+				myList.cursor=myList.head;				
+				sale="si";				
+			}
+			else {
+				myList.cursor=myList.cursor.getNext();
+			}
+		}			
+		return myList.getCursor().getDato().getName();		
 	}
 	//------------------------------------------
 	

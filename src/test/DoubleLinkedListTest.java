@@ -135,4 +135,31 @@ class DoubleLinkedListTest {
 		
 	}
 	
+	
+	@Test
+	void testeliminaportrack() {
+		// Creating the data structure
+		DoubleLinkedList myList = new DoubleLinkedList();
+		
+
+		// Expected values
+		String valoresperado="Amazing";
+		
+		String author = "Aerosmith";
+		String file = "jjfdsklf3424432kdkjsflkjsgf##@#";
+		String name = "Amazing";
+		String trackNo = "4";
+
+		myList.insertaPorCola(author, file, name, trackNo);
+		myList.insertaPorCola("Kraken", "qWErrt", "vestido", "5");
+		myList.insertaPorCola("Queen", "qWsdrsst", "Bohemian", "3");
+		
+		String valorobtenido = myList.eliminaportrack(myList,"5");
+		System.out.println("----------------------------");	
+		myList.listar(myList);
+		
+		assertEquals(valoresperado, valorobtenido);
+		
+	}
+	
 }
