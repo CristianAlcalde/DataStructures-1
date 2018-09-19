@@ -151,7 +151,7 @@ public class DoubleLinkedList {
 		return myList.getCursor().getDato().getName();
 		
 	}
-	//------------------------------------------
+	//-------------------------------------------
 	public String eliminaportrack(DoubleLinkedList myList, String notrack) {
 		String sale="no";
 		while(myList.getCursor()!=null && sale=="no") {
