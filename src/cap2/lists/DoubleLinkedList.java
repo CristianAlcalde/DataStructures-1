@@ -114,13 +114,20 @@ public class DoubleLinkedList {
 				newNode.setPrev(null);
 				this.head=newNode;
 			}
-			
-			
-			
-			
-			
-			
+						
 		}
+		this.cursor= this.head;
+	}
+	//------------------------------------------
+	
+	public String listar(DoubleLinkedList myList) {
+		
+		while(myList.getCursor()!=null) {
+			System.out.println(myList.getCursor().getDato().getTrackNo());			
+			myList.cursor=myList.cursor.getNext();
+		}	
+		myList.setCursor(myList.tail);
+		return myList.getCursor().getDato().getTrackNo();
 		
 	}
 	//------------------------------------------
