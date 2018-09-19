@@ -1,17 +1,17 @@
 package cap2.lists;
 
-import utils.DoublyLinkedNode;
+import utils.DoublyNode;
 import utils.Mp3;
 
 public class DoublyLinkedList {
-	DoublyLinkedNode head = new DoublyLinkedNode();
-	DoublyLinkedNode tail = new DoublyLinkedNode();
+	DoublyNode head = new DoublyNode();
+	DoublyNode tail = new DoublyNode();
 	int size = 0;
 
 	// CRUD
 	public boolean insertNode(Mp3 dato) {
 		boolean respuesta = false;
-		DoublyLinkedNode newNode = new DoublyLinkedNode();
+		DoublyNode newNode = new DoublyNode();
 		newNode.setDato(dato);
 		if (head.getDato() == null) {
 			// Significa que no hay nada en la lista
@@ -20,7 +20,7 @@ public class DoublyLinkedList {
 			respuesta = true;
 		} else {
 			// Significa que hay nodos en la lista
-			DoublyLinkedNode tempo = new DoublyLinkedNode();
+			DoublyNode tempo = new DoublyNode();
 			tempo = head;
 			while (tempo != null) {
 				// Se recorre la lista para saber en que lugar va a quedar el nodo segun el
@@ -40,7 +40,7 @@ public class DoublyLinkedList {
 				} else {
 					// Entra si el track es menor que el nodo que sigue o no hay mas nodos despues
 					// de tempo
-					DoublyLinkedNode anterior = new DoublyLinkedNode();
+					DoublyNode anterior = new DoublyNode();
 					if (tempo.getAnterior() != null) {
 						// Entra si existe mas nodos que solo la cabeza
 						anterior = tempo.getAnterior();
@@ -66,12 +66,12 @@ public class DoublyLinkedList {
 
 	public boolean deleteNode(int track) {
 		boolean respuesta = false;
-		DoublyLinkedNode review = new DoublyLinkedNode();
+		DoublyNode review = new DoublyNode();
 		review = head;
 		while (review != null) {
 			if (review.getDato().getTrack() == track) {
-				DoublyLinkedNode anterior = new DoublyLinkedNode();
-				DoublyLinkedNode siguiente = new DoublyLinkedNode();
+				DoublyNode anterior = new DoublyNode();
+				DoublyNode siguiente = new DoublyNode();
 				anterior = review.getAnterior();
 				siguiente = review.getSiguiente();
 				anterior.setSiguiente(siguiente);
@@ -88,7 +88,7 @@ public class DoublyLinkedList {
 
 	public String listNodes() {
 		String respuesta = "";
-		DoublyLinkedNode review = new DoublyLinkedNode();
+		DoublyNode review = new DoublyNode();
 		review = head;
 		for (int j = 0; j < size; j++) {
 			respuesta = respuesta + review.getDato().getNombre();

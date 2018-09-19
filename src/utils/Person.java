@@ -1,4 +1,4 @@
-package cap1.arrays;
+package utils;
 
 public class Person {
 	private String document;

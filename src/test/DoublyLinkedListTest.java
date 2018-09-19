@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import cap1.arrays.Vector;
 import cap2.lists.DoublyLinkedList;
-import utils.DoublyLinkedNode;
+import utils.DoublyNode;
 import utils.Mp3;
 
 public class DoublyLinkedListTest {
