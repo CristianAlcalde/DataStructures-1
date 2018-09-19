@@ -132,4 +132,27 @@ public class DoubleLinkedList {
 	}
 	//------------------------------------------
 	
+	//------------------------------------------
+	
+	public String buscarportrack(DoubleLinkedList myList, String notrack) {
+		String sale="no";
+		while(myList.getCursor()!=null && sale=="no") {
+			if(myList.getCursor().getDato().getTrackNo()==notrack) {
+				System.out.println("----------------------------");	
+				System.out.println(myList.getCursor().getDato().getTrackNo());	
+				System.out.println(myList.getCursor().getDato().getAuthor());
+				System.out.println(myList.getCursor().getDato().getName());
+				sale="si";
+				System.out.println("----------------------------");
+			}
+			else {
+				myList.cursor=myList.cursor.getNext();
+			}
+		}	
+		
+		return myList.getCursor().getDato().getName();
+		
+	}
+	//------------------------------------------
+	
 }

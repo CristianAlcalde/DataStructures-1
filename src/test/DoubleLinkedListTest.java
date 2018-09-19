@@ -111,4 +111,28 @@ class DoubleLinkedListTest {
 		
 	}
 	
+	@Test
+	void testbuscarportrack() {
+		// Creating the data structure
+		DoubleLinkedList myList = new DoubleLinkedList();
+		
+
+		// Expected values
+		String valoresperado="vestido";
+		
+		String author = "Aerosmith";
+		String file = "jjfdsklf3424432kdkjsflkjsgf##@#";
+		String name = "Amazing";
+		String trackNo = "4";
+
+		myList.insertaPorCola(author, file, name, trackNo);
+		myList.insertaPorCola("Kraken", "qWErrt", "vestido", "5");
+		myList.insertaPorCola("Queen", "qWsdrsst", "Bohemian", "3");
+		
+		String valorobtenido = myList.buscarportrack(myList,"5");
+				
+		assertEquals(valoresperado, valorobtenido);
+		
+	}
+	
 }
