@@ -3,10 +3,9 @@ package test;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.*;
 import cap1.arrays.*;
-import org.junit.jupiter.api.Test;
+import utils.Person;
 
-import cap1.arrays.HashTable;
-import cap1.arrays.Person;
+import org.junit.jupiter.api.Test;
 
 class HashTableTest {
 
