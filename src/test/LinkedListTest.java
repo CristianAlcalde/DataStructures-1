@@ -1,6 +1,9 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Iterator;
+
 import org.junit.jupiter.api.Test;
 import cap2.list.LinkedList;
 import utils.Mp3;
@@ -33,6 +36,7 @@ class LinkedListTest {
 		assertEquals(name, cancion.getName());
 		assertEquals(trackNo, cancion.getTrackNo());
 	}
+
 //Buscar elemento con una lista vacia
 	@Test
 	void testSearchElementInEmptyList() {
@@ -67,6 +71,7 @@ class LinkedListTest {
 		assertEquals(name, searchResponse.getName());
 		assertEquals(trackNo, searchResponse.getTrackNo());
 	}
+
 //Buscar por posición
 	@Test
 	void testSearchByPosition() {
@@ -138,8 +143,8 @@ class LinkedListTest {
 
 		myList.add(author2, file2, name2, trackNo2);
 		assertEquals(2, myList.getSize());
-		//Query to database
-		
+		// Query to database
+
 		Mp3 cancion = myList.getHead().getDato();
 
 		// aSSERTING THE INFORMATION
@@ -147,7 +152,7 @@ class LinkedListTest {
 		assertEquals(file, cancion.getFile());
 		assertEquals(name, cancion.getName());
 		assertEquals(trackNo, cancion.getTrackNo());
-		
+
 		Mp3 listWithTracNo = myList.listElement(author, file, name, trackNo);
 		Mp3 listWithTracNo2 = myList.listElement(author2, file2, name2, trackNo2);
 
@@ -157,6 +162,16 @@ class LinkedListTest {
 		assertEquals(file, cancion.getFile());
 		assertEquals(name, cancion.getName());
 		assertEquals(trackNo, cancion.getTrackNo());
+
+	}
+
+	@Test
+	void deleteElements() {
+		LinkedList myList = new LinkedList();
+
+		myList.add("Aerosmith", "sijkn", "amazing", "011");
+
+		myList.deleteElement();
 
 	}
 

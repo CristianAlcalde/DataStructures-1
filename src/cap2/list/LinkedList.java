@@ -1,7 +1,7 @@
 package cap2.list;
 
 import java.util.ArrayList;
-
+import java.util.Iterator;
 import utils.Mp3;
 
 public class LinkedList {
@@ -91,8 +91,9 @@ public class LinkedList {
 		// When the while finish tmp is located in the correct node.
 		return result;
 	}
+
 	public Mp3 listElement(String author, String file, String name, String trackNo) {
-		Node actual = new Node(author, file, name, trackNo) ;
+		Node actual = new Node(author, file, name, trackNo);
 		actual = head;
 		while (actual != null) {
 			System.out.println("Actual date: " + actual.getDato());
@@ -100,13 +101,25 @@ public class LinkedList {
 		}
 		return null;
 	}
-	public void deleteelement() {
-		if (head!= null) {
+
+	public void deleteElement() {
+		if (head != null) {
 			Node actual = head;
-			while(actual.getNext()!= null) {
+			while (actual.getNext() != null) {
 				Node prev = actual;
 				actual = actual.getNext();
 			}
 		}
 	}
+
+	public void add(Integer integer) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void printContent() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
