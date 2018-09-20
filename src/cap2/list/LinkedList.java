@@ -1,5 +1,7 @@
 package cap2.list;
 
+import java.util.ArrayList;
+
 import utils.Mp3;
 
 public class LinkedList {
@@ -75,7 +77,7 @@ public class LinkedList {
 		Mp3 result = null;
 		// Creamos un nodo temporal para recorrer los nodos
 		Node tmp = this.head;
-		// Creating the position indicator
+		// crear un indicador de posicion
 		int posTmp = 0;
 		// While we are not in the input position
 		while (posTmp <= pos) {
@@ -88,5 +90,23 @@ public class LinkedList {
 		}
 		// When the while finish tmp is located in the correct node.
 		return result;
+	}
+	public Mp3 listElement(String author, String file, String name, String trackNo) {
+		Node actual = new Node(author, file, name, trackNo) ;
+		actual = head;
+		while (actual != null) {
+			System.out.println("Actual date: " + actual.getDato());
+			actual = actual.getNext();
+		}
+		return null;
+	}
+	public void deleteelement() {
+		if (head!= null) {
+			Node actual = head;
+			while(actual.getNext()!= null) {
+				Node prev = actual;
+				actual = actual.getNext();
+			}
+		}
 	}
 }

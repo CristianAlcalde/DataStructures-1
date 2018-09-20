@@ -7,6 +7,7 @@ import utils.Mp3;
 
 class LinkedListTest {
 
+//Insertar elemento en una lista vacia
 	@Test
 	void testInsertElementInEmptyList() {
 
@@ -32,7 +33,7 @@ class LinkedListTest {
 		assertEquals(name, cancion.getName());
 		assertEquals(trackNo, cancion.getTrackNo());
 	}
-
+//Buscar elemento con una lista vacia
 	@Test
 	void testSearchElementInEmptyList() {
 
@@ -66,7 +67,7 @@ class LinkedListTest {
 		assertEquals(name, searchResponse.getName());
 		assertEquals(trackNo, searchResponse.getTrackNo());
 	}
-
+//Buscar por posición
 	@Test
 	void testSearchByPosition() {
 
@@ -114,6 +115,49 @@ class LinkedListTest {
 
 	@Test
 	void testInsertElementAtTheEnd() {
+	}
+
+	@Test
+	void listElements() {
+		// Step 1 create the data structure
+		LinkedList myList = new LinkedList();
+		assertEquals(0, myList.getSize());
+
+		String author = "Aerosmith";
+		String file = "jjfdsklf3424432kdkjsflkjsgf##@#";
+		String name = "Amazing";
+		String trackNo = "004";
+
+		myList.add(author, file, name, trackNo);
+		assertEquals(1, myList.getSize());
+
+		String author2 = "Iron Maiden";
+		String file2 = "jjfdsklf34244efffsdzsfd32kdkjsflkjsgf##@#";
+		String name2 = "Flight of icarus";
+		String trackNo2 = "001";
+
+		myList.add(author2, file2, name2, trackNo2);
+		assertEquals(2, myList.getSize());
+		//Query to database
+		
+		Mp3 cancion = myList.getHead().getDato();
+
+		// aSSERTING THE INFORMATION
+		assertEquals(author, cancion.getAuthor());
+		assertEquals(file, cancion.getFile());
+		assertEquals(name, cancion.getName());
+		assertEquals(trackNo, cancion.getTrackNo());
+		
+		Mp3 listWithTracNo = myList.listElement(author, file, name, trackNo);
+		Mp3 listWithTracNo2 = myList.listElement(author2, file2, name2, trackNo2);
+
+		Mp3 list = myList.getHead().getDato();
+
+		assertEquals(author, cancion.getAuthor());
+		assertEquals(file, cancion.getFile());
+		assertEquals(name, cancion.getName());
+		assertEquals(trackNo, cancion.getTrackNo());
+
 	}
 
 }
