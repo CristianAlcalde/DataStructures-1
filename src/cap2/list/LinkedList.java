@@ -90,7 +90,7 @@ public class LinkedList {
 	}
 	
 	
-	public Mp3 DeletePos(String author,String file,String name,String trackNo) {
+	public Mp3 DeletePos(int pos, String author,String file,String name,String trackNo) {
 		Mp3 result = null;
 		// Creamos un nodo temporal para recorrer los nodos
 		Node tmp = this.head;
@@ -102,13 +102,14 @@ public class LinkedList {
 		result.setTrackNo(trackNo);
 		
 		
-		
-		while(tmp!=null) {
+		while(posTmp <= pos) {
 			if(tmp.getDato()==result) 
 				{
-					//tmp = tmp + 1;
-					
+					result = tmp.getDato();
+					result = null;
 				}
+			posTmp = posTmp + 1;
+			tmp = tmp.getNext();
 		}
 		return result;
 	}
