@@ -34,7 +34,8 @@ public class DoubleLinkedList {
 	}
 
 	// CRUD
-
+	
+	// Metodo Insertar ordenado
 	public void addOrdered(String author, String file, String name, String trackNo) {
 		DoubleLinkedNode compare1;
 		// Step 1. create the new node
@@ -43,17 +44,14 @@ public class DoubleLinkedList {
 		if (this.head == null) {
 			this.head = newNode;
 			this.tail = newNode;
-
 		} else {
 			compare1 = this.head;
 			Integer newNodeTrack = Integer.parseInt(newNode.getDato().getTrackNo());
 			Integer compare1Track = Integer.parseInt(compare1.getDato().getTrackNo());
-
 			if (newNodeTrack <= compare1Track) {
 				newNode.setNext(compare1);
 				compare1.setPrevious(newNode);
 				this.head = newNode;
-
 			}
 			if (newNodeTrack > compare1Track && compare1.getNext() == null) {
 				newNode.setPrevious(compare1);
@@ -72,45 +70,56 @@ public class DoubleLinkedList {
 				} else {
 					compare1 = compare1.getNext();
 				}
-
 			}
 		}
 		this.size = this.size + 1;
 	}
-	// Eliminar por nombre o por N° de track
+	
+	// Metodo Eliminar por nombre o por N° de track
 	public boolean deleteByElement(String data) {
-		// Creamos dos nodos temporales para recorrer los demas nodos
 		boolean result = false;
 		DoubleLinkedNode tmp = this.head;
 		DoubleLinkedNode previous = null;
-		// Mientras el siguiente del temporal no sea null
+		// Mientras el temporal no sea null
 		while (tmp != null) {
 			// Compare el dato del temporal con el dato de entrada
 			if (tmp.getDato().getName().equals(data) || tmp.getDato().getTrackNo().equals(data)) {
 				if(tmp == this.head) {
 					this.head = this.head.getNext();
+					// eliminando todo el elemento
 					tmp = null;
 					result = true;
 					this.size = this.size - 1;
 				} else { previous.setNext(tmp.getNext());
 						 tmp.getNext().setPrevious(previous);
+						// eliminando todo el elemento
 						 tmp = null;
 						 result = true;
 						 this.size = this.size - 1;
 				}
-				// Si lo encuentra elimina todo el elemento
-				
-				
 			}
 			previous = tmp;
 			if(tmp != null) {
 			tmp = tmp.getNext();
 			}
 		}
-		
 		return result;
 	}
 	
+	// Metodo Listar.
+	public String listSongs() {
+		String result;
+		String print = "";
+		DoubleLinkedNode tmp = this.head;
+		int i = 1;
+		while(i <= this.size) {
+			result = tmp.getDato().getTrackNo() + ". " + tmp.getDato().getName();
+			print = print + result + " - ";
+			tmp = tmp.getNext();
+			i = i + 1;
+		}
+		return print;
+	}
 	
 
 }

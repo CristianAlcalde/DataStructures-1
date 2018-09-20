@@ -56,7 +56,7 @@ class LinkedListTest {
 				// Query to database
 				Mp3 cancion = myList.getHead().getDato();
 
-				// aSSERTING THE INFORMATION
+				// Asserting the information
 				assertEquals(author, cancion.getAuthor());
 				assertEquals(file, cancion.getFile());
 				assertEquals(name, cancion.getName());
