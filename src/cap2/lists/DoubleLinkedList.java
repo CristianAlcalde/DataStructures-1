@@ -104,7 +104,7 @@ public class DoubleLinkedList {
 		return result;
 	}
 	
-	// Metodo Listar.
+	// Metodo Listar
 	public String listSongs() {
 		String result;
 		String print = "";

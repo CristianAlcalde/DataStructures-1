@@ -32,7 +32,7 @@ public class Queue {
 
 
 	// CRUD
-	// Metodo Insertar
+	// Metodo Encolar
 	public String enQueue(String document, String name, String phone) {
 		QueueNode newNode = new QueueNode(document, name, phone);
 		if(this.first == null) {
@@ -46,6 +46,10 @@ public class Queue {
 		return newNode.getPerson().getDocument();
 	}
 	
+	// Metodo atender persona en la cola
+	public void deQueue() {
+		this.first = this.first.getNext();
+		this.size = this.size - 1;
+	}
 	
-
 }
