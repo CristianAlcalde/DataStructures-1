@@ -49,11 +49,11 @@ public class Matrix {
 	}
 	// Creo Metodos Crud
 
-	public void insertarElemento(int numeroFilas, int numeroColumnas, int Elemento) {
+	public int insertarElemento(int numeroFilas, int numeroColumnas, int Elemento) {
 
 		this.matriz[numeroFilas][numeroColumnas] = Elemento;
 
-		// return this.Elementos
+		return Elemento;
 	}
 
 	// buscar un elemento posicion
@@ -87,9 +87,10 @@ public class Matrix {
 	}
 
 	// Eliminar un elemento
-	public void eliminarElemento(int numeroFilas, int numeroColumnas) {
+	public int eliminarElemento(int numeroFilas, int numeroColumnas) {
 
 		this.matriz[numeroFilas][numeroColumnas] = 0;
+		return 0;
 	}
 
 }
