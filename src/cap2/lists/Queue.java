@@ -47,9 +47,12 @@ public class Queue {
 	}
 	
 	// Metodo atender persona en la cola
-	public void deQueue() {
-		this.first = this.first.getNext();
-		this.size = this.size - 1;
+	public void deQueue(int cant) {	// atender a las personas indicadas en cant.
+		for(int i = 1; i <= cant; i++) {
+			this.first = this.first.getNext();
+			this.size = this.size - 1;
+		}
+	
 	}
 	
 }

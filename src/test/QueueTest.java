@@ -57,15 +57,12 @@ class QueueTest {
 		assertEquals(3, persons.getSize());
 		
 		// Atendiendo personas
-		persons.deQueue();					// Usando primera vez vez deQueue.
-		assertEquals(2, persons.getSize());
-		
-		persons.deQueue();					// Usando segunda vez deQueue.
+		persons.deQueue(2);					// Probando al atender a 2 personas.
 		assertEquals(1, persons.getSize());
-				
+						
 		// Asserting the information
 		assertEquals(document3, persons.getFirst().getPerson().getDocument()); // Probando el nuevo first despues de
-																			   // usar dos veces deQueue.
+																			   // atender a dos personas.
 		
 	}
 
