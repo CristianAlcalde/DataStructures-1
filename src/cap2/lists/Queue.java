@@ -55,4 +55,19 @@ public class Queue {
 	
 	}
 	
+	// Metodo Listar Cola
+		public String listQueue() {
+			String result;
+			String print = "";
+			QueueNode tmp = this.first;
+			int i = 1;
+			while(i <= this.size) {
+				result = tmp.getPerson().getName() + "-" + tmp.getPerson().getDocument();
+				print = print + result + "; ";
+				tmp = tmp.getNext();
+				i = i + 1;
+			}
+			return print;
+		}
+	
 }
